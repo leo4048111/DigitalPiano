@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  "F:/Vivado2016.2/Vivado/2016.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" --include "../../../DigitalPiano.ip_user_files/ipstatic/clk_wiz_v5_3_1"
+verilog xil_defaultlib  "../../../DigitalPiano.srcs/sources_1/new/Single_Note.v" --include "../../../DigitalPiano.ip_user_files/ipstatic/clk_wiz_v5_3_1"
+verilog xil_defaultlib  "../../../DigitalPiano.srcs/sources_1/new/PS2.v" --include "../../../DigitalPiano.ip_user_files/ipstatic/clk_wiz_v5_3_1"
+verilog xil_defaultlib  "../../../DigitalPiano.srcs/sources_1/new/Keyboard.v" --include "../../../DigitalPiano.ip_user_files/ipstatic/clk_wiz_v5_3_1"
+verilog xil_defaultlib  "../../../DigitalPiano.srcs/sim_1/new/Keyboard_tb.v" --include "../../../DigitalPiano.ip_user_files/ipstatic/clk_wiz_v5_3_1"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -3,43 +3,74 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="VGA_tb_behav.wdb" id="1">
+      <db_ref path="Keyboard_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="VGA_tb" />
+            <top_module name="Keyboard_tb" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="166666666fs"></ZoomStartTime>
-      <ZoomEndTime time="1166666667fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="2937954000666fs"></ZoomStartTime>
+      <ZoomEndTime time="2940574000667fs"></ZoomEndTime>
+      <Cursor1Time time="2938590667000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="6" />
-   <wvobject fp_name="/VGA_tb/uut/clock_25" type="logic">
-      <obj_property name="ElementShortName">clock_25</obj_property>
-      <obj_property name="ObjectShortName">clock_25</obj_property>
+   <WVObjectSize size="13" />
+   <wave_markers>
+      <marker time="1466942000000" label="" />
+      <marker time="2938590667000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/Keyboard_tb/uut/DATA" type="array">
+      <obj_property name="ElementShortName">DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/VGA_tb/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
+   <wvobject fp_name="/Keyboard_tb/uut/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/VGA_tb/hsync" type="logic">
-      <obj_property name="ElementShortName">hsync</obj_property>
-      <obj_property name="ObjectShortName">hsync</obj_property>
+   <wvobject fp_name="/Keyboard_tb/uut/clock_USB_in" type="logic">
+      <obj_property name="ElementShortName">clock_USB_in</obj_property>
+      <obj_property name="ObjectShortName">clock_USB_in</obj_property>
    </wvobject>
-   <wvobject fp_name="/VGA_tb/vsync" type="logic">
-      <obj_property name="ElementShortName">vsync</obj_property>
-      <obj_property name="ObjectShortName">vsync</obj_property>
+   <wvobject fp_name="/Keyboard_tb/uut/data_USB_in" type="logic">
+      <obj_property name="ElementShortName">data_USB_in</obj_property>
+      <obj_property name="ObjectShortName">data_USB_in</obj_property>
    </wvobject>
-   <wvobject fp_name="/VGA_tb/uut/hcount" type="array">
-      <obj_property name="ElementShortName">hcount[9:0]</obj_property>
-      <obj_property name="ObjectShortName">hcount[9:0]</obj_property>
+   <wvobject fp_name="/Keyboard_tb/uut/DATA_16BITS" type="array">
+      <obj_property name="ElementShortName">DATA_16BITS[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_16BITS[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/PS2_ERROR" type="logic">
+      <obj_property name="ElementShortName">PS2_ERROR</obj_property>
+      <obj_property name="ObjectShortName">PS2_ERROR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/DATA_VALID" type="logic">
+      <obj_property name="ElementShortName">DATA_VALID</obj_property>
+      <obj_property name="ObjectShortName">DATA_VALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/octave" type="array">
+      <obj_property name="ElementShortName">octave[2:0]</obj_property>
+      <obj_property name="ObjectShortName">octave[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/PS2/data_in_buf" type="array">
+      <obj_property name="ElementShortName">data_in_buf[10:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_buf[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/note" type="array">
+      <obj_property name="ElementShortName">note[3:0]</obj_property>
+      <obj_property name="ObjectShortName">note[3:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/VGA_tb/uut/vcount" type="array">
-      <obj_property name="ElementShortName">vcount[9:0]</obj_property>
-      <obj_property name="ObjectShortName">vcount[9:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   <wvobject fp_name="/Keyboard_tb/uut/PS2/clock_negedge_detecter" type="array">
+      <obj_property name="ElementShortName">clock_negedge_detecter[1:0]</obj_property>
+      <obj_property name="ObjectShortName">clock_negedge_detecter[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/PS2/is_clock_USB_in_negedge" type="logic">
+      <obj_property name="ElementShortName">is_clock_USB_in_negedge</obj_property>
+      <obj_property name="ObjectShortName">is_clock_USB_in_negedge</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/PS2/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
    </wvobject>
 </wave_config>

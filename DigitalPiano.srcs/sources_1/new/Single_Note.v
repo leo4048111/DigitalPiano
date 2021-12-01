@@ -52,7 +52,7 @@ begin
     endcase
 end
 
-reg [16:0] counter_note;
+reg [16:0] counter_note = 17'b0;
 always @(posedge clk) begin
     if(counter_note == 0)
         counter_note <= clkdivider;
@@ -62,7 +62,7 @@ always @(posedge clk) begin
 end
 
 //C2为最低音，octave=2'd0;
-reg [2:0] counter_octave;
+reg [2:0] counter_octave = 3'b0;
 always @ (posedge clk) begin
     if(counter_note == 0)
     begin

@@ -31,7 +31,7 @@ module Keyboard(
 
 reg reset;
 wire [7:0] DATA;
-wire [15:0] DATA_16BITS;
+reg [15:0] DATA_16BITS;
 wire DATA_VALID;
 wire PS2_ERROR;
 
@@ -45,7 +45,11 @@ PS2 PS2(.clk(clk),
         .data_in_error(PS2_ERROR)
         );
 
-assign DATA_16BITS = {DATA_16BITS[7:0],DATA[7:0]};
+//上次的数据和这次的数据拼接
+always @ (posedge DATA_VALID)
+begin
+    #1 DATA_16BITS = {DATA_16BITS[7:0],DATA};
+end
 
 //基础频率
 parameter C2 = 262;
@@ -83,156 +87,159 @@ reg [2:0] octave;
 
 always @ (posedge clk)
 begin
-    case(DATA)
-    8'h1A:begin    //按键Z
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+    if(DATA_VALID == 1'b1)
+        begin
+            case(DATA)
+            8'h1A:begin    //按键Z
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd0;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd0;
-            octave = 3'd0;
-        end
-    end
 
-    8'h1B:begin    //按键S
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h1B:begin    //按键S
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd1;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd1;
-            octave = 3'd0;
-        end
-    end
 
-    8'h22:begin    //按键X
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h22:begin    //按键X
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd2;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd2;
-            octave = 3'd0;
-        end
-    end
 
-    8'h23:begin    //按键D
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h23:begin    //按键D
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd3;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd3;
-            octave = 3'd0;
-        end
-    end
 
-    8'h21:begin    //按键C
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h21:begin    //按键C
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd4;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd4;
-            octave = 3'd0;
-        end
-    end
 
-    8'h2A:begin    //按键V
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h2A:begin    //按键V
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd5;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd5;
-            octave = 3'd0;
-        end
-    end
 
-    8'h34:begin    //按键G
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h34:begin    //按键G
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd6;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd6;
-            octave = 3'd0;
-        end
-    end
 
-    8'h32:begin    //按键B
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h32:begin    //按键B
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd7;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd7;
-            octave = 3'd0;
-        end
-    end
 
-    8'h33:begin    //按键H
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h33:begin    //按键H
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd8;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd8;
-            octave = 3'd0;
-        end
-    end
 
-    8'h31:begin    //按键N
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h31:begin    //按键N
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd9;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd9;
-            octave = 3'd0;
-        end
-    end
 
-    8'h3B:begin    //按键J
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h3B:begin    //按键J
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd10;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd10;
-            octave = 3'd0;
-        end
-    end
 
-    8'h3A:begin    //按键M
-        if(DATA_16BITS[15:8] == 8'hF0) //弹起
-            begin
-                ena <= 1'b0;
+            8'h3A:begin    //按键M
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd11;
+                    octave = 3'd0;
+                end
             end
-        else begin
-            ena <= 1'b1;
-            note = 4'd11;
-            octave = 3'd0;
-        end
-    end
 
-    default: begin
-        ena <= 1'b0;
-        note = 4'd12;
-    end
-    endcase // DATA
+            default: begin
+                ena <= 1'b0;
+                note = 4'd12;
+            end
+            endcase // DATA
+        end
 
 end
 

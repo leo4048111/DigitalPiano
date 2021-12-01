@@ -60,6 +60,11 @@ assign is_clock_USB_in_negedge = (clock_negedge_detecter == 2'b10) ? 1'b1 : 1'b0
 
 
 //状态机
+initial
+begin
+    state <= IDLE;  //状态初始化
+end
+
 //时钟上升沿状态转移
 always @ (posedge clk or posedge rst)
 begin

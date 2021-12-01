@@ -60,7 +60,7 @@ assign is_clock_USB_in_negedge = (clock_negedge_detecter == 2'b10) ? 1'b1 : 1'b0
 
 
 //状态机
-//时钟上升沿更新状态
+//时钟上升沿状态转移
 always @ (posedge clk or posedge rst)
 begin
     if(rst)
@@ -72,7 +72,7 @@ begin
     end
 end
 
-//检测状态
+//状态操作
 always @ (posedge clk)
 begin
     case(state)

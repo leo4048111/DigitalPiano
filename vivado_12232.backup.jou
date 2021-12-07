@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Dec 07 10:09:41 2021
+# Process ID: 12232
+# Current directory: D:/Project/Vivado/DigitalPiano
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10952 D:\Project\Vivado\DigitalPiano\DigitalPiano.xpr
+# Log file: D:/Project/Vivado/DigitalPiano/vivado.log
+# Journal file: D:/Project/Vivado/DigitalPiano\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Project/Vivado/DigitalPiano/DigitalPiano.xpr
+update_compile_order -fileset sources_1
+generate_target Simulation [get_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci]
+export_ip_user_files -of_objects [get_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci] -no_script -force -quiet
+launch_simulation
+launch_simulation
+open_wave_config D:/Project/Vivado/DigitalPiano/VGA_tb_behav.wcfg
+source Keyboard_tb.tcl
+run all
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top VGA_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config D:/Project/Vivado/DigitalPiano/VGA_tb_behav.wcfg
+source VGA_tb.tcl
+run all
+save_wave_config {D:/Project/Vivado/DigitalPiano/VGA_tb_behav.wcfg}
+run all
+save_wave_config {D:/Project/Vivado/DigitalPiano/VGA_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Project/Vivado/DigitalPiano/VGA_tb_behav.wcfg
+source VGA_tb.tcl
+run all
+run all
+run all
+run all
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+open_run synth_1 -name synth_1

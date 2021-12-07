@@ -26,30 +26,32 @@ module Keyboard(
 
     //USB输入
     input clock_USB_in, //从USB口输入的时钟
-    input data_USB_in  //从USB口输入的串行信号
+    input data_USB_in,  //从USB口输入的串行信号
+    output speaker,
+
+    output [7:0] DATA
     );
 
 reg reset;
-wire [7:0] DATA;
-reg [15:0] DATA_16BITS;
-wire DATA_VALID;
-wire PS2_ERROR;
+reg [15:0] DATA_16BITS; //[15:8]为上次的数据，[7:0]为新数据
+wire data_valid_flag;
+wire [7:0] DATA_OUT;
 
-
-PS2 PS2(.clk(clk),
-        .rst(reset),
-        .clock_USB_in(clock_USB_in),
-        .data_USB_in(data_USB_in),
-        .parallel_data_in(DATA),
-        .parallel_data_valid(DATA_VALID),
-        .data_in_error(PS2_ERROR)
+PS2 PS2(
+    .clk(clk),
+    .kclk(clock_USB_in),
+    .kdata(data_USB_in),
+    .data_out(DATA_OUT),
+    .data_valid_flag(data_valid_flag)    
         );
 
 //上次的数据和这次的数据拼接
-always @ (posedge DATA_VALID)
+always @ (posedge data_valid_flag)
 begin
-    #1 DATA_16BITS = {DATA_16BITS[7:0],DATA};
+    DATA_16BITS <= {DATA_16BITS[7:0], DATA_OUT};
 end
+
+assign DATA = DATA_16BITS[7:0];
 
 //基础频率
 parameter C2 = 262;
@@ -87,7 +89,7 @@ reg [2:0] octave;
 
 always @ (posedge clk)
 begin
-    if(DATA_VALID == 1'b1)
+    if(data_valid_flag == 1'b1)
         begin
             case(DATA)
             8'h1A:begin    //按键Z
@@ -243,8 +245,7 @@ begin
 
 end
 
-wire speaker;
-Single_Note Single_Note_Inst(.clk(clk),
+Single_Note Single_Note_Inst(.clock(clk),
                              .ena(ena),
                              .note(note),
                              .octave(octave),

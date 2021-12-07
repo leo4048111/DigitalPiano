@@ -24,17 +24,21 @@ module VGA_tb;
 
 reg clock;
 reg rst;
+wire [3:0] red;
+wire [3:0] green;
+wire [3:0] blue;
 wire hsync;
 wire vsync;
 
-VGA uut(.clk(clock),.hsync(hsync),.vsync(vsync));
-
-initial begin : RST_GEN
-    rst = 1;
-    #1000;
-    rst = 0;
-end
-
+VGA uut(
+    .clk(clock),
+    .rst(rst),
+    .red(red),
+    .green(green),
+    .blue(blue),
+    .hsync(hsync),
+    .vsync(vsync)
+);
 
 initial 
 begin 

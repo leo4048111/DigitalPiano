@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Nov 30 22:03:30 2021">
+<application name="pa" timeStamp="Tue Dec 07 11:09:52 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="c7d92a2b4cc046d8b7c36f9238396237" type="ProjectID"/>
-<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+<property name="ProjectIteration" value="50" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,105 +17,40 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="8" type="JavaHandler"/>
-<property name="CoreView" value="7" type="JavaHandler"/>
-<property name="CustomizeCore" value="8" type="JavaHandler"/>
-<property name="EditDelete" value="4" type="JavaHandler"/>
+<property name="AddSources" value="13" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="13" type="JavaHandler"/>
+<property name="ConfigureBitstream" value="1" type="JavaHandler"/>
+<property name="CoreView" value="11" type="JavaHandler"/>
+<property name="CustomizeCore" value="11" type="JavaHandler"/>
+<property name="EditDelete" value="6" type="JavaHandler"/>
 <property name="EditProperties" value="1" type="JavaHandler"/>
+<property name="LaunchOpenTarget" value="3" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="46" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
 <property name="OpenExample" value="1" type="JavaHandler"/>
-<property name="RecustomizeCore" value="1" type="JavaHandler"/>
-<property name="SimulationClose" value="20" type="JavaHandler"/>
-<property name="SimulationRun" value="42" type="JavaHandler"/>
-<property name="SimulationRunAll" value="14" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="4" type="JavaHandler"/>
-<property name="WaveformSaveConfiguration" value="1" type="JavaHandler"/>
-</item>
-<item name="Gui Resources Info">
-<property name="FINISH, Finish" value="2" type="GuiResourceData"/>
-<property name="Keyboard.v, 226, 181" value="1" type="GuiResourceData"/>
-<property name="Keyboard.v, 52, 183" value="1" type="GuiResourceData"/>
-<property name="Keyboard.v, 93, 269" value="1" type="GuiResourceData"/>
-<property name="NEXT, Next " value="3" type="GuiResourceData"/>
-<property name="PAResourceAtoD.AbstractFileView_RELOAD, Reload" value="6" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, Keyboard" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, PS2" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, PS2_Transmitter" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, key" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Keyboard (Keyboard.v" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Single_Note (Single_Note.v" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, Keyboard.v], 2, false" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, Keyboard.v], 2, false, false, false, false, false, true" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, PS2.v], 2, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, PS2.v], 2, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files], 1" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, VGA (VGA.v" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, Add Sources], 2, false" value="4" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, Add Directories" value="1" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="1" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="3" type="GuiResourceData"/>
-<property name="PS2.v, 123, 121" value="1" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_OK, OK" value="4" type="GuiResourceData"/>
-<property name="Single_Note.v, 100, 235" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 100, 235, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 101, 235" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 120, 233" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 133, 220" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 133, 220, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 134, 160" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 134, 258" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 138, 235" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 138, 235, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 143, 89" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 144, 193" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 144, 193, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 145, 128" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 145, 128, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 146, 146" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 149, 226" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 155, 148" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 160, 139" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 160, 258" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 160, 258, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 162, 148" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 163, 88" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 169, 199" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 169, 199, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 170, 171" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 170, 194" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 170, 194, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 176, 254" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 176, 254, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 177, 256" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 180, 130" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 180, 210" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 187, 260" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 188, 195" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 188, 195, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 188, 220" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 191, 259" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 191, 259, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 192, 254" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 203, 207" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 203, 207, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 207, 201" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 207, 201, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 211, 214" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 215, 205" value="2" type="GuiResourceData"/>
-<property name="Single_Note.v, 215, 205, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 215, 212" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 219, 175" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 223, 227" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 229, 200" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 24, 86" value="1" type="GuiResourceData"/>
-<property name="Single_Note.v, 31, 83" value="1" type="GuiResourceData"/>
-<property name="VGA.v, 105, 275" value="1" type="GuiResourceData"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="57" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="35" type="TclMode"/>
+<property name="OpenHardwareManager" value="16" type="JavaHandler"/>
+<property name="OpenProject" value="1" type="JavaHandler"/>
+<property name="OpenRecentTarget" value="9" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="3" type="JavaHandler"/>
+<property name="RecustomizeCore" value="13" type="JavaHandler"/>
+<property name="RunBitgen" value="47" type="JavaHandler"/>
+<property name="RunImplementation" value="2" type="JavaHandler"/>
+<property name="RunSynthesis" value="30" type="JavaHandler"/>
+<property name="SaveDesign" value="12" type="JavaHandler"/>
+<property name="SetTopNode" value="6" type="JavaHandler"/>
+<property name="ShowView" value="7" type="JavaHandler"/>
+<property name="SimulationBreak" value="3" type="JavaHandler"/>
+<property name="SimulationClose" value="37" type="JavaHandler"/>
+<property name="SimulationRestart" value="2" type="JavaHandler"/>
+<property name="SimulationRun" value="67" type="JavaHandler"/>
+<property name="SimulationRunAll" value="38" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="17" type="JavaHandler"/>
+<property name="UpdateRegId" value="2" type="JavaHandler"/>
+<property name="ViewLayoutCmd" value="5" type="JavaHandler"/>
+<property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
+<property name="ViewTaskSynthesis" value="17" type="JavaHandler"/>
+<property name="WaveformSaveConfiguration" value="2" type="JavaHandler"/>
+<property name="ZoomIn" value="2" type="JavaHandler"/>
 </item>
 </section>
 </application>

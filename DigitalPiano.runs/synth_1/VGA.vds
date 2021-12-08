@@ -214,3 +214,213 @@ Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "hcount" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "vcount" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP p_m_inst/is_piano2, operation Mode is: A*(B:0x1f4).
+DSP Report: operator p_m_inst/is_piano2 is absorbed into DSP p_m_inst/is_piano2.
+DSP Report: Generating DSP p_m_inst/is_piano1, operation Mode is: PCIN+(A:0x0):B+(C:0xffffffffff2a).
+DSP Report: operator p_m_inst/is_piano1 is absorbed into DSP p_m_inst/is_piano1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:36:57 ; elapsed = 00:37:34 . Memory (MB): peak = 704.785 ; gain = 498.148
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:36:57 ; elapsed = 00:37:34 . Memory (MB): peak = 704.785 ; gain = 498.148
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++--------------+-----------------------+---------------+----------------+
+|Module Name   | RTL Object            | Depth x Width | Implemented As | 
++--------------+-----------------------+---------------+----------------+
+|Pixel_Mapping | is_piano_reg          | 131072x1      | Block RAM      | 
+|VGA           | p_m_inst/is_piano_reg | 131072x1      | Block RAM      | 
++--------------+-----------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+-----------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping                       | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-----------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|VGA         | A*(B:0x1f4)                       | 17     | 9      | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|VGA         | PCIN+(A:0x0):B+(C:0xffffffffff2a) | 30     | 11     | 9      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++------------+-----------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:36:58 ; elapsed = 00:37:34 . Memory (MB): peak = 713.957 ; gain = 507.320
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:36:58 ; elapsed = 00:37:34 . Memory (MB): peak = 713.957 ; gain = 507.320
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'divider/clk_out1' to pin 'divider/bbstub_clk_out1/O'
+INFO: [Synth 8-5820] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:37:13 ; elapsed = 00:37:50 . Memory (MB): peak = 715.141 ; gain = 508.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:37:15 ; elapsed = 00:37:52 . Memory (MB): peak = 776.199 ; gain = 569.563
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance p_m_inst/is_piano_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance p_m_inst/is_piano_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:37:15 ; elapsed = 00:37:52 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:37:15 ; elapsed = 00:37:52 . Memory (MB): peak = 785.652 ; gain = 579.016
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:37:15 ; elapsed = 00:37:52 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:37:16 ; elapsed = 00:37:53 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:37:16 ; elapsed = 00:37:53 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:37:16 ; elapsed = 00:37:53 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:37:16 ; elapsed = 00:37:53 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:37:16 ; elapsed = 00:37:53 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:37:16 ; elapsed = 00:37:53 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |clk_wiz_0  |     1|
+|2     |DSP48E1    |     1|
+|3     |DSP48E1_1  |     1|
+|4     |LUT1       |     2|
+|5     |LUT2       |     8|
+|6     |LUT3       |     9|
+|7     |LUT4       |     9|
+|8     |LUT5       |    13|
+|9     |LUT6       |    20|
+|10    |RAMB36E1_4 |     1|
+|11    |RAMB36E1_5 |     1|
+|12    |RAMB36E1_6 |     1|
+|13    |RAMB36E1_7 |     1|
+|14    |FDRE       |    27|
+|15    |OBUF       |    14|
++------+-----------+------+
+
+Report Instance Areas: 
++------+-----------+--------------+------+
+|      |Instance   |Module        |Cells |
++------+-----------+--------------+------+
+|1     |top        |              |   109|
+|2     |  p_m_inst |Pixel_Mapping |    41|
++------+-----------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:37:16 ; elapsed = 00:37:53 . Memory (MB): peak = 785.652 ; gain = 579.016
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:37:02 ; elapsed = 00:37:39 . Memory (MB): peak = 785.652 ; gain = 243.914
+Synthesis Optimization Complete : Time (s): cpu = 00:37:16 ; elapsed = 00:37:53 . Memory (MB): peak = 785.652 ; gain = 579.016
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+46 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:37:15 ; elapsed = 00:37:47 . Memory (MB): peak = 785.652 ; gain = 553.660
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 785.652 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 08 23:58:32 2021...

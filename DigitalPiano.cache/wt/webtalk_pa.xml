@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Dec 08 23:20:25 2021">
+<application name="pa" timeStamp="Thu Dec 09 00:02:03 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="c7d92a2b4cc046d8b7c36f9238396237" type="ProjectID"/>
 <property name="ProjectIteration" value="91" type="ProjectIteration"/>
@@ -25,7 +25,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditDelete" value="8" type="JavaHandler"/>
 <property name="EditProperties" value="1" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="3" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="72" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="73" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
 <property name="OpenExample" value="1" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="24" type="JavaHandler"/>
@@ -51,6 +51,19 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ViewTaskSynthesis" value="19" type="JavaHandler"/>
 <property name="WaveformSaveConfiguration" value="2" type="JavaHandler"/>
 <property name="ZoomIn" value="2" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceItoN.MsgView_CLEAR_MESSAGES_RESULTING_FROM_USER_EXECUTED, Messages_cleanUpMessages" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, Program device" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProgramFpgaDialog_PROGRAM, Program" value="1" type="GuiResourceData"/>
+<property name="VGA.v, 129, 84" value="1" type="GuiResourceData"/>
+<property name="VGA.v, 287, 134" value="1" type="GuiResourceData"/>
+<property name="VGA.v, 660, 51" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="7" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="4" type="TclMode"/>
 </item>
 </section>
 </application>

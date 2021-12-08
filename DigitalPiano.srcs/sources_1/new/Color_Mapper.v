@@ -1,5 +1,5 @@
 //-------------------------------------------------------------------------
-//    Color_Mapper.sv                                                    --
+//    Color_Mapper.sv                                             --
 //    Stephen Kempf                                                      --
 //    3-1-06                                                             --
 //                                                                       --
@@ -16,7 +16,7 @@
 
 module color_mapper (
 	input clk,
-	input [9:0] DrawX, DrawY,       // Coordinates of current drawing pixel
+	input [10:0] DrawX, DrawY,       // Coordinates of current drawing pixel
 	input [15:0]keycode,
 	input [2:0] OctaveSelect,
 	input [2:0] Tone,
@@ -31,6 +31,8 @@ reg memPianoBackground[0:10961];
 reg memPianoBackgroundHighC[0:11831];
 reg memCurrentOctave[0:15514];
 reg memCurrentOctaveHighC[0:14551];
+
+reg mem[0:115984];
 
 reg memButtonSine [0:5503];
 reg memButtonSquare [0:5503];
@@ -55,7 +57,7 @@ reg data_from_Big_Piano;
 reg data_from_Piano_octave;
 reg data_from_Piano_octave_High_C;
 reg data_from_Piano_Current_Octave;
- reg data_from_Piano_Current_Octave_High_C;
+reg data_from_Piano_Current_Octave_High_C;
 
 reg data_from_ButtonSine;
 reg data_from_ButtonSquare;
@@ -442,7 +444,7 @@ begin : RGB_Display
 		
 //Start drawing big keys
 //C
-			if (DrawX>=(BigOffsetX+3*1+((17*3)*0))    && DrawX<(BigOffsetX+3*1+((17*3)*1)-15) && DrawY>=(BigOffsetY+3)     && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_C==1'b1)
+			if (DrawX>=(BigOffsetX+3*1+((17*3)*0)) && DrawX<(BigOffsetX+3*1+((17*3)*1)-15) && DrawY>=(BigOffsetY+3)     && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_C==1'b1)
 			begin 
 				if (key0 == 4'b0000 || key1 == 4'b0000)
 				begin
@@ -451,7 +453,7 @@ begin : RGB_Display
 					Blue  <= 8'h80;
 				end				
 			end
-			if (DrawX>=(BigOffsetX+3*1+((17*3)*0))    && DrawX<(BigOffsetX+3*1+((17*3)*1))    && DrawY>=(BigOffsetY+3+(49*3)) && DrawY<(BigOffsetY+3+(85*3)))// && data_from_memKey_C==1'b1)
+			if (DrawX>=(BigOffsetX+3*1+((17*3)*0)) && DrawX<(BigOffsetX+3*1+((17*3)*1)) && DrawY>=(BigOffsetY+3+(49*3)) && DrawY<(BigOffsetY+3+(85*3)))// && data_from_memKey_C==1'b1)
 			begin 
 				if (key0 == 4'b0000 || key1 == 4'b0000)
 				begin
@@ -470,7 +472,7 @@ begin : RGB_Display
 					Blue  <= 8'h80;
 				end				
 			end
-			if (DrawX>=(BigOffsetX+3*2+((17*3)*1))    && DrawX<(BigOffsetX+3*2+((17*3)*2))    && DrawY>=(BigOffsetY+3+(49*3)) && DrawY<(BigOffsetY+3+(85*3)))// && data_from_memKey_D==1'b1)
+			if (DrawX>=(BigOffsetX+3*2+((17*3)*1)) && DrawX<(BigOffsetX+3*2+((17*3)*2)) && DrawY>=(BigOffsetY+3+(49*3)) && DrawY<(BigOffsetY+3+(85*3)))// && data_from_memKey_D==1'b1)
 			begin 
 				if (key0 == 4'b0010 || key1 == 4'b0010)
 				begin
@@ -480,7 +482,7 @@ begin : RGB_Display
 				end				
 			end
 //E
-			if (DrawX>=(BigOffsetX+3*3+((17*3)*2)+15) && DrawX<(BigOffsetX+3*3+((17*3)*3))    && DrawY>=(BigOffsetY+3)        && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_E==1'b1)
+			if (DrawX>=(BigOffsetX+3*3+((17*3)*2)+15) && DrawX<(BigOffsetX+3*3+((17*3)*3)) && DrawY>=(BigOffsetY+3) && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_E==1'b1)
 			begin 
 				if (key0 == 4'b0100 || key1 == 4'b0100)
 				begin
@@ -499,7 +501,7 @@ begin : RGB_Display
 				end				
 			end
 //F
-			if (DrawX>=(BigOffsetX+3*4+((17*3)*3))    && DrawX<(BigOffsetX+3*4+((17*3)*4)-15) && DrawY>=(BigOffsetY+3)        && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_F==1'b1)
+			if (DrawX>=(BigOffsetX+3*4+((17*3)*3))    && DrawX<(BigOffsetX+3*4+((17*3)*4)-15) && DrawY>=(BigOffsetY+3) && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_F==1'b1)
 			begin 
 				if (key0 == 4'b0101 || key1 == 4'b0101)
 				begin
@@ -518,7 +520,7 @@ begin : RGB_Display
 				end				
 			end
 //G
-			if (DrawX>=(BigOffsetX+3*5+((17*3)*4)+15) && DrawX<(BigOffsetX+3*5+((17*3)*5)-15) && DrawY>=(BigOffsetY+3)        && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_G==1'b1)
+			if (DrawX>=(BigOffsetX+3*5+((17*3)*4)+15) && DrawX<(BigOffsetX+3*5+((17*3)*5)-15) && DrawY>=(BigOffsetY+3) && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_G==1'b1)
 			begin 
 				if (key0 == 4'b0111 || key1 == 4'b0111)
 				begin
@@ -537,7 +539,7 @@ begin : RGB_Display
 				end				
 			end
 //A
-			if (DrawX>=(BigOffsetX+3*6+((17*3)*5)+15) && DrawX<(BigOffsetX+3*6+((17*3)*6)-15) && DrawY>=(BigOffsetY+3)        && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_A==1'b1)
+			if (DrawX>=(BigOffsetX+3*6+((17*3)*5)+15) && DrawX<(BigOffsetX+3*6+((17*3)*6)-15) && DrawY>=(BigOffsetY+3) && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_A==1'b1)
 			begin 
 				if (key0 == 4'b1001 || key1 == 4'b1001)
 				begin
@@ -556,7 +558,7 @@ begin : RGB_Display
 				end				
 			end
 //B
-			if (DrawX>=(BigOffsetX+3*7+((17*3)*6)+15) && DrawX<(BigOffsetX+3*7+((17*3)*7))    && DrawY>=(BigOffsetY+3)        && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_B==1'b1)
+			if (DrawX>=(BigOffsetX+3*7+((17*3)*6)+15) && DrawX<(BigOffsetX+3*7+((17*3)*7))    && DrawY>=(BigOffsetY+3) && DrawY<(BigOffsetY+3+(49*3)))// && data_from_memKey_B==1'b1)
 			begin 
 				if (key0 == 4'b1011 || key1 == 4'b1011)
 				begin

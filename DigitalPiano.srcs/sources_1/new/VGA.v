@@ -22,59 +22,45 @@
 
 module VGA(
     input clk,
-    input rst,
-    output reg [3:0] red,
-    output reg [3:0] green,
-    output reg [3:0] blue,
+    output [3:0] R_OUT,
+    output [3:0] G_OUT,
+    output [3:0] B_OUT,
     output reg hsync,
     output reg vsync
     );
 
-//生成65MHZ时钟
-clk_wiz_0 divider(.clk_in1(clk),.clk_out1(clock_65));
+//生成25MHZ时钟
+clk_wiz_0 divider(.clk_in1(clk),.clk_out1(clock_25));
 
-/*localparam VISIBLE_HORIZONTAL = 640;
+//640*480参数
+localparam VISIBLE_HORIZONTAL = 640;
 localparam FRONT_H = 16;
 localparam SYNC_H = 96;
-localparam BACK_H = 48; */
-localparam VISIBLE_HORIZONTAL = 1024;
+localparam BACK_H = 48; 
+//1024*768参数
+/*localparam VISIBLE_HORIZONTAL = 1024;
 localparam FRONT_H = 24;
 localparam SYNC_H = 136;
-localparam BACK_H = 160; 
+localparam BACK_H = 160; */
+//640*480参数
 localparam TOTAL_H = VISIBLE_HORIZONTAL+FRONT_H+SYNC_H+BACK_H;
-/*localparam VISIBLE_VERTICAL = 480;
+localparam VISIBLE_VERTICAL = 480;
 localparam FRONT_V = 10;
 localparam SYNC_V = 2;
-localparam BACK_V = 33;*/
-localparam VISIBLE_VERTICAL = 768;
+localparam BACK_V = 33;
+//1024*768参数
+/*localparam VISIBLE_VERTICAL = 768;
 localparam FRONT_V = 3;
 localparam SYNC_V = 6;
-localparam BACK_V = 29;
+localparam BACK_V = 29;*/
 localparam TOTAL_V = VISIBLE_VERTICAL+FRONT_V+SYNC_V+BACK_V;
 
-reg [9:0] hcount = VISIBLE_HORIZONTAL;
-reg [9:0] vcount = VISIBLE_VERTICAL;
+(*dont_touch = "true"*) reg [10:0] hcount = 11'd0;
+(*dont_touch = "true"*) reg [10:0] vcount = 11'd0;
 
-/*reg [7:0] red_8 = 8'hff;
-reg [7:0] green_8 = 8'hff;
-reg [7:0] blue_8 = 8'hff;
-reg [15:0] keycode = 16'h0400;
-reg [2:0] OctaveSelect = 3'b010;
-reg [2:0] Tone = 3'b001;
-*/
-always @(posedge clock_65) 
+//同步信号控制
+always @(posedge clock_25) 
 begin
-    if(hcount < 1024/3)
-        begin
-            red <= 4'b1111;
-            blue <= 4'b0000;
-            green <= 4'b0000;
-        end
-    else begin
-        red <= 4'b1111;
-        blue <= 4'b1111;
-        green <= 4'b1111;
-    end
     if(hcount == TOTAL_H-1)
     begin
         hcount <= 0;
@@ -88,29 +74,27 @@ begin
         hcount <= hcount + 1'b1;
     end
 
-    if (vcount >= VISIBLE_VERTICAL+FRONT_V && vcount < VISIBLE_VERTICAL+FRONT_V+SYNC_V)
+    if (vcount < SYNC_V)
         vsync <= 1'b0;
-    else
+    else begin
         vsync <= 1'b1;
+    end
 
-    if (hcount >= VISIBLE_HORIZONTAL+FRONT_H && hcount < VISIBLE_HORIZONTAL+FRONT_H+SYNC_H)
+    if (hcount < SYNC_H)
         hsync <= 1'b0;
     else begin
         hsync <= 1'b1;
     end
 end
 
-/*color_mapper cm_inst(
-    .clk(clk),
-    .DrawX(hcount),
-    .DrawY(vcount),
-    .OctaveSelect(OctaveSelect),
-    .Tone(Tone),
-    .VGA_R(red_8),
-    .VGA_G(green_8),
-    .VGA_B(blue_8)
-    );*/
-
+//RGB输出控制
+Pixel_Mapping p_m_inst(
+    .clk(clock_25),
+    .hcount(hcount),
+    .vcount(vcount),
+    .R_OUT(R_OUT),
+    .G_OUT(G_OUT),
+    .B_OUT(B_OUT));
 
 endmodule
 

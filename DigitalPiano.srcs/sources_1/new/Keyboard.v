@@ -29,14 +29,18 @@ module Keyboard(
     input data_USB_in,  //从USB口输入的串行信号
     output speaker,
 
-    output [7:0] DATA
+    //数据输出
+    output [3:0] note_out,
+    output [1:0] octave_out
     );
 
+//资源定义
 reg reset;
 reg [15:0] DATA_16BITS; //[15:8]为上次的数据，[7:0]为新数据
 wire data_valid_flag;
 wire [7:0] DATA_OUT;
 
+//连接控制模块
 PS2 PS2(
     .clk(clk),
     .kclk(clock_USB_in),
@@ -51,7 +55,6 @@ begin
     DATA_16BITS <= {DATA_16BITS[7:0], DATA_OUT};
 end
 
-assign DATA = DATA_16BITS[7:0];
 
 //基础频率
 parameter C2 = 262;
@@ -85,13 +88,13 @@ B2   -->  M
 --------------------------*/
 
 reg [3:0] note;
-reg [2:0] octave;
+reg [1:0] octave;
 
 always @ (posedge clk)
 begin
     if(data_valid_flag == 1'b1)
         begin
-            case(DATA)
+            case(DATA_16BITS[7:0])
             8'h1A:begin    //按键Z
                 if(DATA_16BITS[15:8] == 8'hF0) //弹起
                     begin
@@ -100,7 +103,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd0;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -112,7 +115,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd1;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -124,7 +127,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd2;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -136,7 +139,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd3;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -148,7 +151,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd4;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -160,7 +163,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd5;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -172,7 +175,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd6;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -184,7 +187,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd7;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -196,7 +199,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd8;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -208,7 +211,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd9;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -220,7 +223,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd10;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -232,7 +235,7 @@ begin
                 else begin
                     ena <= 1'b1;
                     note = 4'd11;
-                    octave = 3'd0;
+                    octave = 2'd0;
                 end
             end
 
@@ -250,5 +253,9 @@ Single_Note Single_Note_Inst(.clock(clk),
                              .note(note),
                              .octave(octave),
                              .speaker(speaker));
+
+
+assign note_out = ena? note:4'd12;
+assign octave_out = ena? octave:2'd0;
 
 endmodule

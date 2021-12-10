@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Dec 09 09:47:46 2021
+# Process ID: 1384
+# Current directory: D:/Project/Vivado/DigitalPiano
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4592 D:\Project\Vivado\DigitalPiano\DigitalPiano.xpr
+# Log file: D:/Project/Vivado/DigitalPiano/vivado.log
+# Journal file: D:/Project/Vivado/DigitalPiano\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Project/Vivado/DigitalPiano/DigitalPiano.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close [ open D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v w ]
+add_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Color_Mapper.v
+file delete -force D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Color_Mapper.v
+remove_files -fileset constrs_1 D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/module_xdc.xdc
+file delete -force D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/module_xdc.xdc
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1

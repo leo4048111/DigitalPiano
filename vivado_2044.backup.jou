@@ -1,0 +1,216 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Dec 07 10:46:55 2021
+# Process ID: 2044
+# Current directory: D:/Project/Vivado/DigitalPiano
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12164 D:\Project\Vivado\DigitalPiano\DigitalPiano.xpr
+# Log file: D:/Project/Vivado/DigitalPiano/vivado.log
+# Journal file: D:/Project/Vivado/DigitalPiano\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Project/Vivado/DigitalPiano/DigitalPiano.xpr
+update_compile_order -fileset sources_1
+
+set_property -dict [list CONFIG.USE_RESET {false}] [get_ips clk_wiz_2]
+delete_ip_run [get_files -of_objects [get_fileset clk_wiz_2] D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_2/clk_wiz_2.xci]
+set_property generate_synth_checkpoint false [get_files  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_2/clk_wiz_2.xci]
+generate_target all [get_files  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_2/clk_wiz_2.xci]
+export_ip_user_files -of_objects [get_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_2/clk_wiz_2.xci] -no_script -force -quiet
+export_simulation -of_objects [get_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_2/clk_wiz_2.xci] -directory D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/sim_scripts -ip_user_files_dir D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files -ipstatic_source_dir D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/ipstatic -force -quiet
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+reset_run clk_wiz_1_synth_1
+launch_runs clk_wiz_1_synth_1 -jobs 2
+wait_on_run clk_wiz_1_synth_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+remove_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_2/clk_wiz_2.xci
+file delete -force D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_2
+file delete -force D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/ip/clk_wiz_2 D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/sim_scripts/clk_wiz_2
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 5.3 -module_name clk_wiz_0
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {65} CONFIG.USE_LOCKED {false} CONFIG.USE_RESET {false} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {50.375} CONFIG.MMCM_CLKOUT0_DIVIDE_F {15.500} CONFIG.CLKOUT1_JITTER {254.866} CONFIG.CLKOUT1_PHASE_ERROR {297.890}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+update_compile_order -fileset sources_1
+set_property generate_synth_checkpoint false [get_files  d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+generate_target all [get_files  d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+export_ip_user_files -of_objects [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -force -quiet
+export_simulation -of_objects [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/sim_scripts -ip_user_files_dir D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files -ipstatic_source_dir D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/ipstatic -force -quiet
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property IS_GLOBAL_INCLUDE 1 [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+close_hw
+set_property generate_synth_checkpoint true [get_files  d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+generate_target all [get_files  d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+export_ip_user_files -of_objects [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+launch_run -jobs 2 clk_wiz_0_synth_1
+export_simulation -of_objects [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/sim_scripts -ip_user_files_dir D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files -ipstatic_source_dir D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/ipstatic -force -quiet
+remove_files -fileset clk_wiz_0 d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+file delete -force d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0
+file delete -force D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/ip/clk_wiz_0 D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/sim_scripts/clk_wiz_0
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 5.3 -module_name clk_wiz_0
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {65} CONFIG.USE_LOCKED {false} CONFIG.USE_RESET {false} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {50.375} CONFIG.MMCM_CLKOUT0_DIVIDE_F {15.500} CONFIG.CLKOUT1_JITTER {254.866} CONFIG.CLKOUT1_PHASE_ERROR {297.890}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+export_ip_user_files -of_objects [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+launch_run -jobs 4 clk_wiz_0_synth_1
+export_simulation -of_objects [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/sim_scripts -ip_user_files_dir D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files -ipstatic_source_dir D:/Project/Vivado/DigitalPiano/DigitalPiano.ip_user_files/ipstatic -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+close_hw
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+open_run synth_1 -name synth_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_hw
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/impl_1/VGA.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]

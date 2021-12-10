@@ -267,18 +267,26 @@ begin
                     blue <= key_pressed_color[2];
                 end
                 else begin
-                red <= memWhiteKeyBottom[hcount - KEY_C_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_C_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                green <= memWhiteKeyBottom[hcount - KEY_C_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_C_BOTTOM_Y)]? white_key_color[1]:white_key_shadow_color[1];
-                blue <= memWhiteKeyBottom[hcount - KEY_C_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_C_BOTTOM_Y)]? white_key_color[2]:white_key_shadow_color[2];
+                    red <= memWhiteKeyBottom[hcount - KEY_C_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_C_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    green <= memWhiteKeyBottom[hcount - KEY_C_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_C_BOTTOM_Y)]? white_key_color[1]:white_key_shadow_color[1];
+                    blue <= memWhiteKeyBottom[hcount - KEY_C_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_C_BOTTOM_Y)]? white_key_color[2]:white_key_shadow_color[2];
                 end
             end
 
             //第一个黑键#C
             else if(hcount >= KEY_CS_X && hcount < KEY_CS_X + BLACK_KEY_WIDTH && vcount >= KEY_CS_Y && vcount < KEY_CS_Y + BLACK_KEY_HEIGHT)
             begin
-                red <= memBlackKey[hcount - KEY_CS_X + BLACK_KEY_WIDTH * (vcount - KEY_CS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
-                green <= memBlackKey[hcount - KEY_CS_X + BLACK_KEY_WIDTH * (vcount - KEY_CS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
-                blue <= memBlackKey[hcount - KEY_CS_X + BLACK_KEY_WIDTH * (vcount - KEY_CS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                if(note == 1 && octave == 0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memBlackKey[hcount - KEY_CS_X + BLACK_KEY_WIDTH * (vcount - KEY_CS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
+                    green <= memBlackKey[hcount - KEY_CS_X + BLACK_KEY_WIDTH * (vcount - KEY_CS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
+                    blue <= memBlackKey[hcount - KEY_CS_X + BLACK_KEY_WIDTH * (vcount - KEY_CS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                end
             end
 
             //CD间隔
@@ -292,25 +300,49 @@ begin
             //第二个白键D上半部分
             else if(hcount >= KEY_D_TOP_X && hcount < KEY_D_TOP_X + WHITE_KEY_TOP_NARROW_WIDTH && vcount >= KEY_D_TOP_Y && vcount < KEY_D_TOP_Y + WHITE_KEY_TOP_NARROW_HEIGHT)
             begin
-                red <= white_key_color[0];
-                green <= white_key_color[1];
-                blue <= white_key_color[2];
+                if(note == 2 && octave ==0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= white_key_color[0];
+                    green <= white_key_color[1];
+                    blue <= white_key_color[2];
+                end
             end
 
             //第一个白键D下半部分
             else if(hcount >= KEY_D_BOTTOM_X && hcount < KEY_D_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH && vcount >= KEY_D_BOTTOM_Y && vcount < KEY_D_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                red <= memWhiteKeyBottom[hcount - KEY_D_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_D_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                green <= memWhiteKeyBottom[hcount - KEY_D_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_D_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                blue <= memWhiteKeyBottom[hcount - KEY_D_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_D_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                if(note == 2 && octave == 0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memWhiteKeyBottom[hcount - KEY_D_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_D_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    green <= memWhiteKeyBottom[hcount - KEY_D_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_D_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    blue <= memWhiteKeyBottom[hcount - KEY_D_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_D_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                end
             end
 
             //第一个黑键#D
             else if(hcount >= KEY_DS_X && hcount < KEY_DS_X + BLACK_KEY_WIDTH && vcount >= KEY_DS_Y && vcount < KEY_DS_Y + BLACK_KEY_HEIGHT)
             begin
-                red <= memBlackKey[hcount - KEY_DS_X + BLACK_KEY_WIDTH * (vcount - KEY_DS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
-                green <= memBlackKey[hcount - KEY_DS_X + BLACK_KEY_WIDTH * (vcount - KEY_DS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
-                blue <= memBlackKey[hcount - KEY_DS_X + BLACK_KEY_WIDTH * (vcount - KEY_DS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                if(note == 3 && octave == 0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memBlackKey[hcount - KEY_DS_X + BLACK_KEY_WIDTH * (vcount - KEY_DS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
+                    green <= memBlackKey[hcount - KEY_DS_X + BLACK_KEY_WIDTH * (vcount - KEY_DS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
+                    blue <= memBlackKey[hcount - KEY_DS_X + BLACK_KEY_WIDTH * (vcount - KEY_DS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                end
             end
 
             //DE间隔
@@ -324,17 +356,33 @@ begin
              //第一个白键E上半部分
             else if(hcount >= KEY_E_TOP_X && hcount < KEY_E_TOP_X + WHITE_KEY_TOP_WIDE_WIDTH && vcount >= KEY_E_TOP_Y && vcount < KEY_E_TOP_Y + WHITE_KEY_TOP_WIDE_HEIGHT)
             begin
-                red <= white_key_color[0];
-                green <= white_key_color[1];
-                blue <= white_key_color[2];
+                if(note ==4 && octave == 0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= white_key_color[0];
+                    green <= white_key_color[1];
+                    blue <= white_key_color[2];
+                end
             end
 
             //第一个白键E下半部分
             else if(hcount >= KEY_E_BOTTOM_X && hcount < KEY_E_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH && vcount >= KEY_E_BOTTOM_Y && vcount < KEY_E_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                red <= memWhiteKeyBottom[hcount - KEY_E_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_E_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                green <= memWhiteKeyBottom[hcount - KEY_E_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_E_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                blue <= memWhiteKeyBottom[hcount - KEY_E_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_E_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                if(note == 4 && octave == 0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memWhiteKeyBottom[hcount - KEY_E_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_E_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    green <= memWhiteKeyBottom[hcount - KEY_E_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_E_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    blue <= memWhiteKeyBottom[hcount - KEY_E_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_E_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                end
             end
 
             //EF间隔
@@ -348,25 +396,49 @@ begin
             //第一个白键F上半部分
             else if(hcount >= KEY_F_TOP_X && hcount < KEY_F_TOP_X + WHITE_KEY_TOP_WIDE_WIDTH && vcount >= KEY_F_TOP_Y && vcount < KEY_F_TOP_Y + WHITE_KEY_TOP_WIDE_HEIGHT)
             begin
-                red <= white_key_color[0];
-                green <= white_key_color[1];
-                blue <= white_key_color[2];
+                if(note == 5 && octave == 0) 
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2]; 
+                end
+                else begin
+                    red <= white_key_color[0];
+                    green <= white_key_color[1];
+                    blue <= white_key_color[2];
+                end
             end
 
             //第一个白键F下半部分
             else if(hcount >= KEY_F_BOTTOM_X && hcount < KEY_F_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH && vcount >= KEY_F_BOTTOM_Y && vcount < KEY_F_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                red <= memWhiteKeyBottom[hcount - KEY_F_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_F_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                green <= memWhiteKeyBottom[hcount - KEY_F_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_F_BOTTOM_Y)]? white_key_color[1]:white_key_shadow_color[1];
-                blue <= memWhiteKeyBottom[hcount - KEY_F_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_F_BOTTOM_Y)]? white_key_color[2]:white_key_shadow_color[2];
+                if(note == 5 && octave == 0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memWhiteKeyBottom[hcount - KEY_F_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_F_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    green <= memWhiteKeyBottom[hcount - KEY_F_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_F_BOTTOM_Y)]? white_key_color[1]:white_key_shadow_color[1];
+                    blue <= memWhiteKeyBottom[hcount - KEY_F_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_F_BOTTOM_Y)]? white_key_color[2]:white_key_shadow_color[2];
+                end
             end
 
             //第一个黑键#F
             else if(hcount >= KEY_FS_X && hcount < KEY_FS_X + BLACK_KEY_WIDTH && vcount >= KEY_FS_Y && vcount < KEY_FS_Y + BLACK_KEY_HEIGHT)
             begin
-                red <= memBlackKey[hcount - KEY_FS_X + BLACK_KEY_WIDTH * (vcount - KEY_FS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
-                green <= memBlackKey[hcount - KEY_FS_X + BLACK_KEY_WIDTH * (vcount - KEY_FS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
-                blue <= memBlackKey[hcount - KEY_FS_X + BLACK_KEY_WIDTH * (vcount - KEY_FS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                if(note == 6 && octave == 0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memBlackKey[hcount - KEY_FS_X + BLACK_KEY_WIDTH * (vcount - KEY_FS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
+                    green <= memBlackKey[hcount - KEY_FS_X + BLACK_KEY_WIDTH * (vcount - KEY_FS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
+                    blue <= memBlackKey[hcount - KEY_FS_X + BLACK_KEY_WIDTH * (vcount - KEY_FS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                end
             end
 
             //FG间隔
@@ -380,25 +452,49 @@ begin
             //第一个白键G上半部分
             else if(hcount >= KEY_G_TOP_X && hcount < KEY_G_TOP_X + WHITE_KEY_TOP_NARROW_WIDTH && vcount >= KEY_G_TOP_Y && vcount < KEY_G_TOP_Y + WHITE_KEY_TOP_NARROW_HEIGHT)
             begin
-                red <= white_key_color[0];
-                green <= white_key_color[1];
-                blue <= white_key_color[2];
+                if(note == 7 && octave == 0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= white_key_color[0];
+                    green <= white_key_color[1];
+                    blue <= white_key_color[2];
+                end
             end
 
             //第一个白键G下半部分
             else if(hcount >= KEY_G_BOTTOM_X && hcount < KEY_G_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH && vcount >= KEY_G_BOTTOM_Y && vcount < KEY_G_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                red <= memWhiteKeyBottom[hcount - KEY_G_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_G_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                green <= memWhiteKeyBottom[hcount - KEY_G_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_G_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                blue <= memWhiteKeyBottom[hcount - KEY_G_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_G_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                if(note == 7 && octave ==0)
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memWhiteKeyBottom[hcount - KEY_G_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_G_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    green <= memWhiteKeyBottom[hcount - KEY_G_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_G_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    blue <= memWhiteKeyBottom[hcount - KEY_G_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_G_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                end
             end
 
             //第一个黑键#G
             else if(hcount >= KEY_GS_X && hcount < KEY_GS_X + BLACK_KEY_WIDTH && vcount >= KEY_GS_Y && vcount < KEY_GS_Y + BLACK_KEY_HEIGHT)
             begin
-                red <= memBlackKey[hcount - KEY_GS_X + BLACK_KEY_WIDTH * (vcount - KEY_GS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
-                green <= memBlackKey[hcount - KEY_GS_X + BLACK_KEY_WIDTH * (vcount - KEY_GS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
-                blue <= memBlackKey[hcount - KEY_GS_X + BLACK_KEY_WIDTH * (vcount - KEY_GS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                if(note == 8 && octave == 0) 
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memBlackKey[hcount - KEY_GS_X + BLACK_KEY_WIDTH * (vcount - KEY_GS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
+                    green <= memBlackKey[hcount - KEY_GS_X + BLACK_KEY_WIDTH * (vcount - KEY_GS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
+                    blue <= memBlackKey[hcount - KEY_GS_X + BLACK_KEY_WIDTH * (vcount - KEY_GS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                end
             end
 
             //GA间隔
@@ -412,25 +508,49 @@ begin
             //第一个白键A上半部分
             else if(hcount >= KEY_A_TOP_X && hcount < KEY_A_TOP_X + WHITE_KEY_TOP_NARROW_WIDTH && vcount >= KEY_A_TOP_Y && vcount < KEY_A_TOP_Y + WHITE_KEY_TOP_NARROW_HEIGHT)
             begin
-                red <= white_key_color[0];
-                green <= white_key_color[1];
-                blue <= white_key_color[2];
+                if(note == 9 && octave == 0) 
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= white_key_color[0];
+                    green <= white_key_color[1];
+                    blue <= white_key_color[2];
+                end
             end
 
             //第一个白键A下半部分
             else if(hcount >= KEY_A_BOTTOM_X && hcount < KEY_A_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH && vcount >= KEY_A_BOTTOM_Y && vcount < KEY_A_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                red <= memWhiteKeyBottom[hcount - KEY_A_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_A_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                green <= memWhiteKeyBottom[hcount - KEY_A_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_A_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                blue <= memWhiteKeyBottom[hcount - KEY_A_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_A_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                if(note == 9 && octave == 0) 
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memWhiteKeyBottom[hcount - KEY_A_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_A_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    green <= memWhiteKeyBottom[hcount - KEY_A_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_A_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    blue <= memWhiteKeyBottom[hcount - KEY_A_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_A_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                end
             end
 
             //第一个黑键#A
             else if(hcount >= KEY_AS_X && hcount < KEY_AS_X + BLACK_KEY_WIDTH && vcount >= KEY_AS_Y && vcount < KEY_AS_Y + BLACK_KEY_HEIGHT)
             begin
-                red <= memBlackKey[hcount - KEY_AS_X + BLACK_KEY_WIDTH * (vcount - KEY_AS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
-                green <= memBlackKey[hcount - KEY_AS_X + BLACK_KEY_WIDTH * (vcount - KEY_AS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
-                blue <= memBlackKey[hcount - KEY_AS_X + BLACK_KEY_WIDTH * (vcount - KEY_AS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                if(note == 10 && octave == 0) 
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memBlackKey[hcount - KEY_AS_X + BLACK_KEY_WIDTH * (vcount - KEY_AS_Y)] ? black_key_shadow_color[0]:black_key_color[0];
+                    green <= memBlackKey[hcount - KEY_AS_X + BLACK_KEY_WIDTH * (vcount - KEY_AS_Y)] ? black_key_shadow_color[1]:black_key_color[1];
+                    blue <= memBlackKey[hcount - KEY_AS_X + BLACK_KEY_WIDTH * (vcount - KEY_AS_Y)] ? black_key_shadow_color[2]:black_key_color[2];
+                end
             end
 
             //AB间隔
@@ -444,17 +564,33 @@ begin
             //第一个白键B上半部分
             else if(hcount >= KEY_B_TOP_X && hcount < KEY_B_TOP_X + WHITE_KEY_TOP_WIDE_WIDTH && vcount >= KEY_B_TOP_Y && vcount < KEY_B_TOP_Y + WHITE_KEY_TOP_WIDE_HEIGHT)
             begin
-                red <= white_key_color[0];
-                green <= white_key_color[1];
-                blue <= white_key_color[2];
+                if(note == 11 && octave == 0) 
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= white_key_color[0];
+                    green <= white_key_color[1];
+                    blue <= white_key_color[2];
+                end
             end
 
             //第一个白键B下半部分
             else if(hcount >= KEY_B_BOTTOM_X && hcount < KEY_B_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH && vcount >= KEY_B_BOTTOM_Y && vcount < KEY_B_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                red <= memWhiteKeyBottom[hcount - KEY_B_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_B_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                green <= memWhiteKeyBottom[hcount - KEY_B_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_B_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
-                blue <= memWhiteKeyBottom[hcount - KEY_B_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_B_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                if(note == 11 && octave == 0) 
+                begin
+                    red <= key_pressed_color[0];
+                    green <= key_pressed_color[1];
+                    blue <= key_pressed_color[2];
+                end
+                else begin
+                    red <= memWhiteKeyBottom[hcount - KEY_B_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_B_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    green <= memWhiteKeyBottom[hcount - KEY_B_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_B_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                    blue <= memWhiteKeyBottom[hcount - KEY_B_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH * (vcount - KEY_B_BOTTOM_Y)]? white_key_color[0]:white_key_shadow_color[0];
+                end
             end
 
             else begin

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Fri Dec 10 17:42:35 2021
+| Date             : Fri Dec 10 22:07:08 2021
 | Host             : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -50,12 +50,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      655 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      391 |     63400 |            0.62 |
+| Slice Logic    |    <0.001 |      707 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      434 |     63400 |            0.68 |
 |   CARRY4       |    <0.001 |       43 |     15850 |            0.27 |
 |   Register     |    <0.001 |      104 |    126800 |            0.08 |
 |   Others       |     0.000 |       15 |       --- |             --- |
-| Signals        |    <0.001 |      482 |       --- |             --- |
+| Signals        |    <0.001 |      533 |       --- |             --- |
 | MMCM           |     0.232 |        2 |         6 |           33.33 |
 | I/O            |    <0.001 |       18 |       210 |            8.57 |
 | Static Power   |     0.098 |          |           |                 |
@@ -122,15 +122,15 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-------------------------------+--------------------------------------------------------------------+-----------------+
-| Clock                         | Domain                                                             | Constraint (ns) |
-+-------------------------------+--------------------------------------------------------------------+-----------------+
-| VGA_inst/divider/inst/clk_in1 | clk_IBUF                                                           |            10.0 |
-| clk_out1_clk_wiz_0            | VGA_inst/divider/inst/clk_out1_clk_wiz_0                           |            40.0 |
-| clk_out1_clk_wiz_1            | keyboard_inst/Single_Note_Inst/clock_25mhz/inst/clk_out1_clk_wiz_1 |            40.0 |
-| clkfbout_clk_wiz_0            | VGA_inst/divider/inst/clkfbout_clk_wiz_0                           |            10.0 |
-| clkfbout_clk_wiz_1            | keyboard_inst/Single_Note_Inst/clock_25mhz/inst/clkfbout_clk_wiz_1 |            10.0 |
-+-------------------------------+--------------------------------------------------------------------+-----------------+
++---------------------------------------------------------+--------------------------------------------------------------------+-----------------+
+| Clock                                                   | Domain                                                             | Constraint (ns) |
++---------------------------------------------------------+--------------------------------------------------------------------+-----------------+
+| clk_out1_clk_wiz_0                                      | VGA_inst/divider/inst/clk_out1_clk_wiz_0                           |            40.0 |
+| clk_out1_clk_wiz_1                                      | keyboard_inst/Single_Note_Inst/clock_25mhz/inst/clk_out1_clk_wiz_1 |            40.0 |
+| clkfbout_clk_wiz_0                                      | VGA_inst/divider/inst/clkfbout_clk_wiz_0                           |            10.0 |
+| clkfbout_clk_wiz_1                                      | keyboard_inst/Single_Note_Inst/clock_25mhz/inst/clkfbout_clk_wiz_1 |            10.0 |
+| keyboard_inst/Single_Note_Inst/clock_25mhz/inst/clk_in1 | clk_IBUF                                                           |            10.0 |
++---------------------------------------------------------+--------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports

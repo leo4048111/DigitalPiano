@@ -220,6 +220,150 @@ begin
                     octave = 2'd0;
                 end
             end
+            //第二个八度
+            8'h15:begin    //按键Q
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd0;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h1E:begin    //按键2
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd1;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h1D:begin    //按键W
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd2;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h26:begin    //按键3
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd3;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h24:begin    //按键E
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd4;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h2D:begin    //按键R
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd5;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h2E:begin    //按键5
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd6;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h2C:begin    //按键T
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd7;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h36:begin    //按键6
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd8;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h35:begin    //按键Y
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd9;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h3D:begin    //按键7
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd10;
+                    octave = 2'd1;
+                end
+            end
+
+            8'h3C:begin    //按键U
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                    begin
+                        ena <= 1'b0;
+                    end
+                else begin
+                    ena <= 1'b1;
+                    note = 4'd11;
+                    octave = 2'd1;
+                end
+            end
 
             default: begin
                 ena <= 1'b0;

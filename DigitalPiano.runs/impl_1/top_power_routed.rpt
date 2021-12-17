@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Fri Dec 17 22:03:13 2021
+| Date             : Fri Dec 17 23:18:31 2021
 | Host             : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -31,7 +31,7 @@ Table of Contents
 
 +--------------------------+--------+
 | Total On-Chip Power (W)  | 0.220  |
-| Dynamic (W)              | 0.122  |
+| Dynamic (W)              | 0.123  |
 | Device Static (W)        | 0.097  |
 | Effective TJA (C/W)      | 4.6    |
 | Max Ambient (C)          | 84.0   |
@@ -50,13 +50,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        6 |       --- |             --- |
-| Slice Logic    |     0.002 |     2023 |       --- |             --- |
-|   LUT as Logic |     0.001 |     1301 |     63400 |            2.05 |
+| Slice Logic    |     0.002 |     2086 |       --- |             --- |
+|   LUT as Logic |     0.002 |     1363 |     63400 |            2.15 |
 |   CARRY4       |    <0.001 |      150 |     15850 |            0.95 |
-|   Register     |    <0.001 |      128 |    126800 |            0.10 |
+|   Register     |    <0.001 |      129 |    126800 |            0.10 |
 |   F7/F8 Muxes  |    <0.001 |       65 |     63400 |            0.10 |
 |   Others       |     0.000 |       17 |       --- |             --- |
-| Signals        |     0.001 |     1477 |       --- |             --- |
+| Signals        |     0.001 |     1541 |       --- |             --- |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |       19 |       210 |            9.05 |
 | Static Power   |     0.097 |          |           |                 |
@@ -142,7 +142,7 @@ Table of Contents
 +-------------------------------------+-----------+
 | Name                                | Power (W) |
 +-------------------------------------+-----------+
-| top                                 |     0.122 |
+| top                                 |     0.123 |
 |   Single_Note_Inst                  |     0.002 |
 |     dmg0                            |    <0.001 |
 |       U0                            |    <0.001 |

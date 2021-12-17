@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Fri Dec 17 22:00:11 2021">
+<application name="pa" timeStamp="Fri Dec 17 23:46:31 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="c7d92a2b4cc046d8b7c36f9238396237" type="ProjectID"/>
-<property name="ProjectIteration" value="179" type="ProjectIteration"/>
+<property name="ProjectIteration" value="185" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -25,7 +25,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditDelete" value="18" type="JavaHandler"/>
 <property name="EditProperties" value="1" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="3" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="127" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="131" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
 <property name="OpenExample" value="1" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="38" type="JavaHandler"/>
@@ -33,7 +33,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="OpenRecentTarget" value="15" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="4" type="JavaHandler"/>
 <property name="RecustomizeCore" value="26" type="JavaHandler"/>
-<property name="RunBitgen" value="160" type="JavaHandler"/>
+<property name="RunBitgen" value="166" type="JavaHandler"/>
 <property name="RunImplementation" value="19" type="JavaHandler"/>
 <property name="RunSynthesis" value="109" type="JavaHandler"/>
 <property name="SaveDesign" value="13" type="JavaHandler"/>
@@ -51,6 +51,15 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ViewTaskSynthesis" value="23" type="JavaHandler"/>
 <property name="WaveformSaveConfiguration" value="2" type="JavaHandler"/>
 <property name="ZoomIn" value="2" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, Program device" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProgramFpgaDialog_PROGRAM, Program" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="21" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="13" type="TclMode"/>
 </item>
 </section>
 </application>

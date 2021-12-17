@@ -38,18 +38,18 @@ wire [9:0] lut_out;
 //PWM输出
 wire pwm_int;
 
-parameter C = 373;
-parameter CS = 353;
-parameter D = 332;
-parameter DS = 314;
-parameter E = 296;
-parameter F = 280;
-parameter FS = 264;
-parameter G = 249;
-parameter GS = 235;
-parameter A = 222;
-parameter AS = 209;
-parameter B = 197;
+parameter C = 746;
+parameter CS = 706;
+parameter D = 664;
+parameter DS = 628;
+parameter E = 592;
+parameter F = 560;
+parameter FS = 528;
+parameter G = 498;
+parameter GS = 470;
+parameter A = 444;
+parameter AS = 418;
+parameter B = 394;
 
 //音频使能控制
 assign AUD_SD = 1'b1;
@@ -114,13 +114,14 @@ begin
             sine_freq <= 0;
         end
     endcase
-        /*sine_freq <= sine_freq >> octave;*/
 end
 
+wire [10:0] compare;
+assign compare = (sine_freq>>octave);
 
 always @ (posedge clk_100)
 begin
-    if(sine_count == sine_freq)
+    if(sine_count == compare)
     begin
         lut_addr <= lut_addr + 1;
         sine_count <= 18'b0;   

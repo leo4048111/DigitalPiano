@@ -21,7 +21,7 @@
 
 
 module VGA(
-    input clk,
+    input clk_100,
     //显示控制输入
     input [3:0] note,
     input [1:0] octave,
@@ -34,7 +34,7 @@ module VGA(
     );
 
 //生成25MHZ时钟
-clk_wiz_0 divider(.clk_in1(clk),.clk_out1(clock_25));
+clk_wiz_0 divider(.clk_in1(clk_100),.clk_out1(clk_25));
 
 //640*480参数
 localparam VISIBLE_HORIZONTAL = 640;
@@ -63,7 +63,7 @@ localparam TOTAL_V = VISIBLE_VERTICAL+FRONT_V+SYNC_V+BACK_V;
 (*dont_touch = "true"*) reg [10:0] vcount = 11'd0;
 
 //同步信号控制
-always @(posedge clock_25) 
+always @(posedge clk_25) 
 begin
     if(hcount == TOTAL_H-1)
     begin
@@ -93,7 +93,7 @@ end
 
 //RGB输出控制
 Pixel_Mapping p_m_inst(
-    .clk(clock_25),
+    .clk(clk_25),
     .hcount(hcount),
     .vcount(vcount),
     .note(note),

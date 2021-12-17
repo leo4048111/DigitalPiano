@@ -21,7 +21,7 @@
 
 
 module PS2(
-    input clk,
+    input clk_100,
     input kclk,
     input kdata,
     output [7:0] data_out,
@@ -40,7 +40,7 @@ module PS2(
     end
     
 debouncer debounce(
-    .clk(clk),
+    .clk(clk_100),
     .I0(kclk),
     .I1(kdata),
     .O0(kclkf),

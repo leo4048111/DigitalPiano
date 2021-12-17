@@ -22,12 +22,11 @@
 
 module Keyboard(
     //控制时钟
-    input clk,
+    input clk_100,
 
     //USB输入
     input clock_USB_in, //从USB口输入的时钟
     input data_USB_in,  //从USB口输入的串行信号
-    output speaker,
 
     //数据输出
     output [3:0] note_out,
@@ -35,14 +34,14 @@ module Keyboard(
     );
 
 //资源定义
-reg reset;
 reg [15:0] DATA_16BITS; //[15:8]为上次的数据，[7:0]为新数据
 wire data_valid_flag;
 wire [7:0] DATA_OUT;
+reg ena;
 
 //连接控制模块
 PS2 PS2(
-    .clk(clk),
+    .clk_100(clk_100),
     .kclk(clock_USB_in),
     .kdata(data_USB_in),
     .data_out(DATA_OUT),
@@ -55,27 +54,10 @@ begin
     DATA_16BITS <= {DATA_16BITS[7:0], DATA_OUT};
 end
 
-
-//基础频率
-parameter C2 = 262;
-parameter C_SHARP2 = 277;
-parameter D2 = 294;
-parameter D_SHARP2 = 311;
-parameter E2 = 330;
-parameter F2 = 349;
-parameter F_SHARP2 = 370;
-parameter G2 = 392;
-parameter G_SHARP2 = 415;
-parameter A2 = 440;
-parameter A_SHARP2 = 466;
-parameter B2 = 494;
-
-reg ena;
-
 /*------key mapping------
-C2   -->  Z
-#C2  -->  S
-D2   -->  X
+C   -->  Z
+#C  -->  S
+D   -->  X
 #D2  -->  D
 E2   -->  C
 F2   -->  V
@@ -90,7 +72,7 @@ B2   -->  M
 reg [3:0] note;
 reg [1:0] octave;
 
-always @ (posedge clk)
+always @ (posedge clk_100)
 begin
     if(data_valid_flag == 1'b1)
         begin
@@ -247,13 +229,6 @@ begin
         end
 
 end
-
-Single_Note Single_Note_Inst(.clock(clk),
-                             .ena(ena),
-                             .note(note),
-                             .octave(octave),
-                             .speaker(speaker));
-
 
 assign note_out = ena? note:4'd12;
 assign octave_out = ena? octave:2'd0;

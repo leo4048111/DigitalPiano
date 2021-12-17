@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Fri Dec 10 22:06:04 2021
+| Date         : Fri Dec 17 22:02:14 2021
 | Host         : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,7 +23,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |    20 |
-| Unused register locations in slices containing registers |    96 |
+| Unused register locations in slices containing registers |   104 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,10 +33,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              38 |           14 |
+| No           | No                    | No                     |              42 |           13 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              25 |           12 |
-| Yes          | No                    | No                     |              21 |           10 |
+| No           | Yes                   | No                     |              31 |           12 |
+| Yes          | No                    | No                     |              35 |           21 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              20 |            7 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -45,29 +45,29 @@ Table of Contents
 3. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------------------------------------+-----------------------------------------------+-----------------------------------------------+------------------+----------------+
-|                        Clock Signal                       |                 Enable Signal                 |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
-+-----------------------------------------------------------+-----------------------------------------------+-----------------------------------------------+------------------+----------------+
-|  clk_IBUF                                                 | keyboard_inst/PS2/debounce/Iv1_i_1_n_0        |                                               |                1 |              1 |
-|  clk_IBUF                                                 | keyboard_inst/PS2/debounce/O0_i_1_n_0         |                                               |                1 |              1 |
-|  clk_IBUF                                                 | keyboard_inst/PS2/debounce/O1_i_1_n_0         |                                               |                1 |              1 |
-|  clk_IBUF                                                 | keyboard_inst/PS2/debounce/clear              |                                               |                1 |              1 |
-|  VGA_inst/divider/inst/clk_out1                           |                                               |                                               |                1 |              1 |
-|  VGA_inst/divider/inst/clk_out1                           |                                               | VGA_inst/hsync_i_1_n_0                        |                1 |              1 |
-|  VGA_inst/divider/inst/clk_out1                           |                                               | VGA_inst/vsync_i_1_n_0                        |                1 |              1 |
-|  clk_IBUF                                                 |                                               |                                               |                2 |              2 |
-| ~keyboard_inst/PS2/debounce/kclkf                         | keyboard_inst/cnt                             | keyboard_inst/PS2/cnt[3]_i_1_n_0              |                1 |              4 |
-|  clk_IBUF                                                 |                                               | keyboard_inst/PS2/debounce/clear              |                1 |              4 |
-|  clk_IBUF                                                 | keyboard_inst/PS2/E[0]                        |                                               |                1 |              4 |
-|  clk_IBUF                                                 | keyboard_inst/PS2/debounce/cnt1[4]_i_1_n_0    | keyboard_inst/PS2/debounce/Iv1_i_1_n_0        |                1 |              5 |
-|  VGA_inst/divider/inst/clk_out1                           | VGA_inst/p_m_inst/red[0]_i_1_n_0              |                                               |                3 |              6 |
-|  keyboard_inst/Single_Note_Inst/clock_25mhz/inst/clk_out1 | keyboard_inst/Single_Note_Inst/counter_octave |                                               |                2 |              7 |
-|  keyboard_inst/Single_Note_Inst/clock_25mhz/inst/clk_out1 |                                               | keyboard_inst/Single_Note_Inst/counter_octave |                2 |              8 |
-| ~keyboard_inst/PS2/debounce/kclkf                         |                                               |                                               |                3 |              9 |
-|  keyboard_inst/Single_Note_Inst/clock_25mhz/inst/clk_out1 |                                               |                                               |                5 |             10 |
-|  VGA_inst/divider/inst/clk_out1                           |                                               | VGA_inst/hcount__0                            |                7 |             11 |
-|  VGA_inst/divider/inst/clk_out1                           | VGA_inst/hcount__0                            | VGA_inst/vcount[10]_i_1_n_0                   |                5 |             11 |
-|  keyboard_inst/PS2/data_valid_flag                        |                                               |                                               |                3 |             16 |
-+-----------------------------------------------------------+-----------------------------------------------+-----------------------------------------------+------------------+----------------+
++------------------------------------+--------------------------------------------+----------------------------------------+------------------+----------------+
+|            Clock Signal            |                Enable Signal               |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++------------------------------------+--------------------------------------------+----------------------------------------+------------------+----------------+
+|  clk_100_IBUF_BUFG                 | keyboard_inst/PS2/debounce/Iv1_i_1_n_0     |                                        |                1 |              1 |
+|  clk_100_IBUF_BUFG                 | keyboard_inst/PS2/debounce/O01_out         |                                        |                1 |              1 |
+|  clk_100_IBUF_BUFG                 | keyboard_inst/PS2/debounce/O10_out         |                                        |                1 |              1 |
+|  clk_100_IBUF_BUFG                 | keyboard_inst/PS2/debounce/clear           |                                        |                1 |              1 |
+|  clk_100_IBUF_BUFG                 | Single_Note_Inst/driver_inst/pwm_out0      |                                        |                1 |              1 |
+|  VGA_inst/divider/inst/clk_out1    |                                            |                                        |                1 |              1 |
+|  VGA_inst/divider/inst/clk_out1    |                                            | VGA_inst/hsync_i_1_n_0                 |                1 |              1 |
+|  VGA_inst/divider/inst/clk_out1    |                                            | VGA_inst/vsync_i_1_n_0                 |                1 |              1 |
+| ~keyboard_inst/PS2/debounce/kclkf  | keyboard_inst/cnt                          | keyboard_inst/PS2/cnt[3]_i_1_n_0       |                1 |              4 |
+|  clk_100_IBUF_BUFG                 | keyboard_inst/PS2/E[0]                     |                                        |                2 |              4 |
+|  clk_100_IBUF_BUFG                 | keyboard_inst/PS2/debounce/cnt1[4]_i_1_n_0 | keyboard_inst/PS2/debounce/Iv1_i_1_n_0 |                2 |              5 |
+|  VGA_inst/divider/inst/clk_out1    | VGA_inst/p_m_inst/red[0]_i_1_n_0           |                                        |                6 |              6 |
+| ~keyboard_inst/PS2/debounce/kclkf  |                                            |                                        |                3 |              9 |
+|  clk_100_IBUF_BUFG                 | Single_Note_Inst/driver_inst/compare_0     |                                        |                6 |             10 |
+|  clk_100_IBUF_BUFG                 | Single_Note_Inst/sel                       |                                        |                2 |             10 |
+|  VGA_inst/divider/inst/clk_out1    |                                            | VGA_inst/hcount__0                     |                5 |             11 |
+|  VGA_inst/divider/inst/clk_out1    | VGA_inst/hcount__0                         | VGA_inst/vcount[10]_i_1_n_0            |                4 |             11 |
+|  keyboard_inst/PS2/data_valid_flag |                                            |                                        |                3 |             16 |
+|  clk_100_IBUF_BUFG                 |                                            |                                        |                6 |             16 |
+|  clk_100_IBUF_BUFG                 |                                            | Single_Note_Inst/sel                   |                5 |             18 |
++------------------------------------+--------------------------------------------+----------------------------------------+------------------+----------------+
 
 

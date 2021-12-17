@@ -21,100 +21,113 @@
 
 
 module Single_Note(
-    input clock, 
+    input clk_100, 
     input ena,
     input [3:0] note,
-    input [2:0] octave,
-    output reg speaker
+    input [1:0] octave,
+    output AUD_PWM, //PWM输出
+    output AUD_SD   //三态门使能信号，常为1
     );
 
-wire clk;
-clk_wiz_1 clock_25mhz(.clk_in1(clock), .clk_out1(clk));
+//频率和相位累加器
+reg [10:0] sine_freq = 0;
+reg [17:0] sine_count = 0;
+//DDS查表地址和输出振幅
+reg [9:0] lut_addr;
+wire [9:0] lut_out;
+//PWM输出
+wire pwm_int;
 
-reg [16:0] clkdivider;
-/*always @ (note)
+parameter C = 373;
+parameter CS = 353;
+parameter D = 332;
+parameter DS = 314;
+parameter E = 296;
+parameter F = 280;
+parameter FS = 264;
+parameter G = 249;
+parameter GS = 235;
+parameter A = 222;
+parameter AS = 209;
+parameter B = 197;
+
+//音频使能控制
+assign AUD_SD = 1'b1;
+
+//DDS查找ROM表
+dist_mem_gen_0 dmg0(
+    .a(lut_addr), 
+    .spo(lut_out)
+    );
+
+//PWM驱动
+PWMDriver driver_inst(
+    .clk_100(clk_100),
+    .pwm_level(lut_out),
+    .pwm_out(pwm_int)
+    );
+
+assign AUD_PWM = (pwm_int == 1'b0) ? 1'b0 : 
+                    1'b1;
+
+always @ (note or octave)
 begin
     case (note)
-    0: clkdivider = 10000; // C3 = 25000000/262
-    1: clkdivider = 90252; // #C3 = 25000000/277
-    2: clkdivider = 85034; // D3 = 25000000/294
-    3: clkdivider = 80385; // #D3 = 25000000/311
-    4: clkdivider = 75757; // E3 = 25000000/330
-    5: clkdivider = 71633; // F3 = 25000000/349
-    6: clkdivider = 67567; // #F3 = 25000000/370
-    7: clkdivider = 63775; // G3 = 25000000/392
-    8: clkdivider = 60240; // #G3 = 25000000/415
-    9: clkdivider = 56818; // A3 = 25000000/440
-    10: clkdivider = 53648; // #A3 = 25000000/466
-    11: clkdivider = 50607; // B3 = 25000000/494
-    12: clkdivider = 0; // mute
-    13: clkdivider = 0; // mute
-    14: clkdivider = 0; // mute
-    15: clkdivider = 0; // mute
-    default: clkdivider = 0;
+        4'd0 : begin
+            sine_freq <= C;
+        end
+        4'd1 : begin
+            sine_freq <= CS;
+        end
+        4'd2 : begin
+            sine_freq <= D;
+        end
+        4'd3 : begin
+            sine_freq <= DS;
+        end
+        4'd4 : begin
+            sine_freq <= E;
+        end
+        4'd5 : begin
+            sine_freq <= F;
+        end
+        4'd6 : begin
+            sine_freq <= FS;
+        end
+        4'd7 : begin
+            sine_freq <= G;
+        end
+        4'd8 : begin
+            sine_freq <= GS;
+        end
+        4'd9 : begin
+            sine_freq <= A;
+        end
+        4'd10 : begin
+            sine_freq <= AS;
+        end
+        4'd11 : begin
+            sine_freq <= B;
+        end
+
+        default : begin
+            sine_freq <= 0;
+        end
     endcase
-end*/
-
-always @(note)
-case(note)
-  0: clkdivider = 431-1; // C
-  1: clkdivider = 406-1; // C#/Db
-  2: clkdivider = 384-1; // D
-  3: clkdivider = 362-1; // D#/Eb
-  4: clkdivider = 342-1; // E
-  5: clkdivider = 323-1; // F
-  6: clkdivider = 304-1; // F#/Gb
-  7: clkdivider = 287-1; // G
-  8: clkdivider = 271-1; // G#/Ab
-  9: clkdivider = 256-1; // A
-  10: clkdivider = 242-1; // A#/Bb
-  11: clkdivider = 228-1; // B
-  12: clkdivider = 0; // should never happen
-  13: clkdivider = 0; // should never happen
-  14: clkdivider = 0; // should never happen
-  15: clkdivider = 0; // should never happen
-endcase
-
-reg [16:0] counter_note = 17'b0;
-always @(posedge clk) begin
-    if(counter_note == 0)
-        counter_note <= clkdivider;
-    else begin
-        counter_note <= counter_note - 1;
-    end
+        /*sine_freq <= sine_freq >> octave;*/
 end
 
-//C2为最低音，octave=2'd0;
-/*reg [2:0] counter_octave = 3'b0;
-always @ (posedge clk) begin
-    if(counter_note == 0)
+
+always @ (posedge clk_100)
+begin
+    if(sine_count == sine_freq)
     begin
-        if(counter_octave==0)
-        begin
-            counter_octave <= (octave==0?1:0);
-        end
-        else begin
-            counter_octave <= counter_octave -1;
-        end
+        lut_addr <= lut_addr + 1;
+        sine_count <= 18'b0;   
     end
-end*/
-
-reg [7:0] counter_octave;
-always @(posedge clk)
-if(counter_note==0)
-begin
- if(counter_octave==0)
-  counter_octave <= (octave==0?15:7);
- else
-  counter_octave <= counter_octave-1;
-end
-
-always @ (posedge clk)
-begin
-    if(note==12||ena == 0)
-        speaker <= 0;
-    else if(counter_note==0&&counter_octave==0)
-        speaker <= ~speaker;
+    else begin
+        sine_count <= sine_count + 1'b1;
+    end
 end
 
 endmodule

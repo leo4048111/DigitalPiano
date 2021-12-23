@@ -84,8 +84,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd0;
-                    octave = 2'd0;
+                    note <= 4'd0;
+                    octave <= 2'd0;
                 end
             end
 
@@ -96,8 +96,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd1;
-                    octave = 2'd0;
+                    note <= 4'd1;
+                    octave <= 2'd0;
                 end
             end
 
@@ -108,8 +108,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd2;
-                    octave = 2'd0;
+                    note <= 4'd2;
+                    octave <= 2'd0;
                 end
             end
 
@@ -120,8 +120,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd3;
-                    octave = 2'd0;
+                    note <= 4'd3;
+                    octave <= 2'd0;
                 end
             end
 
@@ -132,8 +132,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd4;
-                    octave = 2'd0;
+                    note <= 4'd4;
+                    octave <= 2'd0;
                 end
             end
 
@@ -144,8 +144,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd5;
-                    octave = 2'd0;
+                    note <= 4'd5;
+                    octave <= 2'd0;
                 end
             end
 
@@ -156,8 +156,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd6;
-                    octave = 2'd0;
+                    note <= 4'd6;
+                    octave <= 2'd0;
                 end
             end
 
@@ -168,8 +168,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd7;
-                    octave = 2'd0;
+                    note <= 4'd7;
+                    octave <= 2'd0;
                 end
             end
 
@@ -180,8 +180,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd8;
-                    octave = 2'd0;
+                    note <= 4'd8;
+                    octave <= 2'd0;
                 end
             end
 
@@ -192,8 +192,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd9;
-                    octave = 2'd0;
+                    note <= 4'd9;
+                    octave <= 2'd0;
                 end
             end
 
@@ -204,8 +204,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd10;
-                    octave = 2'd0;
+                    note <= 4'd10;
+                    octave <= 2'd0;
                 end
             end
 
@@ -216,8 +216,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd11;
-                    octave = 2'd0;
+                    note <= 4'd11;
+                    octave <= 2'd0;
                 end
             end
             //第二个八度
@@ -228,8 +228,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd0;
-                    octave = 2'd1;
+                    note <= 4'd0;
+                    octave <= 2'd1;
                 end
             end
 
@@ -240,8 +240,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd1;
-                    octave = 2'd1;
+                    note <= 4'd1;
+                    octave <= 2'd1;
                 end
             end
 
@@ -252,8 +252,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd2;
-                    octave = 2'd1;
+                    note <= 4'd2;
+                    octave <= 2'd1;
                 end
             end
 
@@ -264,8 +264,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd3;
-                    octave = 2'd1;
+                    note <= 4'd3;
+                    octave <= 2'd1;
                 end
             end
 
@@ -276,8 +276,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd4;
-                    octave = 2'd1;
+                    note <= 4'd4;
+                    octave <= 2'd1;
                 end
             end
 
@@ -288,8 +288,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd5;
-                    octave = 2'd1;
+                    note <= 4'd5;
+                    octave <= 2'd1;
                 end
             end
 
@@ -300,8 +300,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd6;
-                    octave = 2'd1;
+                    note <= 4'd6;
+                    octave <= 2'd1;
                 end
             end
 
@@ -312,8 +312,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd7;
-                    octave = 2'd1;
+                    note <= 4'd7;
+                    octave <= 2'd1;
                 end
             end
 
@@ -324,8 +324,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd8;
-                    octave = 2'd1;
+                    note <= 4'd8;
+                    octave <= 2'd1;
                 end
             end
 
@@ -336,8 +336,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd9;
-                    octave = 2'd1;
+                    note <= 4'd9;
+                    octave <= 2'd1;
                 end
             end
 
@@ -348,8 +348,8 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd10;
-                    octave = 2'd1;
+                    note <= 4'd10;
+                    octave <= 2'd1;
                 end
             end
 
@@ -360,14 +360,14 @@ begin
                     end
                 else begin
                     ena <= 1'b1;
-                    note = 4'd11;
-                    octave = 2'd1;
+                    note <= 4'd11;
+                    octave <= 2'd1;
                 end
             end
 
             default: begin
                 ena <= 1'b0;
-                note = 4'd12;
+                note <= 4'd12;
             end
             endcase // DATA
         end

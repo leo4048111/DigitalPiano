@@ -103,7 +103,7 @@ localparam PIANO_HEIGHT = BLACK_KEY_HEIGHT + WHITE_KEY_BOTTOM_HEIGHT;
 
 //部件boundingbox坐标（起始点左上角）
 //钢琴
-localparam PIANO_X = 70 + START_H;
+localparam PIANO_X = 82 + START_H;
 localparam PIANO_Y = 200 + START_V;
 //钢琴下半部分顶部y坐标
 localparam PIANO_BOTTOM_Y = PIANO_Y + WHITE_KEY_TOP_WIDE_HEIGHT;

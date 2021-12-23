@@ -27,8 +27,8 @@ read_verilog -library xil_defaultlib {
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/PS2.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Single_Note.v
-  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Keyboard.v
+  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v
 }
 foreach dcp [get_files -quiet -all *.dcp] {

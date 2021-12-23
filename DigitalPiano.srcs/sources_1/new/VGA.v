@@ -23,8 +23,12 @@
 module VGA(
     input clk_100,
     //显示控制输入
-    input [3:0] note,
-    input [1:0] octave,
+    input [3:0] note_0,
+    input [3:0] note_1,
+    input [3:0] note_2,
+    input [1:0] octave_0,
+    input [1:0] octave_1,
+    input [1:0] octave_2,
     //控制信号输出
     output [3:0] R_OUT,
     output [3:0] G_OUT,
@@ -96,8 +100,12 @@ Pixel_Mapping p_m_inst(
     .clk(clk_25),
     .hcount(hcount),
     .vcount(vcount),
-    .note(note),
-    .octave(octave),
+    .note_0(note_0),
+    .note_1(note_1),
+    .note_2(note_2),
+    .octave_0(octave_0),
+    .octave_1(octave_1),
+    .octave_2(octave_2),
     .R_OUT(R_OUT),
     .G_OUT(G_OUT),
     .B_OUT(B_OUT));

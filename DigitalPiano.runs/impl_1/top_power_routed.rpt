@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Thu Dec 23 16:12:01 2021
+| Date             : Thu Dec 23 23:45:59 2021
 | Host             : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -50,15 +50,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        6 |       --- |             --- |
-| Slice Logic    |     0.002 |     2689 |       --- |             --- |
-|   LUT as Logic |     0.002 |     1937 |     63400 |            3.06 |
-|   CARRY4       |    <0.001 |      150 |     15850 |            0.95 |
-|   Register     |    <0.001 |      129 |    126800 |            0.10 |
-|   F7/F8 Muxes  |    <0.001 |      134 |     63400 |            0.21 |
-|   Others       |     0.000 |       17 |       --- |             --- |
-| Signals        |     0.002 |     2012 |       --- |             --- |
+| Slice Logic    |     0.002 |     2595 |       --- |             --- |
+|   LUT as Logic |     0.001 |     1635 |     63400 |            2.58 |
+|   CARRY4       |    <0.001 |      169 |     15850 |            1.07 |
+|   Register     |    <0.001 |      204 |    126800 |            0.16 |
+|   F7/F8 Muxes  |    <0.001 |      195 |     63400 |            0.31 |
+|   Others       |     0.000 |       20 |       --- |             --- |
+| Signals        |     0.001 |     1751 |       --- |             --- |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
-| I/O            |    <0.001 |       19 |       210 |            9.05 |
+| I/O            |     0.001 |       19 |       210 |            9.05 |
 | Static Power   |     0.097 |          |           |                 |
 | Total          |     0.221 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -70,8 +70,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.008 |      0.015 |
-| Vccaux    |       1.800 |     0.082 |       0.064 |      0.018 |
+| Vccint    |       1.000 |     0.022 |       0.007 |      0.015 |
+| Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -148,11 +148,19 @@ Table of Contents
 |       U0                            |    <0.001 |
 |         synth_options.dist_mem_inst |    <0.001 |
 |           gen_rom.rom_inst          |    <0.001 |
+|     dmg1                            |    <0.001 |
+|       U0                            |    <0.001 |
+|         synth_options.dist_mem_inst |    <0.001 |
+|           gen_rom.rom_inst          |    <0.001 |
+|     dmg2                            |    <0.001 |
+|       U0                            |    <0.001 |
+|         synth_options.dist_mem_inst |    <0.001 |
+|           gen_rom.rom_inst          |    <0.001 |
 |     driver_inst                     |    <0.001 |
-|   VGA_inst                          |     0.121 |
+|   VGA_inst                          |     0.119 |
 |     divider                         |     0.117 |
 |       inst                          |     0.117 |
-|     p_m_inst                        |     0.003 |
+|     p_m_inst                        |     0.002 |
 |   keyboard_inst                     |    <0.001 |
 |     PS2                             |    <0.001 |
 |       debounce                      |    <0.001 |

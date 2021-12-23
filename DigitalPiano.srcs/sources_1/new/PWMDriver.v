@@ -22,12 +22,12 @@
 
 module PWMDriver(
     input clk_100,
-    input [9:0] pwm_level,
+    input [11:0] pwm_level,
     output reg pwm_out
     );
 
-reg [9:0] count;
-reg [9:0] compare;
+reg [11:0] count;
+reg [11:0] compare;
 
 always @ (posedge clk_100)
 begin
@@ -36,7 +36,7 @@ begin
         compare <= pwm_level;
         count <= count + 1;
     end
-    else if (count == 1023) begin
+    else if (count == 3071) begin
         count <= 10'b0;
     end
     else begin

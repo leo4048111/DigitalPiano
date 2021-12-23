@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Dec 23 16:09:02 2021">
+<application name="pa" timeStamp="Thu Dec 23 23:42:52 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="c7d92a2b4cc046d8b7c36f9238396237" type="ProjectID"/>
-<property name="ProjectIteration" value="188" type="ProjectIteration"/>
+<property name="ProjectIteration" value="218" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -25,7 +25,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditDelete" value="18" type="JavaHandler"/>
 <property name="EditProperties" value="1" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="3" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="132" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="146" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
 <property name="OpenExample" value="1" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="39" type="JavaHandler"/>
@@ -33,9 +33,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="OpenRecentTarget" value="15" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="4" type="JavaHandler"/>
 <property name="RecustomizeCore" value="26" type="JavaHandler"/>
-<property name="RunBitgen" value="169" type="JavaHandler"/>
+<property name="RunBitgen" value="199" type="JavaHandler"/>
 <property name="RunImplementation" value="19" type="JavaHandler"/>
-<property name="RunSynthesis" value="110" type="JavaHandler"/>
+<property name="RunSynthesis" value="114" type="JavaHandler"/>
 <property name="SaveDesign" value="13" type="JavaHandler"/>
 <property name="SetTopNode" value="8" type="JavaHandler"/>
 <property name="ShowView" value="14" type="JavaHandler"/>

@@ -28,13 +28,17 @@ module Keyboard(
     input clock_USB_in, //从USB口输入的时钟
     input data_USB_in,  //从USB口输入的串行信号
 
+    //音程选择
+    input octave_select,
     //数据输出
     output [3:0] note_0,
     output [3:0] note_1,
     output [3:0] note_2,
+    output [3:0] note_3,
     output [1:0] octave_0,
     output [1:0] octave_1,
-    output [1:0] octave_2
+    output [1:0] octave_2,
+    output [1:0] octave_3
     );
 
 //资源定义
@@ -70,7 +74,7 @@ G2   -->  B
 #G2  -->  H
 A2   -->  N
 #A2  -->  J
-B2   -->  M
+B2   -->  M25
 --------------------------*/
 
 reg [3:0] note;
@@ -427,23 +431,29 @@ begin
 
 end
 
-reg [3:0] note_arr[2:0];  //最多同时支持三个音
-reg [1:0] octave_arr[2:0];
+reg [3:0] note_arr[3:0];  //最多同时支持四个音
+reg [1:0] octave_arr[3:0];
 
 initial
 begin
     note_arr[0] = 12;
     note_arr[1] = 12;
     note_arr[2] = 12;
+    note_arr[3] = 12;
 end
 
 always @ (posedge clk_100)
 begin
     if(ena == 1'b1)    //按键按下
     begin
-        if((note_arr[2] != note || octave_arr[2] != octave) && (note_arr[1] != note || octave_arr[1] != octave) && (note_arr[0] != note || octave_arr[0] != octave))
+        if((note_arr[3] != note || octave_arr[3] != octave) && (note_arr[2] != note || octave_arr[2] != octave) && (note_arr[1] != note || octave_arr[1] != octave) && (note_arr[0] != note || octave_arr[0] != octave))
         begin
-            if(note_arr[2] == 12)
+            if(note_arr[3] == 12)
+            begin
+                note_arr[3] <= note;
+                octave_arr[3] <= octave;
+            end
+            else if(note_arr[2] == 12)
             begin
                 note_arr[2] <= note;
                 octave_arr[2] <= octave;
@@ -461,7 +471,11 @@ begin
         end
     end
     else begin        //按键弹起
-        if(note == note_arr[2] && octave == octave_arr[2])
+        if(note == note_arr[3] && octave == octave_arr[3])
+        begin
+            note_arr[3] <= 4'd12;
+        end
+        else if(note == note_arr[2] && octave == octave_arr[2])
         begin
             note_arr[2] <= 4'd12;
         end
@@ -479,8 +493,10 @@ end
 assign note_0 = note_arr[0];
 assign note_1 = note_arr[1];
 assign note_2 = note_arr[2];
-assign octave_0 = octave_arr[0];
-assign octave_1 = octave_arr[1];
-assign octave_2 = octave_arr[2];
+assign note_3 = note_arr[3];
+assign octave_0 = octave_arr[0] + (octave_select?2'b10:2'b00);
+assign octave_1 = octave_arr[1] + (octave_select?2'b10:2'b00);
+assign octave_2 = octave_arr[2] + (octave_select?2'b10:2'b00);
+assign octave_3 = octave_arr[3] + (octave_select?2'b10:2'b00);
 
 endmodule

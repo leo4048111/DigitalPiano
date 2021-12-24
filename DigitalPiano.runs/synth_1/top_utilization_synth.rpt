@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Thu Dec 23 23:43:59 2021
+| Date         : Fri Dec 24 17:58:24 2021
 | Host         : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1250 |     0 |     63400 |  1.97 |
-|   LUT as Logic          | 1250 |     0 |     63400 |  1.97 |
+| Slice LUTs*             | 1535 |     0 |     63400 |  2.42 |
+|   LUT as Logic          | 1535 |     0 |     63400 |  2.42 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  204 |     0 |    126800 |  0.16 |
-|   Register as Flip Flop |  204 |     0 |    126800 |  0.16 |
+| Slice Registers         |  237 |     0 |    126800 |  0.19 |
+|   Register as Flip Flop |  237 |     0 |    126800 |  0.19 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                |    0 |     0 |     31700 |  0.00 |
+| F7 Muxes                |    1 |     0 |     31700 | <0.01 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 6     |          Yes |         Set |            - |
-| 198   |          Yes |       Reset |            - |
+| 8     |          Yes |         Set |            - |
+| 229   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   19 |     0 |       210 |  9.05 |
+| Bonded IOB                  |   20 |     0 |       210 |  9.52 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -146,17 +146,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  516 |                 LUT |
-| LUT2     |  441 |                 LUT |
-| LUT4     |  401 |                 LUT |
-| FDRE     |  198 |        Flop & Latch |
-| CARRY4   |  169 |          CarryLogic |
-| LUT3     |  153 |                 LUT |
-| LUT5     |  111 |                 LUT |
+| LUT6     |  754 |                 LUT |
+| LUT2     |  431 |                 LUT |
+| LUT4     |  427 |                 LUT |
+| FDRE     |  229 |        Flop & Latch |
+| LUT5     |  216 |                 LUT |
+| CARRY4   |  176 |          CarryLogic |
+| LUT3     |  109 |                 LUT |
+| LUT1     |   21 |                 LUT |
 | OBUF     |   16 |                  IO |
-| LUT1     |   15 |                 LUT |
-| FDSE     |    6 |        Flop & Latch |
-| IBUF     |    3 |                  IO |
+| FDSE     |    8 |        Flop & Latch |
+| IBUF     |    4 |                  IO |
+| MUXF7    |    1 |               MuxFx |
 +----------+------+---------------------+
 
 
@@ -166,7 +167,7 @@ Table of Contents
 +----------------+------+
 |    Ref Name    | Used |
 +----------------+------+
-| dist_mem_gen_0 |    3 |
+| dist_mem_gen_0 |    4 |
 | clk_wiz_0      |    1 |
 +----------------+------+
 

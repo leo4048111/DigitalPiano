@@ -27,9 +27,11 @@ module Single_Note(
     input [3:0] note_0,
     input [3:0] note_1,
     input [3:0] note_2,
+    input [3:0] note_3,
     input [1:0] octave_0,
     input [1:0] octave_1,
     input [1:0] octave_2,
+    input [1:0] octave_3,
     output AUD_PWM, //PWM输出
     output AUD_SD   //三态门使能信号，常为1
     );
@@ -38,19 +40,23 @@ module Single_Note(
 reg [10:0] sine_freq_0 = 0;
 reg [10:0] sine_freq_1 = 0;
 reg [10:0] sine_freq_2 = 0;
+reg [10:0] sine_freq_3 = 0;
 
 reg [17:0] sine_count_0 = 0;
 reg [17:0] sine_count_1 = 0;
 reg [17:0] sine_count_2 = 0;
+reg [17:0] sine_count_3 = 0;
 
 //DDS查表地址和输出振幅
 reg [9:0] lut_addr_0;
 reg [9:0] lut_addr_1;
 reg [9:0] lut_addr_2;
+reg [9:0] lut_addr_3;
 
 wire [9:0] lut_out_0;
 wire [9:0] lut_out_1;
 wire [9:0] lut_out_2;
+wire [9:0] lut_out_3;
 
 //PWM输出
 wire pwm_int;
@@ -87,8 +93,13 @@ dist_mem_gen_0 dmg2(
     .spo(lut_out_2)
     );
 
+dist_mem_gen_0 dmg3(
+    .a(lut_addr_3), 
+    .spo(lut_out_3)
+    );
+
 wire [11:0] pwm_level;
-assign pwm_level = ((note_0 == 12)? 0:lut_out_0) + ((note_1 == 12)? 0:lut_out_1) + ((note_2 == 12)? 0:lut_out_2);
+assign pwm_level = ((note_0 == 12)? 0:lut_out_0) + ((note_1 == 12)? 0:lut_out_1) + ((note_2 == 12)? 0:lut_out_2) + ((note_3 == 12)? 0:lut_out_3);
 
 //PWM驱动
 PWMDriver driver_inst(
@@ -239,13 +250,62 @@ begin
     endcase
 end
 
+always @ (note_3 or octave_3)
+begin
+    case (note_3)
+        4'd0 : begin
+            sine_freq_3 <= C;
+        end
+        4'd1 : begin
+            sine_freq_3 <= CS;
+        end
+        4'd2 : begin
+            sine_freq_3 <= D;
+        end
+        4'd3 : begin
+            sine_freq_3 <= DS;
+        end
+        4'd4 : begin
+            sine_freq_3 <= E;
+        end
+        4'd5 : begin
+            sine_freq_3 <= F;
+        end
+        4'd6 : begin
+            sine_freq_3 <= FS;
+        end
+        4'd7 : begin
+            sine_freq_3 <= G;
+        end
+        4'd8 : begin
+            sine_freq_3 <= GS;
+        end
+        4'd9 : begin
+            sine_freq_3 <= A;
+        end
+        4'd10 : begin
+            sine_freq_3 <= AS;
+        end
+        4'd11 : begin
+            sine_freq_3 <= B;
+        end
+
+        default : begin
+            sine_freq_3 <= 0;
+        end
+    endcase
+end
+
 wire [10:0] compare_0;
 wire [10:0] compare_1;
 wire [10:0] compare_2;
+wire [10:0] compare_3;
 
 assign compare_0 = (sine_freq_0>>octave_0);
 assign compare_1 = (sine_freq_1>>octave_1);
 assign compare_2 = (sine_freq_2>>octave_2);
+assign compare_3 = (sine_freq_3>>octave_3);
+
 
 //查表得到振幅
 always @ (posedge clk_100)
@@ -281,6 +341,18 @@ begin
     end
     else begin
         sine_count_2 <= sine_count_2 + 1'b1;
+    end
+end
+
+always @ (posedge clk_100)
+begin
+    if(sine_count_3 == compare_3)
+    begin
+        lut_addr_3 <= lut_addr_3 + 1;
+        sine_count_3 <= 18'b0;   
+    end
+    else begin
+        sine_count_3 <= sine_count_3 + 1'b1;
     end
 end
 

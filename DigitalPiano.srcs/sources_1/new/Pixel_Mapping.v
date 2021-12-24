@@ -28,9 +28,11 @@ module Pixel_Mapping(
     input [3:0] note_0,
     input [3:0] note_1,
     input [3:0] note_2,
+    input [3:0] note_3,
     input [1:0] octave_0,
     input [1:0] octave_1,
     input [1:0] octave_2,
+    input [1:0] octave_3,
     //输出单像素色彩信息
     output [3:0] R_OUT,
     output [3:0] G_OUT,
@@ -268,7 +270,7 @@ begin
             //第一个白键C上半部分
             if(hcount >= KEY_C_TOP_X + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_C_TOP_X + WHITE_KEY_TOP_WIDE_WIDTH+i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_C_TOP_Y && vcount < KEY_C_TOP_Y + WHITE_KEY_TOP_WIDE_HEIGHT)
             begin
-                if((note_0 == 0 && octave_0 == i) || (note_1 == 0 && octave_1 == i) || (note_2 == 0 && octave_2 == i))
+                if((note_0 == 0 && octave_0 == i) || (note_1 == 0 && octave_1 == i) || (note_2 == 0 && octave_2 == i) || (note_3 == 0 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -284,7 +286,7 @@ begin
             //第一个白键C下半部分
             else if(hcount >= KEY_C_BOTTOM_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_C_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_C_BOTTOM_Y && vcount < KEY_C_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                if((note_0 == 0 && octave_0 == i) || (note_1 == 0 && octave_1 == i) || (note_2 == 0 && octave_2 == i))
+                if((note_0 == 0 && octave_0 == i) || (note_1 == 0 && octave_1 == i) || (note_2 == 0 && octave_2 == i) || (note_3 == 0 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -300,7 +302,7 @@ begin
             //第一个黑键#C
             else if(hcount >= KEY_CS_X + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& hcount < KEY_CS_X + BLACK_KEY_WIDTH + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& vcount >= KEY_CS_Y && vcount < KEY_CS_Y + BLACK_KEY_HEIGHT)
             begin
-                if((note_0 == 1 && octave_0 == i) || (note_1 == 1 && octave_1 == i) || (note_2 == 1 && octave_2 == i))
+                if((note_0 == 1 && octave_0 == i) || (note_1 == 1 && octave_1 == i) || (note_2 == 1 && octave_2 == i) || (note_3 == 1 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -324,7 +326,7 @@ begin
             //第二个白键D上半部分
             else if(hcount >= KEY_D_TOP_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_D_TOP_X + WHITE_KEY_TOP_NARROW_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_D_TOP_Y && vcount < KEY_D_TOP_Y + WHITE_KEY_TOP_NARROW_HEIGHT)
             begin
-                if((note_0 == 2 && octave_0 == i) || (note_1 == 2 && octave_1 == i) || (note_2 == 2 && octave_2 == i))
+                if((note_0 == 2 && octave_0 == i) || (note_1 == 2 && octave_1 == i) || (note_2 == 2 && octave_2 == i) || (note_3 == 2 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -340,7 +342,7 @@ begin
             //第一个白键D下半部分
             else if(hcount >= KEY_D_BOTTOM_X + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& hcount < KEY_D_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_D_BOTTOM_Y && vcount < KEY_D_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                if((note_0 == 2 && octave_0 == i) || (note_1 == 2 && octave_1 == i) || (note_2 == 2 && octave_2 == i))
+                if((note_0 == 2 && octave_0 == i) || (note_1 == 2 && octave_1 == i) || (note_2 == 2 && octave_2 == i) || (note_3 == 2 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -356,7 +358,7 @@ begin
             //第一个黑键#D
             else if(hcount >= KEY_DS_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_DS_X + BLACK_KEY_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_DS_Y && vcount < KEY_DS_Y + BLACK_KEY_HEIGHT)
             begin
-                if((note_0 == 3 && octave_0 == i) || (note_1 == 3 && octave_1 == i) || (note_2 == 3 && octave_2 == i))
+                if((note_0 == 3 && octave_0 == i) || (note_1 == 3 && octave_1 == i) || (note_2 == 3 && octave_2 == i) || (note_3 == 3 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -380,7 +382,7 @@ begin
              //第一个白键E上半部分
             else if(hcount >= KEY_E_TOP_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_E_TOP_X + WHITE_KEY_TOP_WIDE_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_E_TOP_Y && vcount < KEY_E_TOP_Y + WHITE_KEY_TOP_WIDE_HEIGHT)
             begin
-                if((note_0 == 4 && octave_0 == i) || (note_1 == 4 && octave_1 == i) || (note_2 == 4 && octave_2 == i))
+                if((note_0 == 4 && octave_0 == i) || (note_1 == 4 && octave_1 == i) || (note_2 == 4 && octave_2 == i) || (note_3 == 4 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -396,7 +398,7 @@ begin
             //第一个白键E下半部分
             else if(hcount >= KEY_E_BOTTOM_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_E_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_E_BOTTOM_Y && vcount < KEY_E_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                if((note_0 == 4 && octave_0 == i) || (note_1 == 4 && octave_1 == i) || (note_2 == 4 && octave_2 == i))
+                if((note_0 == 4 && octave_0 == i) || (note_1 == 4 && octave_1 == i) || (note_2 == 4 && octave_2 == i) || (note_3 == 4 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -420,7 +422,7 @@ begin
             //第一个白键F上半部分
             else if(hcount >= KEY_F_TOP_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_F_TOP_X + WHITE_KEY_TOP_WIDE_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_F_TOP_Y && vcount < KEY_F_TOP_Y + WHITE_KEY_TOP_WIDE_HEIGHT)
             begin
-                if((note_0 == 5 && octave_0 == i) || (note_1 == 5 && octave_1 == i) || (note_2 == 5 && octave_2 == i)) 
+                if((note_0 == 5 && octave_0 == i) || (note_1 == 5 && octave_1 == i) || (note_2 == 5 && octave_2 == i) || (note_3 == 5 && octave_3 == i)) 
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -436,7 +438,7 @@ begin
             //第一个白键F下半部分
             else if(hcount >= KEY_F_BOTTOM_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_F_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_F_BOTTOM_Y && vcount < KEY_F_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                if((note_0 == 5 && octave_0 == i) || (note_1 == 5 && octave_1 == i) || (note_2 == 5 && octave_2 == i))
+                if((note_0 == 5 && octave_0 == i) || (note_1 == 5 && octave_1 == i) || (note_2 == 5 && octave_2 == i) || (note_3 == 5 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -452,7 +454,7 @@ begin
             //第一个黑键#F
             else if(hcount >= KEY_FS_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_FS_X + BLACK_KEY_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_FS_Y && vcount < KEY_FS_Y + BLACK_KEY_HEIGHT)
             begin
-                if((note_0 == 6 && octave_0 == i) || (note_1 == 6 && octave_1 == i) || (note_2 == 6 && octave_2 == i))
+                if((note_0 == 6 && octave_0 == i) || (note_1 == 6 && octave_1 == i) || (note_2 == 6 && octave_2 == i) || (note_3 == 6 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -476,7 +478,7 @@ begin
             //第一个白键G上半部分
             else if(hcount >= KEY_G_TOP_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_G_TOP_X + WHITE_KEY_TOP_NARROW_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_G_TOP_Y && vcount < KEY_G_TOP_Y + WHITE_KEY_TOP_NARROW_HEIGHT)
             begin
-                if((note_0 == 7 && octave_0 == i) || (note_1 == 7 && octave_1 == i) || (note_2 == 7 && octave_2 == i))
+                if((note_0 == 7 && octave_0 == i) || (note_1 == 7 && octave_1 == i) || (note_2 == 7 && octave_2 == i) || (note_3 == 7 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -492,7 +494,7 @@ begin
             //第一个白键G下半部分
             else if(hcount >= KEY_G_BOTTOM_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_G_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_G_BOTTOM_Y && vcount < KEY_G_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                if((note_0 == 7 && octave_0 == i) || (note_1 == 7 && octave_1 == i) || (note_2 == 7 && octave_2 == i))
+                if((note_0 == 7 && octave_0 == i) || (note_1 == 7 && octave_1 == i) || (note_2 == 7 && octave_2 == i) || (note_3 == 7 && octave_3 == i))
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -508,7 +510,7 @@ begin
             //第一个黑键#G
             else if(hcount >= KEY_GS_X + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& hcount < KEY_GS_X + BLACK_KEY_WIDTH + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& vcount >= KEY_GS_Y && vcount < KEY_GS_Y + BLACK_KEY_HEIGHT)
             begin
-                if((note_0 == 8 && octave_0 == i) || (note_1 == 8 && octave_1 == i) || (note_2 == 8 && octave_2 == i)) 
+                if((note_0 == 8 && octave_0 == i) || (note_1 == 8 && octave_1 == i) || (note_2 == 8 && octave_2 == i) || (note_3 == 8 && octave_3 == i)) 
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -532,7 +534,7 @@ begin
             //第一个白键A上半部分
             else if(hcount >= KEY_A_TOP_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_A_TOP_X + WHITE_KEY_TOP_NARROW_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_A_TOP_Y && vcount < KEY_A_TOP_Y + WHITE_KEY_TOP_NARROW_HEIGHT)
             begin
-                if((note_0 == 9 && octave_0 == i) || (note_1 == 9 && octave_1 == i) || (note_2 == 9 && octave_2 == i)) 
+                if((note_0 == 9 && octave_0 == i) || (note_1 == 9 && octave_1 == i) || (note_2 == 9 && octave_2 == i) || (note_3 == 9 && octave_3 == i)) 
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -548,7 +550,7 @@ begin
             //第一个白键A下半部分
             else if(hcount >= KEY_A_BOTTOM_X+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && hcount < KEY_A_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH+ i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE) && vcount >= KEY_A_BOTTOM_Y && vcount < KEY_A_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                if((note_0 == 9 && octave_0 == i) || (note_1 == 9 && octave_1 == i) || (note_2 == 9 && octave_2 == i)) 
+                if((note_0 == 9 && octave_0 == i) || (note_1 == 9 && octave_1 == i) || (note_2 == 9 && octave_2 == i) || (note_3 == 9 && octave_3 == i)) 
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -564,7 +566,7 @@ begin
             //第一个黑键#A
             else if(hcount >= KEY_AS_X + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& hcount < KEY_AS_X + BLACK_KEY_WIDTH + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& vcount >= KEY_AS_Y && vcount < KEY_AS_Y + BLACK_KEY_HEIGHT)
             begin
-                if((note_0 == 10 && octave_0 == i) || (note_1 == 10 && octave_1 == i) || (note_2 == 10 && octave_2 == i)) 
+                if((note_0 == 10 && octave_0 == i) || (note_1 == 10 && octave_1 == i) || (note_2 == 10 && octave_2 == i) || (note_3 == 10 && octave_3 == i)) 
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -588,7 +590,7 @@ begin
             //第一个白键B上半部分
             else if(hcount >= KEY_B_TOP_X + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& hcount < KEY_B_TOP_X + WHITE_KEY_TOP_WIDE_WIDTH + i*(GAP_OCTAVE_WIDTH + PIANO_WIDTH_ONEOCTAVE)&& vcount >= KEY_B_TOP_Y && vcount < KEY_B_TOP_Y + WHITE_KEY_TOP_WIDE_HEIGHT)
             begin
-                if((note_0 == 11 && octave_0 == i) || (note_1 == 11 && octave_1 == i) || (note_2 == 11 && octave_2 == i)) 
+                if((note_0 == 11 && octave_0 == i) || (note_1 == 11 && octave_1 == i) || (note_2 == 11 && octave_2 == i) || (note_3 == 11 && octave_3 == i)) 
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];
@@ -604,7 +606,7 @@ begin
             //第一个白键B下半部分
             else if(hcount >= KEY_B_BOTTOM_X + i*(GAP_OCTAVE_WIDTH+PIANO_WIDTH_ONEOCTAVE)&& hcount < KEY_B_BOTTOM_X + WHITE_KEY_BOTTOM_WIDTH + i*(GAP_OCTAVE_WIDTH+PIANO_WIDTH_ONEOCTAVE)&& vcount >= KEY_B_BOTTOM_Y && vcount < KEY_B_BOTTOM_Y + WHITE_KEY_BOTTOM_HEIGHT)
             begin
-                if((note_0 == 11 && octave_0 == i) || (note_1 == 11 && octave_1 == i) || (note_2 == 11 && octave_2 == i)) 
+                if((note_0 == 11 && octave_0 == i) || (note_1 == 11 && octave_1 == i) || (note_2 == 11 && octave_2 == i) || (note_3 == 11 && octave_3 == i)) 
                 begin
                     red <= key_pressed_color[0];
                     green <= key_pressed_color[1];

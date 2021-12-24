@@ -29,6 +29,8 @@ module top(
     output [3:0] VGA_B,
     output VGA_HS,
     output VGA_VS,
+    //声音控制
+    input octave_select,
 
     //PS2控制
     input PS2_CLK,
@@ -40,20 +42,23 @@ module top(
     );
 
 //数据缓存
-wire [3:0] note_out[2:0];
-wire [1:0] octave_out[2:0];
+wire [3:0] note_out[3:0];
+wire [1:0] octave_out[3:0];
 
 //实例化键盘控制模块
 Keyboard keyboard_inst(
     .clk_100(clk_100),
     .clock_USB_in(PS2_CLK),
     .data_USB_in(PS2_DATA),
+    .octave_select(octave_select),
     .note_0(note_out[0]),
     .note_1(note_out[1]),
     .note_2(note_out[2]),
+    .note_3(note_out[3]),
     .octave_0(octave_out[0]),
     .octave_1(octave_out[1]),
-    .octave_2(octave_out[2])
+    .octave_2(octave_out[2]),
+    .octave_3(octave_out[3])
     );
 
 //实例化声音控制模块
@@ -63,9 +68,11 @@ Single_Note Single_Note_Inst(
     .note_0(note_out[0]),
     .note_1(note_out[1]),
     .note_2(note_out[2]),
+    .note_3(note_out[3]),
     .octave_0(octave_out[0]),
     .octave_1(octave_out[1]),
     .octave_2(octave_out[2]),
+    .octave_3(octave_out[3]),
     .AUD_PWM(AUD_PWM),
     .AUD_SD(AUD_SD)
     );
@@ -77,9 +84,11 @@ VGA VGA_inst(
     .note_0(note_out[0]),
     .note_1(note_out[1]),
     .note_2(note_out[2]),
+    .note_3(note_out[3]),
     .octave_0(octave_out[0]),
     .octave_1(octave_out[1]),
     .octave_2(octave_out[2]),
+    .octave_3(octave_out[3]),
     .R_OUT(VGA_R),
     .G_OUT(VGA_G),
     .B_OUT(VGA_B),

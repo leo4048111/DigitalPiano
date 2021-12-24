@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Thu Dec 23 23:42:57 2021
-# Process ID: 16892
+# Start of session at: Fri Dec 24 17:56:46 2021
+# Process ID: 4112
 # Current directory: D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1
 # Command line: vivado.exe -log top.vds -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/top.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17536 
+INFO: Helper process launched with PID 13208 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 304.613 ; gain = 98.090
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 304.859 ; gain = 98.211
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v:23]
 INFO: [Synth 8-638] synthesizing module 'Keyboard' [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Keyboard.v:23]
@@ -40,8 +40,8 @@ INFO: [Synth 8-638] synthesizing module 'Single_Note' [D:/Project/Vivado/Digital
 	Parameter A bound to: 444 - type: integer 
 	Parameter AS bound to: 418 - type: integer 
 	Parameter B bound to: 394 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'dist_mem_gen_0' [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/realtime/dist_mem_gen_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'dist_mem_gen_0' (4#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/realtime/dist_mem_gen_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'dist_mem_gen_0' [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/realtime/dist_mem_gen_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'dist_mem_gen_0' (4#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/realtime/dist_mem_gen_0_stub.v:6]
 INFO: [Synth 8-638] synthesizing module 'PWMDriver' [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/PWMDriver.v:23]
 INFO: [Synth 8-256] done synthesizing module 'PWMDriver' (5#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/PWMDriver.v:23]
 INFO: [Synth 8-256] done synthesizing module 'Single_Note' (6#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Single_Note.v:23]
@@ -56,10 +56,10 @@ INFO: [Synth 8-638] synthesizing module 'VGA' [D:/Project/Vivado/DigitalPiano/Di
 	Parameter SYNC_V bound to: 2 - type: integer 
 	Parameter BACK_V bound to: 33 - type: integer 
 	Parameter TOTAL_V bound to: 525 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v:66]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v:67]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (7#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v:68]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v:69]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (7#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'Pixel_Mapping' [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v:23]
 	Parameter VISIBLE_HORIZONTAL bound to: 640 - type: integer 
 	Parameter FRONT_H bound to: 16 - type: integer 
@@ -148,15 +148,15 @@ INFO: [Synth 8-638] synthesizing module 'Pixel_Mapping' [D:/Project/Vivado/Digit
 	Parameter PIANO_BORDER_X bound to: 215 - type: integer 
 	Parameter PIANO_BORDER_Y bound to: 225 - type: integer 
 	Parameter BORDER_WEIGHT bound to: 3 - type: integer 
-INFO: [Synth 8-3876] $readmem data file 'BlackKey.txt' is read successfully [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v:77]
-INFO: [Synth 8-3876] $readmem data file 'WhiteKeyBottom.txt' is read successfully [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v:78]
+INFO: [Synth 8-3876] $readmem data file 'BlackKey.txt' is read successfully [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v:79]
+INFO: [Synth 8-3876] $readmem data file 'WhiteKeyBottom.txt' is read successfully [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v:80]
 INFO: [Synth 8-256] done synthesizing module 'Pixel_Mapping' (8#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v:23]
 INFO: [Synth 8-256] done synthesizing module 'VGA' (9#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v:23]
-WARNING: [Synth 8-3848] Net ena in module/entity top does not have driver. [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v:62]
+WARNING: [Synth 8-3848] Net ena in module/entity top does not have driver. [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v:67]
 INFO: [Synth 8-256] done synthesizing module 'top' (10#1) [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v:23]
 WARNING: [Synth 8-3331] design Single_Note has unconnected port ena
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 372.590 ; gain = 166.066
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 374.813 ; gain = 168.164
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -166,23 +166,25 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 372.590 ; gain = 166.066
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 374.813 ; gain = 168.164
 ---------------------------------------------------------------------------------
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'VGA_inst/divider' [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v:41]
-WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'dist_mem_gen_0' instantiated as 'Single_Note_Inst/dmg0'. 3 instances of this cell are unresolved black boxes. [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Single_Note.v:75]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'VGA_inst/divider' [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v:43]
+WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'dist_mem_gen_0' instantiated as 'Single_Note_Inst/dmg0'. 4 instances of this cell are unresolved black boxes. [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Single_Note.v:81]
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp/clk_wiz_0_in_context.xdc] for cell 'VGA_inst/divider'
-Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp/clk_wiz_0_in_context.xdc] for cell 'VGA_inst/divider'
-Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg0'
-Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg0'
-Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg1'
-Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg1'
-Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg2'
-Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg2'
+Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp/clk_wiz_0_in_context.xdc] for cell 'VGA_inst/divider'
+Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp/clk_wiz_0_in_context.xdc] for cell 'VGA_inst/divider'
+Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg0'
+Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg0'
+Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg1'
+Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg1'
+Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg2'
+Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg2'
+Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg3'
+Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp_2/dist_mem_gen_0_in_context.xdc] for cell 'Single_Note_Inst/dmg3'
 Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/Nexys4DDR_Master.xdc]
 Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/Nexys4DDR_Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
@@ -192,30 +194,31 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 678.059 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 679.109 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 679.109 ; gain = 472.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 679.109 ; gain = 472.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk_100. (constraint file  D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100. (constraint file  D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-16892-DESKTOP-HSAJ1AE/dcp/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_100. (constraint file  D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100. (constraint file  D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/synth_1/.Xil/Vivado-4112-DESKTOP-HSAJ1AE/dcp/clk_wiz_0_in_context.xdc, line 4).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 679.109 ; gain = 472.461
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "O0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cnt0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "O1" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cnt1" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "note_arr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "note_arr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "note_arr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "note_arr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -357,12 +360,11 @@ INFO: [Synth 8-5544] ROM "green" won't be mapped to Block RAM because address si
 INFO: [Synth 8-5544] ROM "green" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "green" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "green" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "green" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5546] ROM "hcount" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "vcount" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:38 . Memory (MB): peak = 679.109 ; gain = 472.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -378,26 +380,27 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 2     
 	   3 Input     32 Bit       Adders := 48    
 	   2 Input     12 Bit       Adders := 1     
-	   3 Input     12 Bit       Adders := 1     
+	   4 Input     12 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 2     
-	   2 Input     10 Bit       Adders := 3     
+	   2 Input     10 Bit       Adders := 4     
 	   2 Input      5 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 4     
 +---Registers : 
 	               16 Bit    Registers := 1     
 	               12 Bit    Registers := 2     
 	               11 Bit    Registers := 2     
-	               10 Bit    Registers := 3     
+	               10 Bit    Registers := 4     
 	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 8     
-	                2 Bit    Registers := 4     
+	                4 Bit    Registers := 9     
+	                2 Bit    Registers := 5     
 	                1 Bit    Registers := 9     
 +---Multipliers : 
 	                 4x32  Multipliers := 2     
 +---Muxes : 
 	   3 Input     12 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 3     
-	  13 Input     10 Bit        Muxes := 3     
+	   2 Input     10 Bit        Muxes := 4     
+	  13 Input     10 Bit        Muxes := 4     
 	  12 Input      8 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 380   
 	  25 Input      4 Bit        Muxes := 1     
@@ -409,6 +412,7 @@ Detailed RTL Component Info :
 	   3 Input      1 Bit        Muxes := 2     
 	  12 Input      1 Bit        Muxes := 2     
 	  25 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
 	 104 Input      1 Bit        Muxes := 1     
 	 409 Input      1 Bit        Muxes := 20    
 ---------------------------------------------------------------------------------
@@ -440,10 +444,12 @@ Detailed RTL Component Info :
 	  12 Input      1 Bit        Muxes := 2     
 Module Keyboard 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 4     
 +---Registers : 
 	               16 Bit    Registers := 1     
-	                4 Bit    Registers := 4     
-	                2 Bit    Registers := 4     
+	                4 Bit    Registers := 5     
+	                2 Bit    Registers := 5     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 1     
@@ -452,6 +458,7 @@ Detailed RTL Component Info :
 	  25 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 7     
 	  25 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
 Module PWMDriver 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -467,13 +474,13 @@ Detailed RTL Component Info :
 Module Single_Note 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     12 Bit       Adders := 1     
-	   2 Input     10 Bit       Adders := 3     
+	   4 Input     12 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 4     
 +---Registers : 
-	               10 Bit    Registers := 3     
+	               10 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input     10 Bit        Muxes := 3     
-	  13 Input     10 Bit        Muxes := 3     
+	   2 Input     10 Bit        Muxes := 4     
+	  13 Input     10 Bit        Muxes := 4     
 Module Pixel_Mapping 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -511,7 +518,7 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 678.059 ; gain = 471.535
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:38 . Memory (MB): peak = 679.109 ; gain = 472.461
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -522,9 +529,9 @@ INFO: [Synth 8-5546] ROM "VGA_inst/hcount" won't be mapped to RAM because it is 
 INFO: [Synth 8-5546] ROM "VGA_inst/vcount" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3917] design top has port AUD_SD driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:42 . Memory (MB): peak = 679.109 ; gain = 472.461
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished Parallel Reinference  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:42 . Memory (MB): peak = 679.109 ; gain = 472.461
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -609,16 +616,10 @@ INFO: [Synth 8-3886] merging instance 'VGA_inst/p_m_inst/blue_reg[2]' (FDE) to '
 INFO: [Synth 8-3886] merging instance 'VGA_inst/p_m_inst/blue_reg[3]' (FDE) to 'VGA_inst/p_m_inst/red_reg[3]'
 WARNING: [Synth 8-3332] Sequential element (blue_reg[2]) is unused and will be removed from module Pixel_Mapping.
 WARNING: [Synth 8-3332] Sequential element (blue_reg[3]) is unused and will be removed from module Pixel_Mapping.
-INFO: [Synth 8-3886] merging instance 'VGA_inst/p_m_inst/blue_reg[0]' (FDE) to 'VGA_inst/p_m_inst/green_reg[0]'
-INFO: [Synth 8-3886] merging instance 'VGA_inst/p_m_inst/blue_reg[1]' (FDE) to 'VGA_inst/p_m_inst/green_reg[3]'
-INFO: [Synth 8-3886] merging instance 'VGA_inst/p_m_inst/green_reg[1]' (FDE) to 'VGA_inst/p_m_inst/red_reg[3]'
-WARNING: [Synth 8-3332] Sequential element (blue_reg[0]) is unused and will be removed from module Pixel_Mapping.
-WARNING: [Synth 8-3332] Sequential element (blue_reg[1]) is unused and will be removed from module Pixel_Mapping.
-WARNING: [Synth 8-3332] Sequential element (green_reg[1]) is unused and will be removed from module Pixel_Mapping.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:00 . Memory (MB): peak = 679.109 ; gain = 472.461
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:44 ; elapsed = 00:01:00 . Memory (MB): peak = 679.109 ; gain = 472.461
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -634,10 +635,16 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'VGA_inst/divider/clk_out1' to pin 'VGA_inst/divider/bbstub_clk_out1/O'
 INFO: [Synth 8-5820] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:52 . Memory (MB): peak = 678.059 ; gain = 471.535
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:01:15 . Memory (MB): peak = 679.109 ; gain = 472.461
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'VGA_inst/p_m_inst/blue_reg[0]' (FDE) to 'VGA_inst/p_m_inst/green_reg[0]'
+INFO: [Synth 8-3886] merging instance 'VGA_inst/p_m_inst/blue_reg[1]' (FDE) to 'VGA_inst/p_m_inst/green_reg[3]'
+INFO: [Synth 8-3886] merging instance 'VGA_inst/p_m_inst/green_reg[1]' (FDE) to 'VGA_inst/p_m_inst/red_reg[3]'
+WARNING: [Synth 8-3332] Sequential element (blue_reg[0]) is unused and will be removed from module Pixel_Mapping.
+WARNING: [Synth 8-3332] Sequential element (blue_reg[1]) is unused and will be removed from module Pixel_Mapping.
+WARNING: [Synth 8-3332] Sequential element (green_reg[1]) is unused and will be removed from module Pixel_Mapping.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 727.305 ; gain = 520.781
+Finished Timing Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:29 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -649,16 +656,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Technology Mapping : Time (s): cpu = 00:01:09 ; elapsed = 00:01:30 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:09 ; elapsed = 00:01:30 . Memory (MB): peak = 771.906 ; gain = 565.258
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:09 ; elapsed = 00:01:30 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -675,7 +682,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished IO Insertion : Time (s): cpu = 00:01:10 ; elapsed = 00:01:31 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -688,7 +695,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:10 ; elapsed = 00:01:31 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -700,25 +707,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:10 ; elapsed = 00:01:32 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:10 ; elapsed = 00:01:32 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:11 ; elapsed = 00:01:32 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:11 ; elapsed = 00:01:32 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -728,7 +735,7 @@ Report BlackBoxes:
 +------+---------------+----------+
 |      |BlackBox name  |Instances |
 +------+---------------+----------+
-|1     |dist_mem_gen_0 |         3|
+|1     |dist_mem_gen_0 |         4|
 |2     |clk_wiz_0      |         1|
 +------+---------------+----------+
 
@@ -740,41 +747,43 @@ Report Cell Usage:
 |2     |dist_mem_gen_0    |     1|
 |3     |dist_mem_gen_0__1 |     1|
 |4     |dist_mem_gen_0__2 |     1|
-|5     |CARRY4            |   166|
-|6     |LUT1              |    94|
-|7     |LUT2              |   441|
-|8     |LUT3              |   153|
-|9     |LUT4              |   401|
-|10    |LUT5              |   111|
-|11    |LUT6              |   516|
-|12    |XORCY             |     3|
-|13    |FDRE              |   198|
-|14    |FDSE              |     6|
-|15    |IBUF              |     2|
-|16    |OBUF              |    16|
+|5     |dist_mem_gen_0__3 |     1|
+|6     |CARRY4            |   173|
+|7     |LUT1              |   117|
+|8     |LUT2              |   431|
+|9     |LUT3              |   109|
+|10    |LUT4              |   427|
+|11    |LUT5              |   216|
+|12    |LUT6              |   754|
+|13    |MUXF7             |     1|
+|14    |XORCY             |     3|
+|15    |FDRE              |   229|
+|16    |FDSE              |     8|
+|17    |IBUF              |     3|
+|18    |OBUF              |    16|
 +------+------------------+------+
 
 Report Instance Areas: 
 +------+-------------------+--------------+------+
 |      |Instance           |Module        |Cells |
 +------+-------------------+--------------+------+
-|1     |top                |              |  2138|
-|2     |  Single_Note_Inst |Single_Note   |   313|
-|3     |    driver_inst    |PWMDriver     |    79|
-|4     |  VGA_inst         |VGA           |  1566|
-|5     |    p_m_inst       |Pixel_Mapping |  1480|
-|6     |  keyboard_inst    |Keyboard      |   239|
+|1     |top                |              |  2528|
+|2     |  Single_Note_Inst |Single_Note   |   388|
+|3     |    driver_inst    |PWMDriver     |    72|
+|4     |  VGA_inst         |VGA           |  1735|
+|5     |    p_m_inst       |Pixel_Mapping |  1646|
+|6     |  keyboard_inst    |Keyboard      |   384|
 |7     |    PS2            |PS2           |    58|
 |8     |      debounce     |debouncer     |    37|
 +------+-------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 749.793 ; gain = 543.270
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:11 ; elapsed = 00:01:32 . Memory (MB): peak = 771.906 ; gain = 565.258
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 749.793 ; gain = 204.477
-Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 749.793 ; gain = 543.270
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:54 ; elapsed = 00:01:13 . Memory (MB): peak = 771.906 ; gain = 232.387
+Synthesis Optimization Complete : Time (s): cpu = 00:01:11 ; elapsed = 00:01:33 . Memory (MB): peak = 771.906 ; gain = 565.258
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 171 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 179 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
@@ -786,6 +795,6 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 201 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 749.793 ; gain = 519.715
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 749.793 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 23 23:43:59 2021...
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:26 . Memory (MB): peak = 771.906 ; gain = 540.762
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 771.906 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 24 17:58:24 2021...

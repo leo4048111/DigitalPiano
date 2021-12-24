@@ -36,8 +36,8 @@ begin
         compare <= pwm_level;
         count <= count + 1;
     end
-    else if (count == 3071) begin
-        count <= 10'b0;
+    else if (count == 4095) begin
+        count <= 11'b0;
     end
     else begin
         count <= count + 1;

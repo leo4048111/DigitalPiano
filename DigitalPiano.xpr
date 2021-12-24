@@ -107,7 +107,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/ip/dist_mem_gen_0/pwm.coe">
+      <File Path="$PSRCDIR/sources_1/ip/dist_mem_gen_0/sine.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

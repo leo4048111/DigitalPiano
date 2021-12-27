@@ -21,7 +21,7 @@
 
 
 module Pixel_Mapping(
-    input clk,
+    input clk_25,
     input [10:0] hcount,
     input [10:0] vcount,
     //高亮控制数据
@@ -33,6 +33,7 @@ module Pixel_Mapping(
     input [1:0] octave_1,
     input [1:0] octave_2,
     input [1:0] octave_3,
+    input [11:0] pwm_level,
     //输出单像素色彩信息
     output [3:0] R_OUT,
     output [3:0] G_OUT,
@@ -103,9 +104,13 @@ localparam GAP_WHITE_KEY_HEIGHT = 20;
 localparam GAP_OCTAVE_WIDTH = 3;
 localparam GAP_OCTAVE_HEIGHT = BLACK_KEY_HEIGHT + WHITE_KEY_BOTTOM_HEIGHT;
 //整体大小(4个八度)
-localparam PIANO_WIDTH = 4*(4*WHITE_KEY_TOP_WIDE_WIDTH + 3*WHITE_KEY_TOP_NARROW_WIDTH + 5*BLACK_KEY_WIDTH + GAP_WHITE_KEY_WIDTH) + 3*GAP_OCTAVE_WIDTH;
+localparam PIANO_WIDTH = 4*(4*WHITE_KEY_TOP_WIDE_WIDTH + 3*WHITE_KEY_TOP_NARROW_WIDTH + 5*BLACK_KEY_WIDTH + GAP_WHITE_KEY_WIDTH) + 3*GAP_OCTAVE_WIDTH;  //477
 localparam PIANO_WIDTH_ONEOCTAVE = 4*WHITE_KEY_TOP_WIDE_WIDTH + 3*WHITE_KEY_TOP_NARROW_WIDTH + 5*BLACK_KEY_WIDTH + GAP_WHITE_KEY_WIDTH;
 localparam PIANO_HEIGHT = BLACK_KEY_HEIGHT + WHITE_KEY_BOTTOM_HEIGHT;
+
+//波形显示区域大小
+localparam WAVE_SHOW_WIDTH = 470;
+localparam WAVE_SHOW_HEIGHT = 128;
 
 //部件boundingbox坐标（起始点左上角）
 //钢琴
@@ -198,6 +203,10 @@ localparam PIANO_BORDER_X = PIANO_X - PIANO_MARGIN_HORIZONTAL;
 localparam PIANO_BORDER_Y = PIANO_Y - PIANO_MARGIN_VERTICAL;
 localparam BORDER_WEIGHT = 3;
 
+//波形显示
+localparam WAVE_SHOW_X = 85 + START_H;
+localparam WAVE_SHOW_Y = 300 + START_V;
+
 //部件色彩设置
 reg [3:0] white_key_color[2:0];
 reg [3:0] white_key_shadow_color[2:0];
@@ -207,6 +216,7 @@ reg [3:0] key_pressed_color[2:0];
 reg [3:0] gap_color[2:0];
 reg [3:0] bg_color[2:0];
 reg [3:0] border_color[2:0];
+reg [3:0] wave_color[2:0];
 
 //色彩暂存
 reg [3:0] red;
@@ -251,13 +261,49 @@ begin
     border_color[0] = 4'b1111;
     border_color[1] = 4'b1111;
     border_color[2] = 4'b1111;
-
+    //波形颜色
+    wave_color[0] = 4'b1111;
+    wave_color[1] = 4'b1111;
+    wave_color[2] = 4'b1111;
 end
 
 integer i = 0;
 
+//缓存波形点阵
+reg [6:0] wave_shape[470:0];
+wire [6:0] wave_level;
+assign wave_level = (pwm_level >> 5);
+
+integer j = 0;
+
+initial
+begin
+    for(j = 0;j <= 470;j = j + 1)
+    begin
+        wave_shape[j] <= 7'b0;
+    end
+end
+
+reg [9:0] count = 0;
+
+always @ (posedge clk_25)
+begin
+    if(count == 1023)
+    begin
+        for(j = 0;j < 470;j = j + 1)
+        begin
+            wave_shape[j + 1] <= wave_shape[j];
+        end
+        wave_shape[0] <= wave_level;
+        count <= 0;
+    end
+    else begin
+        count <= count + 1;
+    end
+end
+
 //读取缓存信息
-always @ (posedge clk)
+always @ (posedge clk_25)
 begin
     if(hcount >= START_H && hcount < START_H + VISIBLE_HORIZONTAL && vcount >= START_V && vcount < START_V +VISIBLE_VERTICAL)
     begin
@@ -653,6 +699,26 @@ begin
             green <= border_color[1];
             blue <= border_color[2];
         end
+        //打印波形显示图
+        else if(hcount >= WAVE_SHOW_X && hcount < WAVE_SHOW_X + WAVE_SHOW_WIDTH && vcount >= WAVE_SHOW_Y && vcount < WAVE_SHOW_Y + WAVE_SHOW_HEIGHT)
+        begin
+            red <= bg_color[0];
+            green <= bg_color[1];
+            blue <= bg_color[2];
+            for(j = 0;j < WAVE_SHOW_WIDTH;j = j + 1)
+            begin
+                if(hcount == (WAVE_SHOW_X + j))
+                begin
+                    if(vcount == WAVE_SHOW_Y + WAVE_SHOW_HEIGHT - wave_shape[j] - 1)
+                    begin
+                        red <= wave_color[0];
+                        green <= wave_color[1];
+                        blue <= wave_color[2];
+                    end
+                end
+            end
+        end
+        //打印背景
         else begin
             red <= bg_color[0];
             green <= bg_color[1];

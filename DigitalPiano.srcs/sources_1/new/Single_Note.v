@@ -32,6 +32,7 @@ module Single_Note(
     input [1:0] octave_1,
     input [1:0] octave_2,
     input [1:0] octave_3,
+    output [11:0] PWM_LEVEL_OUT,  //当前信号位移
     output AUD_PWM, //PWM输出
     output AUD_SD   //三态门使能信号，常为1
     );
@@ -100,6 +101,7 @@ dist_mem_gen_0 dmg3(
 
 wire [11:0] pwm_level;
 assign pwm_level = ((note_0 == 12)? 0:lut_out_0) + ((note_1 == 12)? 0:lut_out_1) + ((note_2 == 12)? 0:lut_out_2) + ((note_3 == 12)? 0:lut_out_3);
+assign PWM_LEVEL_OUT = pwm_level;
 
 //PWM驱动
 PWMDriver driver_inst(

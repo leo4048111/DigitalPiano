@@ -31,6 +31,7 @@ module VGA(
     input [1:0] octave_1,
     input [1:0] octave_2,
     input [1:0] octave_3,
+    input [11:0] pwm_level,
     //控制信号输出
     output [3:0] R_OUT,
     output [3:0] G_OUT,
@@ -99,7 +100,7 @@ end
 
 //RGB输出控制
 Pixel_Mapping p_m_inst(
-    .clk(clk_25),
+    .clk_25(clk_25),
     .hcount(hcount),
     .vcount(vcount),
     .note_0(note_0),
@@ -110,6 +111,7 @@ Pixel_Mapping p_m_inst(
     .octave_1(octave_1),
     .octave_2(octave_2),
     .octave_3(octave_3),
+    .pwm_level(pwm_level),
     .R_OUT(R_OUT),
     .G_OUT(G_OUT),
     .B_OUT(B_OUT));

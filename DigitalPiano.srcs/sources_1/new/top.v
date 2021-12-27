@@ -45,6 +45,9 @@ module top(
 wire [3:0] note_out[3:0];
 wire [1:0] octave_out[3:0];
 
+//当前叠加波形位移
+wire [11:0] PWM_LEVEL_OUT; 
+
 //实例化键盘控制模块
 Keyboard keyboard_inst(
     .clk_100(clk_100),
@@ -73,6 +76,7 @@ Single_Note Single_Note_Inst(
     .octave_1(octave_out[1]),
     .octave_2(octave_out[2]),
     .octave_3(octave_out[3]),
+    .PWM_LEVEL_OUT(PWM_LEVEL_OUT),
     .AUD_PWM(AUD_PWM),
     .AUD_SD(AUD_SD)
     );
@@ -89,6 +93,7 @@ VGA VGA_inst(
     .octave_1(octave_out[1]),
     .octave_2(octave_out[2]),
     .octave_3(octave_out[3]),
+    .pwm_level(PWM_LEVEL_OUT),
     .R_OUT(VGA_R),
     .G_OUT(VGA_G),
     .B_OUT(VGA_B),

@@ -15,11 +15,11 @@ set_property parent.project_path D:/Project/Vivado/DigitalPiano/DigitalPiano.xpr
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-add_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/sine.coe
+add_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/sine.coe
 add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp
 set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp]
-add_files -quiet D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.dcp
-set_property used_in_implementation false [get_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.dcp]
+add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.dcp
+set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.dcp]
 read_verilog -library xil_defaultlib {
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/debouncer.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/PWMDriver.v

@@ -112,6 +112,14 @@ localparam PIANO_HEIGHT = BLACK_KEY_HEIGHT + WHITE_KEY_BOTTOM_HEIGHT;
 localparam WAVE_SHOW_WIDTH = 470;
 localparam WAVE_SHOW_HEIGHT = 128;
 
+//LOGO大小
+localparam LOGO_WIDTH = 353;
+localparam LOGO_HEIGHT = 159;
+
+//ICON大小
+localparam ICON_WIDTH = 75;
+localparam ICON_HEIGHT = 75;
+
 //部件boundingbox坐标（起始点左上角）
 //钢琴
 localparam PIANO_X = 81 + START_H;
@@ -207,6 +215,30 @@ localparam BORDER_WEIGHT = 3;
 localparam WAVE_SHOW_X = 85 + START_H;
 localparam WAVE_SHOW_Y = 300 + START_V;
 
+//LOGO显示
+localparam LOGO_X = 1 + START_H;
+localparam LOGO_Y = 10 + START_V;
+
+//LOGO查表地址
+reg [15:0] logo_lut_addr = 0;
+wire [3:0] logo_color;
+
+dist_mem_gen_1 logo_rom_inst(
+    .a(logo_lut_addr),
+    .spo(logo_color));
+
+//ICON显示
+localparam ICON_X = 380 + START_H;
+localparam ICON_Y = 10 + START_V;
+
+//ICON查表地址
+reg [12:0] icon_lut_addr = 0;
+wire [3:0] icon_color;
+
+dist_mem_gen_2 icon_rom_inst(
+    .a(icon_lut_addr),
+    .spo(icon_color));
+
 //部件色彩设置
 reg [3:0] white_key_color[2:0];
 reg [3:0] white_key_shadow_color[2:0];
@@ -254,9 +286,9 @@ begin
     gap_color[1] = 4'b0000;
     gap_color[2] = 4'b0000;
     //背景颜色
-    bg_color[0] = 4'b0001;
-    bg_color[1] = 4'b0001;
-    bg_color[2] = 4'b0001;
+    bg_color[0] = 4'b0000;
+    bg_color[1] = 4'b0000;
+    bg_color[2] = 4'b0000;
     //边框颜色
     border_color[0] = 4'b1111;
     border_color[1] = 4'b1111;
@@ -717,6 +749,22 @@ begin
                     end
                 end
             end
+        end
+        //打印logo
+        else if(hcount >= LOGO_X && hcount < LOGO_X + LOGO_WIDTH && vcount >= LOGO_Y && vcount < LOGO_Y + LOGO_HEIGHT)
+        begin
+            logo_lut_addr <= (hcount - LOGO_X) + (vcount - LOGO_Y) * LOGO_WIDTH; //查表地址更新
+            red <= logo_color;
+            green <= logo_color;
+            blue <= logo_color;
+        end
+        //打印icon
+        else if(hcount >= ICON_X && hcount < ICON_X + ICON_WIDTH && vcount >= ICON_Y && vcount < ICON_Y + ICON_HEIGHT)
+        begin
+            icon_lut_addr <= (hcount - ICON_X) + (vcount - ICON_Y) * ICON_WIDTH; //查表地址更新
+            red <= icon_color;
+            green <= icon_color;
+            blue <= icon_color;
         end
         //打印背景
         else begin

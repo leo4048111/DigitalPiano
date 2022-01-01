@@ -61,6 +61,10 @@ set rc [catch {
   set_property netlist_only true [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp]
   add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.dcp
   set_property netlist_only true [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.dcp]
+  add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/dist_mem_gen_1.dcp
+  set_property netlist_only true [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/dist_mem_gen_1.dcp]
+  add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_2/dist_mem_gen_2.dcp
+  set_property netlist_only true [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_2/dist_mem_gen_2.dcp]
   read_xdc -mode out_of_context -ref clk_wiz_0 -cells inst d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc
   set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
   read_xdc -prop_thru_buffers -ref clk_wiz_0 -cells inst d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc
@@ -69,6 +73,10 @@ set rc [catch {
   set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
   read_xdc -mode out_of_context -ref dist_mem_gen_0 -cells U0 d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0_ooc.xdc
   set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0_ooc.xdc]
+  read_xdc -mode out_of_context -ref dist_mem_gen_1 -cells U0 d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/dist_mem_gen_1_ooc.xdc
+  set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/dist_mem_gen_1_ooc.xdc]
+  read_xdc -mode out_of_context -ref dist_mem_gen_2 -cells U0 d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_2/dist_mem_gen_2_ooc.xdc
+  set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_2/dist_mem_gen_2_ooc.xdc]
   read_xdc D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/Nexys4DDR_Master.xdc
   link_design -top top -part xc7a100tcsg324-1
   write_hwdef -file top.hwdef

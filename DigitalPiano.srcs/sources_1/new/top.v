@@ -29,8 +29,6 @@ module top(
     output [3:0] VGA_B,
     output VGA_HS,
     output VGA_VS,
-    //声音控制
-    input octave_select,
 
     //PS2控制
     input PS2_CLK,
@@ -53,7 +51,6 @@ Keyboard keyboard_inst(
     .clk_100(clk_100),
     .clock_USB_in(PS2_CLK),
     .data_USB_in(PS2_DATA),
-    .octave_select(octave_select),
     .note_0(note_out[0]),
     .note_1(note_out[1]),
     .note_2(note_out[2]),

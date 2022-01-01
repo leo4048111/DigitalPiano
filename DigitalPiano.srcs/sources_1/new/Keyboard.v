@@ -28,8 +28,6 @@ module Keyboard(
     input clock_USB_in, //从USB口输入的时钟
     input data_USB_in,  //从USB口输入的串行信号
 
-    //音程选择
-    input octave_select,
     //数据输出
     output [3:0] note_0,
     output [3:0] note_1,
@@ -46,6 +44,8 @@ reg [15:0] DATA_16BITS; //[15:8]为上次的数据，[7:0]为新数据
 wire data_valid_flag;
 wire [7:0] DATA_OUT;
 reg ena;
+reg space_detect = 1'b0;
+reg octave_select = 1'b0;
 
 //连接控制模块
 PS2 PS2(
@@ -421,14 +421,30 @@ begin
                 end
             end
 
+            8'h29:begin    //空格
+                if(DATA_16BITS[15:8] == 8'hF0) //弹起
+                begin
+                    space_detect <= 0;
+                end
+                else begin
+                    space_detect <= 1;
+                end
+            end
+
             default: begin
                 ena <= ena;
                 note <= note;
                 octave <= octave;
+                space_detect <= space_detect;
             end
             endcase // DATA
         end
+end
 
+//空格按键触发八度选择
+always @ (posedge space_detect)
+begin
+    octave_select <= ~octave_select;
 end
 
 reg [3:0] note_arr[3:0];  //最多同时支持四个音

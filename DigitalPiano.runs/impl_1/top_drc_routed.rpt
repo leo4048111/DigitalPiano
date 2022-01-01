@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Mon Dec 27 22:09:15 2021
+| Date         : Sat Jan 01 17:48:33 2022
 | Host         : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb
 | Design       : top
@@ -23,7 +23,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 1
+             Violations found: 5
 
 2. REPORT DETAILS
 -----------------
@@ -38,6 +38,26 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
  #where value2 is the voltage provided to configuration bank 0
 
 Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+DPIP-1#1 Warning
+Input pipelining  
+DSP VGA_inst/p_m_inst/icon_lut_addr1 input VGA_inst/p_m_inst/icon_lut_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP VGA_inst/p_m_inst/icon_lut_addr_reg input VGA_inst/p_m_inst/icon_lut_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP VGA_inst/p_m_inst/logo_lut_addr1 input VGA_inst/p_m_inst/logo_lut_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP VGA_inst/p_m_inst/logo_lut_addr_reg input VGA_inst/p_m_inst/logo_lut_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 

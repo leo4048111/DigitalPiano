@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Sat Jan 01 17:48:41 2022
+| Date             : Mon Jan 03 01:01:25 2022
 | Host             : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 0.259  |
-| Dynamic (W)              | 0.161  |
+| Total On-Chip Power (W)  | 0.251  |
+| Dynamic (W)              | 0.154  |
 | Device Static (W)        | 0.098  |
 | Effective TJA (C/W)      | 4.6    |
-| Max Ambient (C)          | 83.8   |
-| Junction Temperature (C) | 26.2   |
+| Max Ambient (C)          | 83.9   |
+| Junction Temperature (C) | 26.1   |
 | Confidence Level         | Medium |
 | Setting File             | ---    |
 | Simulation Activity File | ---    |
@@ -50,18 +50,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.006 |        6 |       --- |             --- |
-| Slice Logic    |     0.021 |    16592 |       --- |             --- |
-|   LUT as Logic |     0.020 |     9733 |     63400 |           15.35 |
-|   F7/F8 Muxes  |    <0.001 |     1570 |     63400 |            2.48 |
+| Slice Logic    |     0.016 |    15572 |       --- |             --- |
+|   LUT as Logic |     0.016 |     8914 |     63400 |           14.06 |
+|   F7/F8 Muxes  |    <0.001 |      934 |     63400 |            1.47 |
 |   CARRY4       |    <0.001 |      646 |     15850 |            4.08 |
 |   Register     |    <0.001 |     3541 |    126800 |            2.79 |
 |   Others       |     0.000 |       22 |       --- |             --- |
-| Signals        |     0.017 |    11193 |       --- |             --- |
+| Signals        |     0.014 |    11446 |       --- |             --- |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        4 |       240 |            1.67 |
 | I/O            |     0.001 |       19 |       210 |            9.05 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.259 |          |           |                 |
+| Total          |     0.251 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.060 |       0.045 |      0.015 |
+| Vccint    |       1.000 |     0.052 |       0.037 |      0.015 |
 | Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,7 +143,7 @@ Table of Contents
 +---------------------------------------+-----------+
 | Name                                  | Power (W) |
 +---------------------------------------+-----------+
-| top                                   |     0.161 |
+| top                                   |     0.154 |
 |   Single_Note_Inst                    |     0.003 |
 |     dmg0                              |    <0.001 |
 |       U0                              |    <0.001 |
@@ -162,16 +162,18 @@ Table of Contents
 |         synth_options.dist_mem_inst   |    <0.001 |
 |           gen_rom.rom_inst            |    <0.001 |
 |     driver_inst                       |    <0.001 |
-|   VGA_inst                            |     0.155 |
+|   VGA_inst                            |     0.147 |
 |     divider                           |     0.117 |
 |       inst                            |     0.117 |
-|     p_m_inst                          |     0.037 |
+|     p_m_inst                          |     0.029 |
 |       icon_rom_inst                   |    <0.001 |
 |         U0                            |    <0.001 |
 |           synth_options.dist_mem_inst |    <0.001 |
 |             gen_rom.rom_inst          |    <0.001 |
-|       logo_rom_inst                   |     0.020 |
-|         U0                            |     0.020 |
+|       logo_rom_inst                   |     0.016 |
+|         U0                            |     0.016 |
+|           synth_options.dist_mem_inst |     0.016 |
+|             gen_rom.rom_inst          |     0.016 |
 |   keyboard_inst                       |     0.002 |
 |     PS2                               |    <0.001 |
 |       debounce                        |    <0.001 |

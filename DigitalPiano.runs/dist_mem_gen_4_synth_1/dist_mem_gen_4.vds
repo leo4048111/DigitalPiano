@@ -1,0 +1,518 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon Jan 03 23:58:18 2022
+# Process ID: 18216
+# Current directory: D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/dist_mem_gen_4_synth_1
+# Command line: vivado.exe -log dist_mem_gen_4.vds -mode batch -messageDb vivado.pb -notrace -source dist_mem_gen_4.tcl
+# Log file: D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/dist_mem_gen_4_synth_1/dist_mem_gen_4.vds
+# Journal file: D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/dist_mem_gen_4_synth_1\vivado.jou
+#-----------------------------------------------------------
+source dist_mem_gen_4.tcl -notrace
+Command: synth_design -top dist_mem_gen_4 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12804 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:28 . Memory (MB): peak = 328.793 ; gain = 121.469
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'dist_mem_gen_4' [d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/synth/dist_mem_gen_4.vhd:66]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_DEPTH bound to: 32768 - type: integer 
+	Parameter C_HAS_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_D bound to: 0 - type: integer 
+	Parameter C_HAS_DPO bound to: 0 - type: integer 
+	Parameter C_HAS_DPRA bound to: 0 - type: integer 
+	Parameter C_HAS_I_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_SPO bound to: 1 - type: integer 
+	Parameter C_HAS_WE bound to: 0 - type: integer 
+	Parameter C_MEM_INIT_FILE bound to: dist_mem_gen_4.mif - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_QCE_JOINED bound to: 0 - type: integer 
+	Parameter C_QUALIFY_WE bound to: 0 - type: integer 
+	Parameter C_READ_MIF bound to: 1 - type: integer 
+	Parameter C_REG_A_D_INPUTS bound to: 0 - type: integer 
+	Parameter C_REG_DPRA_INPUT bound to: 0 - type: integer 
+	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
+	Parameter C_WIDTH bound to: 10 - type: integer 
+	Parameter C_PARSER_TYPE bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_10' declared at 'd:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_v8_0_10/hdl/dist_mem_gen_v8_0.vhd:78' bound to instance 'U0' of component 'dist_mem_gen_v8_0_10' [d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/synth/dist_mem_gen_4.vhd:132]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_DEPTH bound to: 32768 - type: integer 
+	Parameter C_HAS_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_D bound to: 0 - type: integer 
+	Parameter C_HAS_DPO bound to: 0 - type: integer 
+	Parameter C_HAS_DPRA bound to: 0 - type: integer 
+	Parameter C_HAS_I_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_SPO bound to: 1 - type: integer 
+	Parameter C_HAS_WE bound to: 0 - type: integer 
+	Parameter C_MEM_INIT_FILE bound to: dist_mem_gen_4.mif - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_QCE_JOINED bound to: 0 - type: integer 
+	Parameter C_QUALIFY_WE bound to: 0 - type: integer 
+	Parameter C_READ_MIF bound to: 1 - type: integer 
+	Parameter C_REG_A_D_INPUTS bound to: 0 - type: integer 
+	Parameter C_REG_DPRA_INPUT bound to: 0 - type: integer 
+	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
+	Parameter C_WIDTH bound to: 10 - type: integer 
+	Parameter C_PARSER_TYPE bound to: 1 - type: integer 
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_DEPTH bound to: 32768 - type: integer 
+	Parameter C_HAS_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_D bound to: 0 - type: integer 
+	Parameter C_HAS_DPO bound to: 0 - type: integer 
+	Parameter C_HAS_DPRA bound to: 0 - type: integer 
+	Parameter C_HAS_I_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_SPO bound to: 1 - type: integer 
+	Parameter C_HAS_WE bound to: 0 - type: integer 
+	Parameter C_MEM_INIT_FILE bound to: dist_mem_gen_4.mif - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_QCE_JOINED bound to: 0 - type: integer 
+	Parameter C_QUALIFY_WE bound to: 0 - type: integer 
+	Parameter C_READ_MIF bound to: 1 - type: integer 
+	Parameter C_REG_A_D_INPUTS bound to: 0 - type: integer 
+	Parameter C_REG_DPRA_INPUT bound to: 0 - type: integer 
+	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
+	Parameter C_WIDTH bound to: 10 - type: integer 
+	Parameter C_PARSER_TYPE bound to: 0 - type: integer 
+	Parameter c_addr_width bound to: 15 - type: integer 
+	Parameter c_depth bound to: 32768 - type: integer 
+	Parameter c_width bound to: 10 - type: integer 
+	Parameter c_default_data bound to: 0 - type: string 
+	Parameter c_mem_init_file bound to: dist_mem_gen_4.mif - type: string 
+	Parameter c_elaboration_dir bound to: ./ - type: string 
+	Parameter c_read_mif bound to: 1 - type: integer 
+	Parameter c_reg_a_d_inputs bound to: 0 - type: integer 
+	Parameter c_has_clk bound to: 0 - type: integer 
+	Parameter c_has_qspo_ce bound to: 0 - type: integer 
+	Parameter c_has_qspo_rst bound to: 0 - type: integer 
+	Parameter c_has_qspo_srst bound to: 0 - type: integer 
+	Parameter c_has_spo bound to: 1 - type: integer 
+	Parameter c_has_qspo bound to: 0 - type: integer 
+	Parameter c_sync_enable bound to: 1 - type: integer 
+	Parameter c_parser_type bound to: 0 - type: integer 
+	Parameter c_addr_width bound to: 15 - type: integer 
+	Parameter c_depth bound to: 32768 - type: integer 
+	Parameter c_width bound to: 10 - type: integer 
+	Parameter c_default_data bound to: 0 - type: string 
+	Parameter c_mem_init_file bound to: dist_mem_gen_4.mif - type: string 
+	Parameter c_elaboration_dir bound to: ./ - type: string 
+	Parameter c_read_mif bound to: 1 - type: integer 
+	Parameter c_reg_a_d_inputs bound to: 0 - type: integer 
+	Parameter c_has_clk bound to: 0 - type: integer 
+	Parameter c_has_qspo_ce bound to: 0 - type: integer 
+	Parameter c_has_qspo_rst bound to: 0 - type: integer 
+	Parameter c_has_qspo_srst bound to: 0 - type: integer 
+	Parameter c_has_spo bound to: 1 - type: integer 
+	Parameter c_has_qspo bound to: 0 - type: integer 
+	Parameter c_sync_enable bound to: 1 - type: integer 
+	Parameter c_parser_type bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'dist_mem_gen_4' (4#1) [d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/synth/dist_mem_gen_4.vhd:66]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[9]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[8]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[7]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[6]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[5]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[4]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[3]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[2]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[1]
+WARNING: [Synth 8-3331] design rom has unconnected port qspo[0]
+WARNING: [Synth 8-3331] design rom has unconnected port clk
+WARNING: [Synth 8-3331] design rom has unconnected port qspo_ce
+WARNING: [Synth 8-3331] design rom has unconnected port qspo_rst
+WARNING: [Synth 8-3331] design rom has unconnected port qspo_srst
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[9]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[8]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[7]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[6]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[5]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[4]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[3]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[2]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[1]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpo[0]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[9]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[8]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[7]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[6]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[5]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[4]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[3]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[2]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[1]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo[0]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[9]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[8]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[7]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[6]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[5]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[4]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[3]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[2]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[1]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port d[0]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[14]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[13]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[12]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[11]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[10]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[9]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[8]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[7]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[6]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[5]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[4]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[3]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[2]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[1]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port dpra[0]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port we
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port i_ce
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo_ce
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo_clk
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo_rst
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10_synth has unconnected port qdpo_srst
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[9]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[8]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[7]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[6]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[5]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[4]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[3]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[2]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[1]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port d[0]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[14]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[13]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[12]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[11]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[10]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[9]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[8]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[7]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[6]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[5]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[4]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[3]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[2]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[1]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port dpra[0]
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port clk
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port we
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port i_ce
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port qspo_ce
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port qdpo_ce
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port qdpo_clk
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port qspo_rst
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port qdpo_rst
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port qspo_srst
+WARNING: [Synth 8-3331] design dist_mem_gen_v8_0_10 has unconnected port qdpo_srst
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:43:04 ; elapsed = 00:58:24 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:43:04 ; elapsed = 00:58:25 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4_ooc.xdc] for cell 'U0'
+Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/dist_mem_gen_4_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Project/Vivado/DigitalPiano/DigitalPiano.runs/dist_mem_gen_4_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 3050.082 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:43:14 ; elapsed = 00:58:37 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:43:14 ; elapsed = 00:58:37 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for U0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:43:14 ; elapsed = 00:58:37 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:44:52 ; elapsed = 01:00:18 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:44:52 ; elapsed = 01:00:18 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:46:35 ; elapsed = 01:02:04 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:46:35 ; elapsed = 01:02:04 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|rom         | rom[32767] | 32768x9       | LUT            | 
+|rom         | rom[32767] | 32768x9       | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:46:36 ; elapsed = 01:02:05 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:46:36 ; elapsed = 01:02:05 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:46:47 ; elapsed = 01:02:16 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:46:47 ; elapsed = 01:02:16 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:46:47 ; elapsed = 01:02:17 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:46:47 ; elapsed = 01:02:17 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:46:47 ; elapsed = 01:02:17 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:46:48 ; elapsed = 01:02:17 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:46:48 ; elapsed = 01:02:17 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:46:48 ; elapsed = 01:02:17 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:46:48 ; elapsed = 01:02:17 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:46:48 ; elapsed = 01:02:18 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:46:48 ; elapsed = 01:02:18 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT2  |     8|
+|2     |LUT3  |    15|
+|3     |LUT4  |    33|
+|4     |LUT5  |   101|
+|5     |LUT6  |   253|
+|6     |MUXF7 |    56|
+|7     |MUXF8 |    11|
++------+------+------+
+
+Report Instance Areas: 
++------+----------------------------------+---------------------------+------+
+|      |Instance                          |Module                     |Cells |
++------+----------------------------------+---------------------------+------+
+|1     |top                               |                           |   477|
+|2     |  U0                              |dist_mem_gen_v8_0_10       |   477|
+|3     |    \synth_options.dist_mem_inst  |dist_mem_gen_v8_0_10_synth |   477|
+|4     |      \gen_rom.rom_inst           |rom                        |   477|
++------+----------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:46:48 ; elapsed = 01:02:18 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 79 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:38 ; elapsed = 01:01:52 . Memory (MB): peak = 3050.082 ; gain = 2803.809
+Synthesis Optimization Complete : Time (s): cpu = 00:46:48 ; elapsed = 01:02:18 . Memory (MB): peak = 3050.082 ; gain = 2842.758
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4_ooc.xdc] for cell 'U0'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+13 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:46:45 ; elapsed = 01:02:02 . Memory (MB): peak = 3050.082 ; gain = 2803.809
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 3050.082 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 04 01:00:41 2022...

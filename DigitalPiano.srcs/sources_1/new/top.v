@@ -23,6 +23,10 @@
 module top(
     //全局时钟输入
     input clk_100,
+
+    //控制器输入
+    input x,
+
     //VGA控制
     output [3:0] VGA_R,
     output [3:0] VGA_G,
@@ -46,9 +50,20 @@ wire [1:0] octave_out[3:0];
 //当前叠加波形位移
 wire [11:0] PWM_LEVEL_OUT; 
 
+//当前控制器状态
+wire [1:0] state;
+
+//实例化控制器
+Controller_FSM controller_inst(
+    .clk_100(clk_100),
+    .x(x),
+    .state(state)
+    );
+
 //实例化键盘控制模块
 Keyboard keyboard_inst(
     .clk_100(clk_100),
+    .state(state),
     .clock_USB_in(PS2_CLK),
     .data_USB_in(PS2_DATA),
     .note_0(note_out[0]),
@@ -64,7 +79,7 @@ Keyboard keyboard_inst(
 //实例化声音控制模块
 Single_Note Single_Note_Inst(
     .clk_100(clk_100),
-    .ena(ena),
+    .state(state),
     .note_0(note_out[0]),
     .note_1(note_out[1]),
     .note_2(note_out[2]),
@@ -82,6 +97,7 @@ Single_Note Single_Note_Inst(
 //实例化VGA显示输出模块
 VGA VGA_inst(
     .clk_100(clk_100),
+    .state(state),
     .note_0(note_out[0]),
     .note_1(note_out[1]),
     .note_2(note_out[2]),

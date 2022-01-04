@@ -24,6 +24,9 @@ module Keyboard(
     //控制时钟
     input clk_100,
 
+    //控制信号
+    input [1:0] state,
+    
     //USB输入
     input clock_USB_in, //从USB口输入的时钟
     input data_USB_in,  //从USB口输入的串行信号

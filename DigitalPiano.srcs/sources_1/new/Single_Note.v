@@ -22,7 +22,9 @@
 
 module Single_Note(
     input clk_100, 
-    input ena,
+    //控制信号
+    input [1:0] state,
+    
     //音符控制数据
     input [3:0] note_0,
     input [3:0] note_1,

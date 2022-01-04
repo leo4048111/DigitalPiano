@@ -22,6 +22,8 @@
 
 module VGA(
     input clk_100,
+    //控制信号
+    input [1:0] state,
     //显示控制输入
     input [3:0] note_0,
     input [3:0] note_1,
@@ -101,6 +103,7 @@ end
 //RGB输出控制
 Pixel_Mapping p_m_inst(
     .clk_25(clk_25),
+    .state(state),
     .hcount(hcount),
     .vcount(vcount),
     .note_0(note_0),

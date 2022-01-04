@@ -17,7 +17,9 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 add_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/sine.coe
 add_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_2/icon.coe
-add_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/logo.coe
+add_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/logo.coe
+add_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_3/statementX.coe
+add_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/statementY.coe
 add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp
 set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp]
 add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.dcp
@@ -26,13 +28,18 @@ add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/d
 set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_2/dist_mem_gen_2.dcp]
 add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/dist_mem_gen_1.dcp
 set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/dist_mem_gen_1.dcp]
+add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_3/dist_mem_gen_3.dcp
+set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_3/dist_mem_gen_3.dcp]
+add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4.dcp
+set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4.dcp]
 read_verilog -library xil_defaultlib {
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/debouncer.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/PS2.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/PWMDriver.v
-  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Keyboard.v
+  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Controller_FSM.v
+  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Single_Note.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v
 }

@@ -24,6 +24,14 @@ module Single_Note(
     input clk_100, 
     //控制信号
     input [1:0] state,
+    input rst_n,
+
+    //失真度控制
+    input [9:0] od_level,
+    input [9:0] od_level_bottom,
+
+    //音色选择
+    input tone,
     
     //音符控制数据
     input [3:0] note_0,
@@ -56,10 +64,14 @@ reg [9:0] lut_addr_1;
 reg [9:0] lut_addr_2;
 reg [9:0] lut_addr_3;
 
-wire [9:0] lut_out_0;
-wire [9:0] lut_out_1;
-wire [9:0] lut_out_2;
-wire [9:0] lut_out_3;
+wire [9:0] lut_out_0_sine;
+wire [9:0] lut_out_1_sine;
+wire [9:0] lut_out_2_sine;
+wire [9:0] lut_out_3_sine;
+wire [9:0] lut_out_0_sawtooth;
+wire [9:0] lut_out_1_sawtooth;
+wire [9:0] lut_out_2_sawtooth;
+wire [9:0] lut_out_3_sawtooth;
 
 //PWM输出
 wire pwm_int;
@@ -80,29 +92,78 @@ parameter B = 394;
 //音频使能控制
 assign AUD_SD = 1'b1;
 
-//DDS查找ROM表
-dist_mem_gen_0 dmg0(
+//DDS查找ROM表（正弦波）
+dist_mem_gen_0 dmg0_sine(
     .a(lut_addr_0), 
-    .spo(lut_out_0)
+    .spo(lut_out_0_sine)
     );
 
-dist_mem_gen_0 dmg1(
+dist_mem_gen_0 dmg1_sine(
     .a(lut_addr_1), 
-    .spo(lut_out_1)
+    .spo(lut_out_1_sine)
     );
 
-dist_mem_gen_0 dmg2(
+dist_mem_gen_0 dmg2_sine(
     .a(lut_addr_2), 
-    .spo(lut_out_2)
+    .spo(lut_out_2_sine)
     );
 
-dist_mem_gen_0 dmg3(
+dist_mem_gen_0 dmg3_sine(
     .a(lut_addr_3), 
-    .spo(lut_out_3)
+    .spo(lut_out_3_sine)
     );
 
+//DDS查找ROM表（锯齿波）
+dist_mem_gen_5 dmg0_sawtooth(
+    .a(lut_addr_0), 
+    .spo(lut_out_0_sawtooth)
+    );
+
+dist_mem_gen_5 dmg1_sawtooth(
+    .a(lut_addr_1), 
+    .spo(lut_out_1_sawtooth)
+    );
+
+dist_mem_gen_5 dmg2_sawtooth(
+    .a(lut_addr_2), 
+    .spo(lut_out_2_sawtooth)
+    );
+
+dist_mem_gen_5 dmg3_sawtooth(
+    .a(lut_addr_3), 
+    .spo(lut_out_3_sawtooth)
+    );
+
+wire [11:0] pwm_level_sine;
+wire [11:0] pwm_level_sawtooth;
 wire [11:0] pwm_level;
-assign pwm_level = ((note_0 == 12)? 0:lut_out_0) + ((note_1 == 12)? 0:lut_out_1) + ((note_2 == 12)? 0:lut_out_2) + ((note_3 == 12)? 0:lut_out_3);
+
+// assign pwm_level =  ((note_0 == 12)? 0:((lut_out_0_sine > od_level)? od_level : lut_out_0_sine)) + 
+//                     ((note_1 == 12)? 0:((lut_out_1_sine > od_level)? od_level : lut_out_1_sine)) + 
+//                     ((note_2 == 12)? 0:((lut_out_2_sine > od_level)? od_level : lut_out_2_sine)) + 
+//                     ((note_3 == 12)? 0:((lut_out_3_sine > od_level)? od_level : lut_out_3_sine));
+
+reg [9:0] od_level_top;
+reg [9:0] od_level_bot;
+
+always @ (posedge clk_100)
+begin
+    od_level_top <= od_level;
+    od_level_bot <= od_level_bottom;
+end
+
+assign pwm_level_sine =  ((note_0 == 12) ? 0 : ((lut_out_0_sine > od_level_top) ? od_level : ((lut_out_0_sine < od_level_bot) ? od_level_bot : lut_out_0_sine))) + 
+                    ((note_1 == 12) ? 0 : ((lut_out_1_sine > od_level_top) ? od_level : ((lut_out_1_sine < od_level_bot) ? od_level_bot : lut_out_1_sine))) + 
+                    ((note_2 == 12) ? 0 : ((lut_out_2_sine > od_level_top) ? od_level : ((lut_out_2_sine < od_level_bot) ? od_level_bot : lut_out_2_sine))) + 
+                    ((note_3 == 12) ? 0 : ((lut_out_3_sine > od_level_top) ? od_level : ((lut_out_3_sine < od_level_bot) ? od_level_bot : lut_out_3_sine)));
+
+assign pwm_level_sawtooth =  ((note_0 == 12) ? 0 : ((lut_out_0_sawtooth > od_level_top) ? od_level : ((lut_out_0_sawtooth < od_level_bot) ? od_level_bot : lut_out_0_sawtooth))) + 
+                    ((note_1 == 12) ? 0 : ((lut_out_1_sawtooth > od_level_top) ? od_level : ((lut_out_1_sawtooth < od_level_bot) ? od_level_bot : lut_out_1_sawtooth))) + 
+                    ((note_2 == 12) ? 0 : ((lut_out_2_sawtooth > od_level_top) ? od_level : ((lut_out_2_sawtooth < od_level_bot) ? od_level_bot : lut_out_2_sawtooth))) + 
+                    ((note_3 == 12) ? 0 : ((lut_out_3_sawtooth > od_level_top) ? od_level : ((lut_out_3_sawtooth < od_level_bot) ? od_level_bot : lut_out_3_sawtooth)));
+
+assign pwm_level = (tone == 0) ? pwm_level_sine : pwm_level_sawtooth;
+
 assign PWM_LEVEL_OUT = pwm_level;
 
 //PWM驱动
@@ -312,9 +373,12 @@ assign compare_3 = (sine_freq_3>>octave_3);
 
 
 //查表得到振幅
-always @ (posedge clk_100)
+always @ (posedge clk_100 or negedge rst_n)
 begin
-    if(sine_count_0 == compare_0)
+    if(!rst_n) begin
+        lut_addr_0 <= 0;
+    end
+    else if(sine_count_0 == compare_0)
     begin
         lut_addr_0 <= lut_addr_0 + 1;
         sine_count_0 <= 18'b0;   
@@ -324,9 +388,12 @@ begin
     end
 end
 
-always @ (posedge clk_100)
+always @ (posedge clk_100 or negedge rst_n)
 begin
-    if(sine_count_1 == compare_1)
+    if(!rst_n) begin
+        lut_addr_1 <= 0;
+    end
+    else if(sine_count_1 == compare_1)
     begin
         lut_addr_1 <= lut_addr_1 + 1;
         sine_count_1 <= 18'b0;   
@@ -336,9 +403,12 @@ begin
     end
 end
 
-always @ (posedge clk_100)
+always @ (posedge clk_100 or negedge rst_n)
 begin
-    if(sine_count_2 == compare_2)
+    if(!rst_n) begin
+        lut_addr_2 <= 0;
+    end
+    else if(sine_count_2 == compare_2)
     begin
         lut_addr_2 <= lut_addr_2 + 1;
         sine_count_2 <= 18'b0;   
@@ -348,9 +418,12 @@ begin
     end
 end
 
-always @ (posedge clk_100)
+always @ (posedge clk_100 or negedge rst_n)
 begin
-    if(sine_count_3 == compare_3)
+    if(!rst_n) begin
+        lut_addr_3 <= 0;
+    end
+    else if(sine_count_3 == compare_3)
     begin
         lut_addr_3 <= lut_addr_3 + 1;
         sine_count_3 <= 18'b0;   

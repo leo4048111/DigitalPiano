@@ -20,6 +20,7 @@ add_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem
 add_files D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_1/logo.coe
 add_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_3/statementX.coe
 add_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/statementY.coe
+add_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_5/sawtooth.coe
 add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp
 set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp]
 add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.dcp
@@ -32,6 +33,8 @@ add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/d
 set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_3/dist_mem_gen_3.dcp]
 add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4.dcp
 set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4.dcp]
+add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_5/dist_mem_gen_5.dcp
+set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_5/dist_mem_gen_5.dcp]
 read_verilog -library xil_defaultlib {
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/debouncer.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v

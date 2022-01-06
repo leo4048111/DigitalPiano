@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1641268409">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1641466196">
   <File Type="OPT-DCP" Name="top_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="top_route_status.pb"/>
   <File Type="PA-TCL" Name="top.tcl"/>
@@ -152,6 +152,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/ip/dist_mem_gen_5/sawtooth.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top"/>
@@ -187,4 +193,5 @@
   <BlockFileSet Type="BlockSrcs" Name="dist_mem_gen_1"/>
   <BlockFileSet Type="BlockSrcs" Name="dist_mem_gen_3"/>
   <BlockFileSet Type="BlockSrcs" Name="dist_mem_gen_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="dist_mem_gen_5"/>
 </GenRun>

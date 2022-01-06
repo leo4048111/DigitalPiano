@@ -69,6 +69,8 @@ set rc [catch {
   set_property netlist_only true [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_3/dist_mem_gen_3.dcp]
   add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4.dcp
   set_property netlist_only true [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4.dcp]
+  add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_5/dist_mem_gen_5.dcp
+  set_property netlist_only true [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_5/dist_mem_gen_5.dcp]
   read_xdc -mode out_of_context -ref clk_wiz_0 -cells inst d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc
   set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
   read_xdc -prop_thru_buffers -ref clk_wiz_0 -cells inst d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc
@@ -85,6 +87,8 @@ set rc [catch {
   set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_3/dist_mem_gen_3_ooc.xdc]
   read_xdc -mode out_of_context -ref dist_mem_gen_4 -cells U0 d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4_ooc.xdc
   set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_4/dist_mem_gen_4_ooc.xdc]
+  read_xdc -mode out_of_context -ref dist_mem_gen_5 -cells U0 d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_5/dist_mem_gen_5_ooc.xdc
+  set_property processing_order EARLY [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_5/dist_mem_gen_5_ooc.xdc]
   read_xdc D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/Nexys4DDR_Master.xdc
   link_design -top top -part xc7a100tcsg324-1
   write_hwdef -file top.hwdef

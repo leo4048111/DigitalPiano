@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Tue Jan 04 12:01:23 2022
+| Date             : Thu Jan 06 19:00:31 2022
 | Host             : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 0.251  |
-| Dynamic (W)              | 0.153  |
+| Total On-Chip Power (W)  | 0.254  |
+| Dynamic (W)              | 0.156  |
 | Device Static (W)        | 0.098  |
 | Effective TJA (C/W)      | 4.6    |
-| Max Ambient (C)          | 83.9   |
-| Junction Temperature (C) | 26.1   |
+| Max Ambient (C)          | 83.8   |
+| Junction Temperature (C) | 26.2   |
 | Confidence Level         | Medium |
 | Setting File             | ---    |
 | Simulation Activity File | ---    |
@@ -50,18 +50,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.006 |        6 |       --- |             --- |
-| Slice Logic    |     0.016 |    21807 |       --- |             --- |
-|   LUT as Logic |     0.016 |    13322 |     63400 |           21.01 |
-|   F7/F8 Muxes  |    <0.001 |     2597 |     63400 |            4.10 |
-|   CARRY4       |    <0.001 |      659 |     15850 |            4.16 |
-|   Register     |    <0.001 |     3588 |    126800 |            2.83 |
+| Slice Logic    |     0.017 |    22138 |       --- |             --- |
+|   LUT as Logic |     0.017 |    13520 |     63400 |           21.32 |
+|   CARRY4       |    <0.001 |      694 |     15850 |            4.38 |
+|   F7/F8 Muxes  |    <0.001 |     2598 |     63400 |            4.10 |
+|   Register     |    <0.001 |     3632 |    126800 |            2.86 |
 |   Others       |     0.000 |       24 |       --- |             --- |
-| Signals        |     0.014 |    14352 |       --- |             --- |
+| Signals        |     0.015 |    14407 |       --- |             --- |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        4 |       240 |            1.67 |
-| I/O            |     0.001 |       20 |       210 |            9.52 |
+| I/O            |     0.002 |       20 |       210 |            9.52 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.251 |          |           |                 |
+| Total          |     0.254 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.052 |       0.036 |      0.015 |
+| Vccint    |       1.000 |     0.054 |       0.039 |      0.015 |
 | Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,25 +143,41 @@ Table of Contents
 +---------------------------------------+-----------+
 | Name                                  | Power (W) |
 +---------------------------------------+-----------+
-| top                                   |     0.153 |
-|   Single_Note_Inst                    |     0.003 |
-|     dmg0                              |    <0.001 |
+| top                                   |     0.156 |
+|   Single_Note_Inst                    |     0.005 |
+|     dmg0_sawtooth                     |    <0.001 |
 |       U0                              |    <0.001 |
 |         synth_options.dist_mem_inst   |    <0.001 |
 |           gen_rom.rom_inst            |    <0.001 |
-|     dmg1                              |    <0.001 |
+|     dmg0_sine                         |    <0.001 |
 |       U0                              |    <0.001 |
 |         synth_options.dist_mem_inst   |    <0.001 |
 |           gen_rom.rom_inst            |    <0.001 |
-|     dmg2                              |    <0.001 |
+|     dmg1_sawtooth                     |    <0.001 |
 |       U0                              |    <0.001 |
 |         synth_options.dist_mem_inst   |    <0.001 |
 |           gen_rom.rom_inst            |    <0.001 |
-|     dmg3                              |    <0.001 |
+|     dmg1_sine                         |    <0.001 |
 |       U0                              |    <0.001 |
 |         synth_options.dist_mem_inst   |    <0.001 |
 |           gen_rom.rom_inst            |    <0.001 |
-|     driver_inst                       |    <0.001 |
+|     dmg2_sawtooth                     |    <0.001 |
+|       U0                              |    <0.001 |
+|         synth_options.dist_mem_inst   |    <0.001 |
+|           gen_rom.rom_inst            |    <0.001 |
+|     dmg2_sine                         |    <0.001 |
+|       U0                              |    <0.001 |
+|         synth_options.dist_mem_inst   |    <0.001 |
+|           gen_rom.rom_inst            |    <0.001 |
+|     dmg3_sawtooth                     |    <0.001 |
+|       U0                              |    <0.001 |
+|         synth_options.dist_mem_inst   |    <0.001 |
+|           gen_rom.rom_inst            |    <0.001 |
+|     dmg3_sine                         |    <0.001 |
+|       U0                              |    <0.001 |
+|         synth_options.dist_mem_inst   |    <0.001 |
+|           gen_rom.rom_inst            |    <0.001 |
+|     driver_inst                       |     0.001 |
 |   VGA_inst                            |     0.146 |
 |     divider                           |     0.117 |
 |       inst                            |     0.117 |
@@ -181,7 +197,7 @@ Table of Contents
 |           synth_options.dist_mem_inst |    <0.001 |
 |             gen_rom.rom_inst          |    <0.001 |
 |   controller_inst                     |    <0.001 |
-|   keyboard_inst                       |     0.002 |
+|   keyboard_inst                       |     0.003 |
 |     PS2                               |    <0.001 |
 |       debounce                        |    <0.001 |
 +---------------------------------------+-----------+

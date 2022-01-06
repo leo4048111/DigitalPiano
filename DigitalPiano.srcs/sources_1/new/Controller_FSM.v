@@ -23,7 +23,8 @@
 module Controller_FSM(
     input clk_100,
     input x,
-    output [1:0] state
+    output [1:0] state,
+    output rst_n
     );
 
 localparam STATEMENT = 0;
@@ -74,5 +75,6 @@ begin
 end
 
 assign state = cur_state;
+assign rst_n = ((state == START) ? 1:0);
 
 endmodule

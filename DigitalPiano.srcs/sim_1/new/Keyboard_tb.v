@@ -26,7 +26,7 @@ reg clk; //驱动时钟
 reg clock_USB_in;    //USB输入时钟
 reg data_USB_in;     //USB串行输入
 
-Keyboard uut(.clk(clk),
+Keyboard uut(.clk_100(clk),
     .clock_USB_in(clock_USB_in),
     .data_USB_in(data_USB_in));
 
@@ -37,223 +37,223 @@ begin
     data_USB_in = 0;
     //准备送入
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿1
-    //送入10位开始
+    #66666 clock_USB_in = 0;    //下降�?1
+    //送入10位开�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿2
+    #66666 clock_USB_in = 0;    //下降�?2
         data_USB_in = 0;    //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿3
+    #66666 clock_USB_in = 0;    //下降�?3
         data_USB_in = 1;    //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿4
+    #66666 clock_USB_in = 0;    //下降�?4
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿5
+    #66666 clock_USB_in = 0;    //下降�?5
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿6
+    #66666 clock_USB_in = 0;    //下降�?6
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿7
+    #66666 clock_USB_in = 0;    //下降�?7
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿8
+    #66666 clock_USB_in = 0;    //下降�?8
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿9
+    #66666 clock_USB_in = 0;    //下降�?9
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿10
-        data_USB_in = 0;     //送入奇偶校验位
+    #66666 clock_USB_in = 0;    //下降�?10
+        data_USB_in = 0;     //送入奇偶校验�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿11
-        data_USB_in = 1;     //送入结束位
-    //送入10位结束
+    #66666 clock_USB_in = 0;    //下降�?11
+        data_USB_in = 1;     //送入结束�?
+    //送入10位结�?
     #5000;
 
     //准备送入
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿1
-    //送入10位开始
+    #66666 clock_USB_in = 0;    //下降�?1
+    //送入10位开�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿2
+    #66666 clock_USB_in = 0;    //下降�?2
         data_USB_in = 0;    //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿3
+    #66666 clock_USB_in = 0;    //下降�?3
         data_USB_in = 0;    //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿4
+    #66666 clock_USB_in = 0;    //下降�?4
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿5
+    #66666 clock_USB_in = 0;    //下降�?5
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿6
+    #66666 clock_USB_in = 0;    //下降�?6
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿7
+    #66666 clock_USB_in = 0;    //下降�?7
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿8
+    #66666 clock_USB_in = 0;    //下降�?8
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿9
+    #66666 clock_USB_in = 0;    //下降�?9
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿10
-        data_USB_in = 1;     //送入奇偶校验位
+    #66666 clock_USB_in = 0;    //下降�?10
+        data_USB_in = 1;     //送入奇偶校验�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿11
-        data_USB_in = 1;     //送入结束位
-    //送入10位结束
+    #66666 clock_USB_in = 0;    //下降�?11
+        data_USB_in = 1;     //送入结束�?
+    //送入10位结�?
     #5000;
 
     //准备送入
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿1
-    //送入10位开始
+    #66666 clock_USB_in = 0;    //下降�?1
+    //送入10位开�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿2
+    #66666 clock_USB_in = 0;    //下降�?2
         data_USB_in = 0;    //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿3
+    #66666 clock_USB_in = 0;    //下降�?3
         data_USB_in = 1;    //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿4
+    #66666 clock_USB_in = 0;    //下降�?4
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿5
+    #66666 clock_USB_in = 0;    //下降�?5
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿6
+    #66666 clock_USB_in = 0;    //下降�?6
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿7
+    #66666 clock_USB_in = 0;    //下降�?7
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿8
+    #66666 clock_USB_in = 0;    //下降�?8
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿9
+    #66666 clock_USB_in = 0;    //下降�?9
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿10
-        data_USB_in = 0;     //送入奇偶校验位
+    #66666 clock_USB_in = 0;    //下降�?10
+        data_USB_in = 0;     //送入奇偶校验�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿11
-        data_USB_in = 1;     //送入结束位
-    //送入10位结束
+    #66666 clock_USB_in = 0;    //下降�?11
+        data_USB_in = 1;     //送入结束�?
+    //送入10位结�?
     #5000;
 
     //准备送入
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿1
-    //送入10位开始
+    #66666 clock_USB_in = 0;    //下降�?1
+    //送入10位开�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿2
+    #66666 clock_USB_in = 0;    //下降�?2
         data_USB_in = 0;    //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿3
+    #66666 clock_USB_in = 0;    //下降�?3
         data_USB_in = 1;    //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿4
+    #66666 clock_USB_in = 0;    //下降�?4
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿5
+    #66666 clock_USB_in = 0;    //下降�?5
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿6
+    #66666 clock_USB_in = 0;    //下降�?6
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿7
+    #66666 clock_USB_in = 0;    //下降�?7
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿8
+    #66666 clock_USB_in = 0;    //下降�?8
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿9
+    #66666 clock_USB_in = 0;    //下降�?9
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿10
-        data_USB_in = 1;     //送入奇偶校验位
+    #66666 clock_USB_in = 0;    //下降�?10
+        data_USB_in = 1;     //送入奇偶校验�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿11
-        data_USB_in = 1;     //送入结束位
-    //送入10位结束
+    #66666 clock_USB_in = 0;    //下降�?11
+        data_USB_in = 1;     //送入结束�?
+    //送入10位结�?
 
     //准备送入
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿1
-    //送入10位开始
+    #66666 clock_USB_in = 0;    //下降�?1
+    //送入10位开�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿2
+    #66666 clock_USB_in = 0;    //下降�?2
         data_USB_in = 0;    //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿3
+    #66666 clock_USB_in = 0;    //下降�?3
         data_USB_in = 0;    //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿4
+    #66666 clock_USB_in = 0;    //下降�?4
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿5
+    #66666 clock_USB_in = 0;    //下降�?5
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿6
+    #66666 clock_USB_in = 0;    //下降�?6
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿7
+    #66666 clock_USB_in = 0;    //下降�?7
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿8
+    #66666 clock_USB_in = 0;    //下降�?8
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿9
+    #66666 clock_USB_in = 0;    //下降�?9
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿10
-        data_USB_in = 1;     //送入奇偶校验位
+    #66666 clock_USB_in = 0;    //下降�?10
+        data_USB_in = 1;     //送入奇偶校验�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿11
-        data_USB_in = 1;     //送入结束位
-    //送入10位结束
+    #66666 clock_USB_in = 0;    //下降�?11
+        data_USB_in = 1;     //送入结束�?
+    //送入10位结�?
     #5000;
 
     //准备送入
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿1
-    //送入10位开始
+    #66666 clock_USB_in = 0;    //下降�?1
+    //送入10位开�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿2
+    #66666 clock_USB_in = 0;    //下降�?2
         data_USB_in = 0;    //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿3
+    #66666 clock_USB_in = 0;    //下降�?3
         data_USB_in = 1;    //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿4
+    #66666 clock_USB_in = 0;    //下降�?4
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿5
+    #66666 clock_USB_in = 0;    //下降�?5
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿6
+    #66666 clock_USB_in = 0;    //下降�?6
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿7
+    #66666 clock_USB_in = 0;    //下降�?7
         data_USB_in = 1;     //送入1
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿8
+    #66666 clock_USB_in = 0;    //下降�?8
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿9
+    #66666 clock_USB_in = 0;    //下降�?9
         data_USB_in = 0;     //送入0
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿10
-        data_USB_in = 1;     //送入奇偶校验位
+    #66666 clock_USB_in = 0;    //下降�?10
+        data_USB_in = 1;     //送入奇偶校验�?
     #66666 clock_USB_in = 1;
-    #66666 clock_USB_in = 0;    //下降沿11
-        data_USB_in = 1;     //送入结束位
-    //送入10位结束
+    #66666 clock_USB_in = 0;    //下降�?11
+        data_USB_in = 1;     //送入结束�?
+    //送入10位结�?
 end
 
 always begin

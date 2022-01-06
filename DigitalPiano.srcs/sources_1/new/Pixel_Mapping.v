@@ -336,11 +336,11 @@ begin
     end
 end
 
-reg [9:0] count = 0;
+reg [11:0] count = 0;
 
 always @ (posedge clk_25)
 begin
-    if(count == 1023)
+    if(count == 2875)
     begin
         for(j = 0;j < 470;j = j + 1)
         begin
@@ -353,6 +353,7 @@ begin
         count <= count + 1;
     end
 end
+
 
 //读取缓存信息
 always @ (posedge clk_25)
@@ -815,9 +816,36 @@ begin
             end
         end
         else begin             //CLOSE
-            red <= 4'b1111;
-            green <= 4'b1010;
-            blue <= 4'b0101;
+            if(hcount < START_H + VISIBLE_HORIZONTAL/6) begin
+                red <= 4'b1111;
+                green <= 4'b0000;
+                blue <= 4'b0000;
+            end
+            else if(hcount < START_H + VISIBLE_HORIZONTAL * 2 / 6) begin
+                red <= 4'b0000;
+                green <= 4'b1111;
+                blue <= 4'b0000;
+            end
+            else if(hcount < START_H + VISIBLE_HORIZONTAL * 3 / 6) begin
+                red <= 4'b0000;
+                green <= 4'b0000;
+                blue <= 4'b1111;
+            end
+            else if(hcount < START_H + VISIBLE_HORIZONTAL * 4 / 6) begin
+                red <= 4'b1111;
+                green <= 4'b1111;
+                blue <= 4'b0000;
+            end
+            else if(hcount < START_H + VISIBLE_HORIZONTAL * 5 / 6) begin
+                red <= 4'b0000;
+                green <= 4'b1111;
+                blue <= 4'b1111;
+            end 
+            else begin
+                red <= 4'b1111;
+                green <= 4'b0000;
+                blue <= 4'b1111;
+            end 
         end
     end     //显示区域结束
     else begin

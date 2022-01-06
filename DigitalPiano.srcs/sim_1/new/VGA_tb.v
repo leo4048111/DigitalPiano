@@ -23,7 +23,6 @@
 module VGA_tb;
 
 reg clock;
-reg rst;
 wire [3:0] red;
 wire [3:0] green;
 wire [3:0] blue;
@@ -31,11 +30,10 @@ wire hsync;
 wire vsync;
 
 VGA uut(
-    .clk(clock),
-    .rst(rst),
-    .red(red),
-    .green(green),
-    .blue(blue),
+    .clk_100(clock),
+    .R_OUT(red),
+    .G_OUT(green),
+    .B_OUT(blue),
     .hsync(hsync),
     .vsync(vsync)
 );

@@ -50,20 +50,32 @@ wire [1:0] octave_out[3:0];
 //当前叠加波形位移
 wire [11:0] PWM_LEVEL_OUT; 
 
+//当前失真度
+wire [9:0] od_level;
+wire [9:0] od_level_bottom;
+
+//当前音色
+wire tone;
+
 //当前控制器状态
 wire [1:0] state;
+
+//全局重置信号
+wire rst_n;
 
 //实例化控制器
 Controller_FSM controller_inst(
     .clk_100(clk_100),
     .x(x),
-    .state(state)
+    .state(state),
+    .rst_n(rst_n)
     );
 
 //实例化键盘控制模块
 Keyboard keyboard_inst(
     .clk_100(clk_100),
     .state(state),
+    .rst_n(rst_n),
     .clock_USB_in(PS2_CLK),
     .data_USB_in(PS2_DATA),
     .note_0(note_out[0]),
@@ -73,13 +85,20 @@ Keyboard keyboard_inst(
     .octave_0(octave_out[0]),
     .octave_1(octave_out[1]),
     .octave_2(octave_out[2]),
-    .octave_3(octave_out[3])
+    .octave_3(octave_out[3]),
+    .od_level(od_level),
+    .od_level_bottom(od_level_bottom),
+    .tone(tone)
     );
 
 //实例化声音控制模块
 Single_Note Single_Note_Inst(
     .clk_100(clk_100),
     .state(state),
+    .rst_n(rst_n),
+    .od_level(od_level),
+    .od_level_bottom(od_level_bottom),
+    .tone(tone),
     .note_0(note_out[0]),
     .note_1(note_out[1]),
     .note_2(note_out[2]),

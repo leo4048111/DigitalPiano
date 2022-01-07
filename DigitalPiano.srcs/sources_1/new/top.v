@@ -24,7 +24,7 @@ module top(
     //全局时钟输入
     input clk_100,
 
-    //控制器输入
+    //控制器输??
     input x,
 
     //VGA控制
@@ -38,9 +38,13 @@ module top(
     input PS2_CLK,
     input PS2_DATA,
 
-    //PWM单声道音频输出控制
+    //PWM单声道音频输出控??
     output AUD_PWM,
-    output AUD_SD
+    output AUD_SD,
+
+    //Led显示输出
+    output [7:0] dig,
+    output [7:0] seg
     );
 
 //数据缓存
@@ -50,14 +54,14 @@ wire [1:0] octave_out[3:0];
 //当前叠加波形位移
 wire [11:0] PWM_LEVEL_OUT; 
 
-//当前失真度
+//当前失真??
 wire [9:0] od_level;
 wire [9:0] od_level_bottom;
 
 //当前音色
 wire tone;
 
-//当前控制器状态
+//当前控制器状??
 wire [1:0] state;
 
 //全局重置信号
@@ -71,7 +75,7 @@ Controller_FSM controller_inst(
     .rst_n(rst_n)
     );
 
-//实例化键盘控制模块
+//实例化键盘控制模??
 Keyboard keyboard_inst(
     .clk_100(clk_100),
     .state(state),
@@ -91,7 +95,7 @@ Keyboard keyboard_inst(
     .tone(tone)
     );
 
-//实例化声音控制模块
+//实例化声音控制模??
 Single_Note Single_Note_Inst(
     .clk_100(clk_100),
     .state(state),
@@ -131,6 +135,14 @@ VGA VGA_inst(
     .B_OUT(VGA_B),
     .hsync(VGA_HS),
     .vsync(VGA_VS)
+    );
+
+//实例化LED显示模块
+Led Led_inst(
+    .clk_100(clk_100),
+    .rst_n(rst_n),
+    .dig(dig),
+    .seg(seg)
     );
 
 

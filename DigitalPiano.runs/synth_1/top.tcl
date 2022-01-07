@@ -5,6 +5,8 @@
 set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -37,12 +39,13 @@ add_files -quiet d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/d
 set_property used_in_implementation false [get_files d:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/ip/dist_mem_gen_5/dist_mem_gen_5.dcp]
 read_verilog -library xil_defaultlib {
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/debouncer.v
-  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/PS2.v
+  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Pixel_Mapping.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/PWMDriver.v
+  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v
+  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Led.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Keyboard.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Controller_FSM.v
-  D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/VGA.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/Single_Note.v
   D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/sources_1/new/top.v
 }

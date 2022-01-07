@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Thu Jan 06 19:00:31 2022
+| Date             : Fri Jan 07 23:05:44 2022
 | Host             : DESKTOP-HSAJ1AE running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 0.254  |
-| Dynamic (W)              | 0.156  |
+| Total On-Chip Power (W)  | 0.257  |
+| Dynamic (W)              | 0.159  |
 | Device Static (W)        | 0.098  |
 | Effective TJA (C/W)      | 4.6    |
 | Max Ambient (C)          | 83.8   |
@@ -50,18 +50,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.006 |        6 |       --- |             --- |
-| Slice Logic    |     0.017 |    22138 |       --- |             --- |
-|   LUT as Logic |     0.017 |    13520 |     63400 |           21.32 |
+| Slice Logic    |     0.017 |    22190 |       --- |             --- |
+|   LUT as Logic |     0.017 |    13539 |     63400 |           21.35 |
 |   CARRY4       |    <0.001 |      694 |     15850 |            4.38 |
 |   F7/F8 Muxes  |    <0.001 |     2598 |     63400 |            4.10 |
-|   Register     |    <0.001 |     3632 |    126800 |            2.86 |
-|   Others       |     0.000 |       24 |       --- |             --- |
-| Signals        |     0.015 |    14407 |       --- |             --- |
+|   Register     |    <0.001 |     3655 |    126800 |            2.88 |
+|   Others       |     0.000 |       26 |       --- |             --- |
+| Signals        |     0.015 |    14438 |       --- |             --- |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        4 |       240 |            1.67 |
-| I/O            |     0.002 |       20 |       210 |            9.52 |
+| I/O            |     0.005 |       36 |       210 |           17.14 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.254 |          |           |                 |
+| Total          |     0.257 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.054 |       0.039 |      0.015 |
 | Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
-| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
+| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -143,8 +143,9 @@ Table of Contents
 +---------------------------------------+-----------+
 | Name                                  | Power (W) |
 +---------------------------------------+-----------+
-| top                                   |     0.156 |
-|   Single_Note_Inst                    |     0.005 |
+| top                                   |     0.159 |
+|   Led_inst                            |    <0.001 |
+|   Single_Note_Inst                    |     0.004 |
 |     dmg0_sawtooth                     |    <0.001 |
 |       U0                              |    <0.001 |
 |         synth_options.dist_mem_inst   |    <0.001 |
@@ -186,10 +187,10 @@ Table of Contents
 |         U0                            |    <0.001 |
 |           synth_options.dist_mem_inst |    <0.001 |
 |             gen_rom.rom_inst          |    <0.001 |
-|       logo_rom_inst                   |     0.016 |
-|         U0                            |     0.016 |
-|           synth_options.dist_mem_inst |     0.016 |
-|             gen_rom.rom_inst          |     0.016 |
+|       logo_rom_inst                   |     0.017 |
+|         U0                            |     0.017 |
+|           synth_options.dist_mem_inst |     0.017 |
+|             gen_rom.rom_inst          |     0.017 |
 |       statement_rom_x_inst            |    <0.001 |
 |         U0                            |    <0.001 |
 |       statement_rom_y_inst            |    <0.001 |

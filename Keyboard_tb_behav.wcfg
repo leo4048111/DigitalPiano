@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Keyboard_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Keyboard_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2428036686666666fs"></ZoomStartTime>
+      <ZoomEndTime time="2428037686666667fs"></ZoomEndTime>
+      <Cursor1Time time="2428037520000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/Keyboard_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/clock_USB_in" type="logic">
+      <obj_property name="ElementShortName">clock_USB_in</obj_property>
+      <obj_property name="ObjectShortName">clock_USB_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/data_USB_in" type="logic">
+      <obj_property name="ElementShortName">data_USB_in</obj_property>
+      <obj_property name="ObjectShortName">data_USB_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/note_0" type="array">
+      <obj_property name="ElementShortName">note_0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">note_0[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/note_1" type="array">
+      <obj_property name="ElementShortName">note_1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">note_1[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/note_2" type="array">
+      <obj_property name="ElementShortName">note_2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">note_2[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/note_3" type="array">
+      <obj_property name="ElementShortName">note_3[3:0]</obj_property>
+      <obj_property name="ObjectShortName">note_3[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/tone" type="logic">
+      <obj_property name="ElementShortName">tone</obj_property>
+      <obj_property name="ObjectShortName">tone</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/DATA_16BITS" type="array">
+      <obj_property name="ElementShortName">DATA_16BITS[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_16BITS[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/octave_0" type="array">
+      <obj_property name="ElementShortName">octave_0[1:0]</obj_property>
+      <obj_property name="ObjectShortName">octave_0[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/octave_1" type="array">
+      <obj_property name="ElementShortName">octave_1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">octave_1[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/octave_2" type="array">
+      <obj_property name="ElementShortName">octave_2[1:0]</obj_property>
+      <obj_property name="ObjectShortName">octave_2[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Keyboard_tb/uut/od_level_bottom" type="array">
+      <obj_property name="ElementShortName">od_level_bottom[9:0]</obj_property>
+      <obj_property name="ObjectShortName">od_level_bottom[9:0]</obj_property>
+   </wvobject>
+</wave_config>

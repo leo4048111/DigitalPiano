@@ -2,64 +2,16 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Thu Dec 09 11:38:43 2021
-# Process ID: 9284
+# Start of session at: Sat Jan 08 11:03:17 2022
+# Process ID: 3608
 # Current directory: D:/Project/Vivado/DigitalPiano
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9664 D:\Project\Vivado\DigitalPiano\DigitalPiano.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11856 D:\Project\Vivado\DigitalPiano\DigitalPiano.xpr
 # Log file: D:/Project/Vivado/DigitalPiano/vivado.log
 # Journal file: D:/Project/Vivado/DigitalPiano\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project D:/Project/Vivado/DigitalPiano/DigitalPiano.xpr
 update_compile_order -fileset sources_1
-reset_run synth_1 -noclean_dir 
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-launch_runs impl_1 -jobs 4
-wait_on_run impl_1
-open_run synth_1 -name synth_1
-place_ports clk E3
-place_ports clock_USB_in F4
-place_ports data_USB_in B2
-place_ports hsync B11
-place_ports vsync B12
-set_property package_pin "" [get_ports [list  speaker]]
-set_property package_pin "" [get_ports [list  {B_OUT[3]}]]
-place_ports {R_OUT[0]} A3
-place_ports {R_OUT[1]} B4
-place_ports {R_OUT[2]} C5
-place_ports {R_OUT[3]} A4
-place_ports {G_OUT[0]} C6
-place_ports {G_OUT[1]} A5
-place_ports {G_OUT[2]} B6
-place_ports {G_OUT[3]} A6
-place_ports {B_OUT[0]} B7
-place_ports {B_OUT[1]} C7
-place_ports {B_OUT[2]} D7
-place_ports {B_OUT[3]} D8
-place_ports speaker A11
-set_property IOSTANDARD LVCMOS33 [get_ports [list {B_OUT[3]} {B_OUT[2]} {B_OUT[1]} {B_OUT[0]}]]
-set_property IOSTANDARD LVCMOS33 [get_ports [list {G_OUT[3]} {G_OUT[2]} {G_OUT[1]} {G_OUT[0]}]]
-set_property IOSTANDARD LVCMOS33 [get_ports [list {R_OUT[3]} {R_OUT[2]} {R_OUT[1]} {R_OUT[0]}]]
-set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
-set_property IOSTANDARD LVCMOS33 [get_ports [list clock_USB_in]]
-set_property IOSTANDARD LVCMOS33 [get_ports [list data_USB_in]]
-set_property IOSTANDARD LVCMOS33 [get_ports [list hsync]]
-set_property IOSTANDARD LVCMOS33 [get_ports [list speaker]]
-set_property IOSTANDARD LVCMOS33 [get_ports [list vsync]]
-close [ open D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/module_xdc.xdc w ]
-add_files -fileset constrs_1 D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/module_xdc.xdc
-set_property target_constrs_file D:/Project/Vivado/DigitalPiano/DigitalPiano.srcs/constrs_1/new/module_xdc.xdc [current_fileset -constrset]
-save_constraints -force
-reset_run synth_1
-launch_runs impl_1 -jobs 4
-wait_on_run impl_1
-close_design
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
 open_hw
 connect_hw_server
 open_hw_target

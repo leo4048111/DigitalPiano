@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Fri Jan 07 23:59:52 2022">
+<application name="pa" timeStamp="Sat Jan 08 11:04:28 2022">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="c7d92a2b4cc046d8b7c36f9238396237" type="ProjectID"/>
 <property name="ProjectIteration" value="362" type="ProjectIteration"/>
@@ -18,7 +18,7 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="AddSources" value="25" type="JavaHandler"/>
-<property name="AutoConnectTarget" value="63" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="64" type="JavaHandler"/>
 <property name="CloseProject" value="2" type="JavaHandler"/>
 <property name="ConfigureBitstream" value="1" type="JavaHandler"/>
 <property name="CoreView" value="23" type="JavaHandler"/>
@@ -26,10 +26,10 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditDelete" value="22" type="JavaHandler"/>
 <property name="EditProperties" value="2" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="3" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="232" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="233" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
 <property name="OpenExample" value="1" type="JavaHandler"/>
-<property name="OpenHardwareManager" value="68" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="69" type="JavaHandler"/>
 <property name="OpenProject" value="1" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="25" type="JavaHandler"/>
 <property name="ProgramDevice" value="1" type="JavaHandler"/>
@@ -62,32 +62,17 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ZoomIn" value="2" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_BREAK, simulation_live_break" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL, simulation_live_run_all" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Program and Debug, Open Hardware Manager, Open Target], 41, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, RTL Analysis, Open Elaborated Design], 14, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.ProgramDebugTab_OPEN_RECENTLY_OPENED_TARGET, Recent Targets" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, Auto Connect" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Coefficient Files], 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Program and Debug, Open Hardware Manager], 26, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, Open target" value="1" type="GuiResourceData"/>
 <property name="PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, Program device" value="1" type="GuiResourceData"/>
 <property name="PAResourceOtoP.ProgramFpgaDialog_PROGRAM, Program" value="1" type="GuiResourceData"/>
-<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="1" type="GuiResourceData"/>
-<property name="RDIResource.ProgressDialog_BACKGROUND, Background" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 0, 46" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 10, 35, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 127, 16, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 170, 253, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 22, 34, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 28, 37, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 4, 50" value="2" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 52, 35, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 6, 31, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 76, 37, false, false, false, true, false" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="34" type="GuiMode"/>
+<property name="GuiMode" value="35" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="22" type="TclMode"/>
+<property name="TclMode" value="23" type="TclMode"/>
 </item>
 </section>
 </application>

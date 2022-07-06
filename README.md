@@ -3,6 +3,7 @@
 ## Features
 + Chords √
 + Tone adjustment √
++ Octave selection(Four octaves) √
 + Keyboard control √
 + .3.5mm audio output √
 + Visualized sound wave √  

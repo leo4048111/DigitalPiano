@@ -7,7 +7,7 @@
 + Keyboard control √
 + .3.5mm audio output √
 + Visualization √
-+ Sound good √
++ Sound good to ear √
 + EZ to play √
 + Robust performance √
 ## Run prerequisites

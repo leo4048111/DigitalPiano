@@ -1,5 +1,5 @@
 # A FPGA digital Piano/Synthesizer
-## 制作者(Made By)： 同济大学(Shanghai Tongji University)20级计算机系(CS)2050250(SID)
+## 制作者(Made By)： 同济大学(Shanghai Tongji University)20级计算机系某学生(CS)
 ## Features
 + Chords √
 + Tone adjustment √

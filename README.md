@@ -11,7 +11,7 @@
 + Installed Vivado 2016+
 + This system is implemented on Digilent™ Nexy4 DDR board
 + You need a keyboard to play the notes, a 3.5mm jack speaker to play sound, and a VGA monitor for visualization
-+ open `.xpr` file, generate bitstream and write it to hardware, then the system should be running
++ open `.xpr` file, generate bitstream and write it to hardware, connect every required hardware, then the system should be running
 ## Keybinds
 |Key|Type|Function|
 | :-----| ----: | :----: |

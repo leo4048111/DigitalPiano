@@ -7,6 +7,8 @@
 + Keyboard control √
 + .3.5mm audio output √
 + Visualization √
++ Sound good √
++ EZ to play √
 + Robust performance √
 ## Run prerequisites
 + Installed Vivado 2016+

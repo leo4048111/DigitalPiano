@@ -1,4 +1,4 @@
-# DigitalPiano
+# A FPGA digital Piano/Synthesizer with wide octave, chord support and tone adjustment
 ## 制作者(Made By)： 同济大学(Shanghai Tongji University)20级计算机系(CS)2050250(SID)
 ## Features
 + Chords √

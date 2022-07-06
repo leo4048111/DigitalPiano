@@ -17,7 +17,7 @@
 | :-----| ----: | :----: |
 |`ZSXDCVGBHNMJ`|hold|octave 1, note C ~ B|
 |`Q2W3ER5T6Y7U`|hold|octave 2, note C ~ B|
-|`space`|toggle|toggle octave 1~2 and octave 3~4|
+|`space`|toggle|toggle octave 1\~2 and octave 3\~4|
 |`F1`|toggle|increase overdrive level|
 |`F2`|toggle|reduce overdrive level|
 |`F3`|toggle|toggle tone|

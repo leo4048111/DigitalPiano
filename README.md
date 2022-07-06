@@ -8,6 +8,6 @@
 + .3.5mm audio output √
 + Visualized sound wave √  
 ## Picture
-
+[Picture](https://raw.githubusercontent.com/leo4048111/DigitalPiano/main/Picture/picture.png)
 ## Demo
 Demo: https://www.bilibili.com/video/BV1VL411c7Pk?spm_id_from=333.999.0.0

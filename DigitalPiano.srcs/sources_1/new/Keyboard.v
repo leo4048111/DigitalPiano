@@ -90,7 +90,7 @@ G2   -->  B
 #G2  -->  H
 A2   -->  N
 #A2  -->  J
-B2   -->  M25
+B2   -->  M
 --------------------------*/
 
 reg [3:0] note;
@@ -472,7 +472,7 @@ begin
             end
         end
 
-        8'h04:begin   //F2 
+        8'h04:begin   //F3
             if(DATA_16BITS[15:8] == 8'hF0) //弹起
             begin
                 f3_detect <= 0;

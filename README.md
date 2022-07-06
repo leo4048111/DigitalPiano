@@ -5,4 +5,8 @@
 + Tone adjustment √
 + Keyboard control √
 + .3.5mm audio output √
-Demo:https://www.bilibili.com/video/BV1VL411c7Pk?spm_id_from=333.999.0.0
++ Visualized sound wave √  
+## Picture
+
+## Demo
+Demo: https://www.bilibili.com/video/BV1VL411c7Pk?spm_id_from=333.999.0.0
